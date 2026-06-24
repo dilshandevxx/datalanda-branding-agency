@@ -12,9 +12,6 @@
   animation: scroll 30s linear infinite;
 }
 
-.marqueeTrack:hover {
-  animation-play-state: paused;
-}
 
 .marqueeGroup {
   display: flex;
