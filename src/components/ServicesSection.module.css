@@ -194,12 +194,22 @@
 
 @media (max-width: 992px) {
   .item {
-    grid-template-columns: 50px 1fr auto;
+    grid-template-columns: 40px 1fr 40px;
   }
   .colImage {
     grid-column: 1 / -1;
   }
   .colText {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    padding: 1.5rem 0;
+  }
+  .colTitle {
+    white-space: normal;
+    font-size: 1.5rem;
   }
 }

@@ -32,3 +32,16 @@
   min-height: 400px;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--header-height) + 10vw);
+  }
+  .imageWrapper {
+    height: 40vh;
+    min-height: 300px;
+  }
+  .title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+}

@@ -1,4 +1,5 @@
 import styles from './CtaSection.module.css';
+import Magnetic from './Magnetic';
 
 export default function CtaSection() {
   return (
@@ -9,9 +10,11 @@ export default function CtaSection() {
           <span>Let's Work</span>
           <span>Together</span>
         </h2>
-        <button className={styles.button}>
-          Contact Now <span className={styles.arrow}>↗</span>
-        </button>
+        <Magnetic>
+          <button className={styles.button}>
+            Contact Now <span className={styles.arrow}>↗</span>
+          </button>
+        </Magnetic>
       </div>
     </section>
   );
