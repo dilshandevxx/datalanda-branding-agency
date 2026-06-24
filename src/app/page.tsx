@@ -3,6 +3,12 @@ import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
 import ServicesSection from '@/components/ServicesSection';
+import WorkSection from '@/components/WorkSection';
+import StudioSection from '@/components/StudioSection';
+import TestimonialSection from '@/components/TestimonialSection';
+import FaqSection from '@/components/FaqSection';
+import CtaSection from '@/components/CtaSection';
+import FooterSection from '@/components/FooterSection';
 
 export default function Home() {
   return (
@@ -12,6 +18,12 @@ export default function Home() {
       <Marquee />
       <IntroSection />
       <ServicesSection />
+      <WorkSection />
+      <StudioSection />
+      <TestimonialSection />
+      <FaqSection />
+      <CtaSection />
+      <FooterSection />
     </main>
   );
 }

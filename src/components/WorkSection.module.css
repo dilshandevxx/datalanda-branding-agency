@@ -1,0 +1,117 @@
+.section {
+  padding: 12vw 4vw;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.header {
+  margin-bottom: 8vw;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--foreground);
+  border-radius: 50%;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* Clean 2-Column Staggered Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+}
+
+.colRight {
+  margin-top: 15vw;
+}
+
+.projectCard {
+  margin-bottom: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Different Size Aspect Ratios */
+.ratioStandard { aspect-ratio: 4 / 3; }
+.ratioWide { aspect-ratio: 16 / 9; }
+.ratioPortrait { aspect-ratio: 3 / 4; }
+.ratioSquare { aspect-ratio: 1 / 1; }
+
+
+.imageInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.projectCard:hover .imageInner {
+  transform: scale(1.05);
+}
+
+.projectInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projectTitle {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  transition: color 0.4s ease;
+}
+
+.projectCard:hover .projectTitle {
+  color: var(--accent);
+}
+
+.projectCategory {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .colRight {
+    margin-top: 0;
+  }
+  .projectCard {
+    margin-bottom: 15vw;
+  }
+}

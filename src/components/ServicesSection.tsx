@@ -9,45 +9,52 @@ export default function ServicesSection() {
 
   const services = [
     {
-      num: "(001)",
-      title: "AI & ENGINEERING",
-      desc: "We build highly scalable, resilient architectures that leverage cutting-edge artificial intelligence. From predictive models to deep learning integrations, we engineer systems that put you years ahead of the competition.",
+      num: "/01",
+      title: "AI CONSULTING & STRATEGY",
+      desc: "Whether you're just exploring possibilities or looking to scale existing tools, we build a clear plan that aligns with your goals.",
+      tags: ["#AICONSULTING", "#BUSINESSAUTOMATION"],
       img: "/service_1.png",
     },
     {
-      num: "(002)",
+      num: "/02",
       title: "AGENTIC & AUTOMATION SYSTEMS",
-      desc: "Revolutionize your workflows with autonomous agentic systems. We design intelligent, self-correcting automation pipelines that drastically reduce overhead and eliminate human error in complex operations.",
+      desc: "Revolutionize your workflows with autonomous agentic systems. We design intelligent, self-correcting automation pipelines.",
+      tags: ["#AGENTICSYSTEMS", "#WORKFLOWS"],
       img: "/service_2.png",
     },
     {
-      num: "(003)",
+      num: "/03",
       title: "SOFTWARE DEVELOPMENT",
-      desc: "A beautiful interface means nothing without a robust foundation. We architect enterprise-grade software capable of handling massive concurrency with near-zero latency.",
+      desc: "A beautiful interface means nothing without a robust foundation. We architect enterprise-grade software capable of massive concurrency.",
+      tags: ["#ENGINEERING", "#ARCHITECTURE"],
       img: "/service_3.png",
     },
     {
-      num: "(004)",
+      num: "/04",
       title: "UI/UX DESIGN",
-      desc: "We don't just build software; we architect your market presence. Our designers align your technical capabilities with a striking user experience that commands industry authority.",
+      desc: "We don't just build software; we architect your market presence with a striking user experience that commands industry authority.",
+      tags: ["#PRODUCTDESIGN", "#AESTHETICS"],
       img: "/service_4.png",
     },
     {
-      num: "(005)",
+      num: "/05",
       title: "CLOUD & DEVOPS",
-      desc: "Seamlessly transition to the cloud with our expert DevOps strategies. We optimize your infrastructure for maximum uptime, security, and scalability.",
+      desc: "Seamlessly transition to the cloud with our expert DevOps strategies. We optimize your infrastructure for maximum uptime and scalability.",
+      tags: ["#CLOUD", "#DEVOPS"],
       img: "/service_1.png",
     },
     {
-      num: "(006)",
+      num: "/06",
       title: "AUTOMATION & SCALING",
-      desc: "We help you achieve hyper-growth through relentless automation. By identifying bottlenecks and implementing custom scaling solutions, we ensure your tech stack can handle rapid expansion.",
+      desc: "Achieve hyper-growth through relentless automation. By identifying bottlenecks, we ensure your tech stack can handle rapid expansion.",
+      tags: ["#SCALING", "#PERFORMANCE"],
       img: "/service_2.png",
     },
     {
-      num: "(007)",
+      num: "/07",
       title: "MOBILE & CROSS-PLATFORM",
-      desc: "Deliver exceptional mobile experiences across all devices. Our cross-platform engineering team ensures your apps perform flawlessly whether on iOS, Android, or the web.",
+      desc: "Deliver exceptional mobile experiences across all devices. Our cross-platform engineering ensures your apps perform flawlessly.",
+      tags: ["#MOBILE", "#IOSANDROID"],
       img: "/service_3.png",
     }
   ];
@@ -73,31 +80,42 @@ export default function ServicesSection() {
           return (
             <div 
               key={svc.num} 
-              className={styles.item}
+              className={`${styles.item} ${isActive ? styles.active : ''}`}
               onClick={() => toggleAccordion(index)}
             >
-              <div className={styles.itemHeader}>
-                <span className={styles.itemNum}>{svc.num}</span>
-                <h3 className={styles.itemTitle}>{svc.title}</h3>
-                <div className={`${styles.iconWrapper} ${isActive ? styles.active : ''}`}>
-                  +
+              <div className={styles.colNum}>{svc.num}</div>
+              <div className={styles.colTitle}>{svc.title}</div>
+              
+              <div className={styles.colImage}>
+                <div className={styles.imageWrapper}>
+                  <div className={styles.imageInner}>
+                    <Image
+                      src={svc.img}
+                      alt={svc.title}
+                      fill
+                      sizes="(max-width: 992px) 100vw, 30vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
                 </div>
               </div>
-              
-              <div className={`${styles.contentWrapper} ${isActive ? styles.active : ''}`}>
-                <div className={styles.contentInner}>
-                  <div className={styles.contentBody}>
+
+              <div className={styles.colText}>
+                <div className={styles.textWrapper}>
+                  <div className={styles.textInner}>
                     <p className={styles.desc}>{svc.desc}</p>
-                    <div className={styles.imageWrapper}>
-                      <Image
-                        src={svc.img}
-                        alt={svc.title}
-                        fill
-                        sizes="(max-width: 992px) 100vw, 50vw"
-                        style={{ objectFit: 'cover' }}
-                      />
+                    <div className={styles.tags}>
+                      {svc.tags.map(tag => (
+                        <span key={tag}>{tag}</span>
+                      ))}
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div className={styles.colIcon}>
+                <div className={styles.iconWrapper}>
+                  +
                 </div>
               </div>
             </div>

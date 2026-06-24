@@ -1,0 +1,92 @@
+.section {
+  padding: 15vw 4vw;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Beautiful subtle background glow */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vw;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+}
+
+.title {
+  font-size: clamp(4rem, 12vw, 14rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  display: flex;
+  flex-direction: column;
+}
+
+.title span {
+  display: block;
+}
+
+.title span:last-child {
+  padding-left: 5vw; /* Slight stagger for dynamic editorial look */
+}
+
+.button {
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.5rem 3.5rem;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2vw;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+}
+
+.arrow {
+  font-size: 1.2em;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.button:hover .arrow {
+  transform: translate(4px, -4px); /* Diagonal arrow movement */
+}
+
+@media (max-width: 768px) {
+  .title span:last-child {
+    padding-left: 0;
+  }
+}
