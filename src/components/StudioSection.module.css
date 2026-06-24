@@ -40,9 +40,9 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
   align-items: start;
-}
-
 .controls {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   gap: 1rem;
 }
@@ -68,17 +68,27 @@
   transform: scale(1.05);
 }
 
-.textBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 .paragraph {
   font-size: clamp(1rem, 1.25vw, 1.25rem);
   line-height: 1.6;
   font-weight: 400;
   opacity: 0.9;
+}
+
+.para1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.para2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.linkWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 3rem;
 }
 
 .linkBtn {
@@ -121,5 +131,18 @@
   }
   .controls {
     display: none;
+  }
+  .para1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .para2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .linkWrapper {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
   }
 }

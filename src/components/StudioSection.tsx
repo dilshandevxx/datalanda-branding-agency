@@ -41,20 +41,19 @@ export default function StudioSection() {
           </button>
         </div>
 
-        <div className={styles.textBlock}>
-          <p className={styles.paragraph}>
-            Great design has no expiration date. It lasts for years and inspires instantly. Our creative freedom enables us to spend more time on fewer projects, ensuring unparalleled attention to detail.
-          </p>
+        <p className={`${styles.paragraph} ${styles.para1}`}>
+          Great design has no expiration date. It lasts for years and inspires instantly. Our creative freedom enables us to spend more time on fewer projects, ensuring unparalleled attention to detail.
+        </p>
+
+        <p className={`${styles.paragraph} ${styles.para2}`}>
+          We focus on the intellectual, functional, and artistic aspects of business. Looking to create profound ideas, timeless design, and beauty in everyday life.
+        </p>
+
+        <div className={styles.linkWrapper}>
           <div className={styles.linkBtn}>
             <span>About Studio</span>
             <div className={styles.linkIcon}>→</div>
           </div>
-        </div>
-
-        <div className={styles.textBlock}>
-          <p className={styles.paragraph}>
-            We focus on the intellectual, functional, and artistic aspects of business. Looking to create profound ideas, timeless design, and beauty in everyday life.
-          </p>
         </div>
       </div>
     </section>

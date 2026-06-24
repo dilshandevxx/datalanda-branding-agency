@@ -169,3 +169,30 @@
     height: 40vh;
   }
 }
+
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column-reverse; /* Put FAQ above visual column */
+    gap: 8vw;
+  }
+  .imagesRow {
+    display: none; /* Hide decorative images on mobile to keep it clean */
+  }
+  .contactBox {
+    padding: 1.25rem 1.5rem;
+    align-items: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .contactIcon {
+    font-size: 1.5rem;
+    padding-top: 0;
+  }
+  .contactText {
+    font-size: 0.8rem;
+  }
+  .title {
+    margin-bottom: 2rem;
+  }
+}
