@@ -83,7 +83,7 @@
   }
   .card {
     width: 85vw;
-    opacity: 0.9; /* Force full opacity since there's no hover on mobile */
+    opacity: 1; /* Make full opacity since there's no hover on mobile */
     transform: scale(1);
   }
   .avatar {
@@ -93,6 +93,6 @@
     max-width: 100%;
     font-size: 1.125rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
   }
 }

@@ -133,7 +133,7 @@
     gap: 2rem;
   }
   .controls {
-    display: none;
+    align-self: flex-end;
   }
   .paragraphs {
     flex-direction: column;
