@@ -1,9 +1,23 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.logo}>Tavern</div>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>
