@@ -15,6 +15,11 @@ export default function Header() {
         <button className={styles.ctaButton}>
           Get in Touch <span className={styles.arrow}>→</span>
         </button>
+        <button className={styles.hamburger} aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
   );
