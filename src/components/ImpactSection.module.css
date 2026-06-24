@@ -55,44 +55,33 @@
   letter-spacing: -0.04em;
   line-height: 1;
   margin: 0;
-  /* Text gradient setup */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent; /* Fallback */
+  color: #ffffff;
   position: relative;
   z-index: 2;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease;
 }
 
 .statCard:hover .number {
   transform: translateY(-10px) scale(1.02);
+  text-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
 }
 
 .label {
   font-size: clamp(1.25rem, 2vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
   position: relative;
   z-index: 2;
+  transition: color 0.4s ease;
 }
 
-/* Gradients */
-.gradientMagenta {
-  background-image: linear-gradient(135deg, #FF00FF 0%, #FF6B00 100%);
+.statCard:hover .label {
+  color: #ffffff;
 }
 
-.gradientBlue {
-  background-image: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
-}
-
-.gradientOrange {
-  background-image: linear-gradient(135deg, #F2C94C 0%, #F2994A 100%);
-}
-
-/* Glowing Auras */
+/* Glowing Auras (Monochromatic) */
 .glowAura {
   position: absolute;
   top: 40%;
@@ -100,16 +89,17 @@
   width: 60%;
   height: 60%;
   border-radius: 50%;
+  background: #ffffff;
   transform: translate(-50%, -50%);
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.02;
   z-index: 1;
   transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
   pointer-events: none;
 }
 
 .statCard:hover .glowAura {
-  opacity: 0.4;
+  opacity: 0.08;
   transform: translate(-50%, -50%) scale(1.2);
   filter: blur(60px);
 }

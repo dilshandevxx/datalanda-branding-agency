@@ -3,18 +3,15 @@ import styles from './ImpactSection.module.css';
 const stats = [
   {
     number: "50+",
-    label: "Awwwards Won",
-    gradientClass: styles.gradientMagenta
+    label: "Awwwards Won"
   },
   {
     number: "$120M",
-    label: "Client Revenue",
-    gradientClass: styles.gradientBlue
+    label: "Client Revenue"
   },
   {
     number: "100%",
-    label: "Creative Freedom",
-    gradientClass: styles.gradientOrange
+    label: "Creative Freedom"
   }
 ];
 
@@ -30,8 +27,8 @@ export default function ImpactSection() {
         <div className={styles.grid}>
           {stats.map((stat, i) => (
             <div key={i} className={styles.statCard}>
-              <div className={`${styles.glowAura} ${stat.gradientClass}`}></div>
-              <h2 className={`${styles.number} ${stat.gradientClass}`}>{stat.number}</h2>
+              <div className={styles.glowAura}></div>
+              <h2 className={styles.number}>{stat.number}</h2>
               <p className={styles.label}>{stat.label}</p>
             </div>
           ))}
