@@ -66,3 +66,21 @@
     transform: translateX(-50%);
   }
 }
+@media (max-width: 768px) {
+  .marqueeSection {
+    padding: 12vw 0; /* More breathing room on mobile */
+    gap: 6vw;
+  }
+  .heading {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+  }
+  .brand {
+    font-size: 1.15rem; /* Smaller text on mobile */
+    padding: 0 6vw;
+  }
+  .brandIcon {
+    font-size: 1rem;
+  }
+}

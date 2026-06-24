@@ -3,9 +3,11 @@ import Hero from '@/components/Hero';
 import WhyUsSection from '@/components/WhyUsSection';
 import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
+import WaitlistSection from '@/components/WaitlistSection';
 import ServicesSection from '@/components/ServicesSection';
 import WorkSection from '@/components/WorkSection';
 import StudioSection from '@/components/StudioSection';
+import PartnersSection from '@/components/PartnersSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
@@ -19,9 +21,11 @@ export default function Home() {
       <WhyUsSection />
       <Marquee />
       <IntroSection />
+      <WaitlistSection />
       <ServicesSection />
       <WorkSection />
       <StudioSection />
+      <PartnersSection />
       <TestimonialSection />
       <FaqSection />
       <CtaSection />

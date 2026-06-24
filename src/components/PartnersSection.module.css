@@ -1,0 +1,175 @@
+.section {
+  padding: 12vw 5vw;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vw;
+}
+
+.cardsWrapper {
+  flex: 1;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.card {
+  position: absolute;
+  width: 240px;
+  height: 160px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+}
+
+.cardWhite {
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 1;
+  transform: translateX(-40%) rotate(-6deg);
+}
+
+.cardWhite:hover {
+  transform: translateX(-45%) rotate(-8deg) scale(1.05);
+  z-index: 10;
+}
+
+.cardRed {
+  background-color: #ED2224;
+  color: #ffffff;
+  z-index: 2;
+  transform: translateX(0) rotate(2deg);
+}
+
+.cardRed:hover {
+  transform: translateX(0) rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+.cardBlue {
+  background-color: #1A73E8;
+  color: #ffffff;
+  z-index: 0;
+  transform: translateX(40%) rotate(8deg);
+}
+
+.cardBlue:hover {
+  transform: translateX(45%) rotate(10deg) scale(1.05);
+  z-index: 10;
+}
+
+.hiIbiza {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.reg {
+  font-size: 0.6rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  margin-left: 0.1rem;
+}
+
+.adobe {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.adobeIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.genericBrand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.text {
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.ctaButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateX(4px);
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .cardsWrapper {
+    width: 100%;
+    max-width: 100%;
+    transform: scale(0.8);
+  }
+  
+  .content {
+    align-items: center;
+  }
+  
+  .ctaWrapper {
+    justify-content: center;
+  }
+}
