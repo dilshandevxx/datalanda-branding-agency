@@ -9,10 +9,10 @@ export default function Hero() {
           TIMELESS BRANDS,<br />DRIVEN BY MODERN<br />HERITAGE
         </h1>
       </div>
-      <div className={`${styles.imageContainer} animate-fade-in`} style={{ animationDelay: '0.2s' }}>
+      <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
           <Image
-            src="/hero.png"
+            src="/hero-abstract.png"
             alt="Hero IT Professionals"
             fill
             priority

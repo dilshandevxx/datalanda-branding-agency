@@ -29,6 +29,12 @@
   transform: scale(1.05);
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
 .nav {
   display: flex;
   gap: 2.5rem;
@@ -62,6 +68,38 @@
 
 .navLink:hover::after {
   width: 100%;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1.1em;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
