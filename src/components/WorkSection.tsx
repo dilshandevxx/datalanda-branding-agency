@@ -63,8 +63,14 @@ export default function WorkSection() {
               </div>
             </div>
             <div className={styles.projectInfo}>
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <span className={styles.projectCategory}>{project.category}</span>
+              <div className={styles.textStack}>
+                <h3 className={styles.projectTitle}>{project.title}</h3>
+                <span className={styles.projectCategory}>{project.category}</span>
+              </div>
+              <div className={styles.viewBadge}>
+                <span>VIEW</span>
+                <span>PROJECT</span>
+              </div>
             </div>
           </div>
         ))}

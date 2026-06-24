@@ -85,6 +85,17 @@
   align-items: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+}
+
+.textStack {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.viewBadge {
+  display: none; /* Hidden on desktop, we use custom cursor */
 }
 
 .projectTitle {
@@ -111,6 +122,11 @@
 }
 
 @media (max-width: 768px) {
+  /* Force all cards to 1:1 Aspect Ratio on Mobile */
+  .ratioStandard, .ratioWide, .ratioPortrait, .ratioSquare {
+    aspect-ratio: 1 / 1 !important;
+  }
+
   .grid {
     display: flex;
     overflow-x: auto;
@@ -123,8 +139,59 @@
     display: none; /* Chrome/Safari */
   }
   .projectCard {
+    position: relative;
     min-width: 85vw;
     scroll-snap-align: center;
     margin-bottom: 0;
+  }
+  .projectInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom: none;
+    margin-top: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  }
+  .textStack {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
+  }
+  .projectTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .projectCategory {
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+  }
+  .viewBadge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 55px;
+    height: 55px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
   }
 }
