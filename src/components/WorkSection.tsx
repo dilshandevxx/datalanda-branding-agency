@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './WorkSection.module.css';
 
@@ -74,6 +75,12 @@ export default function WorkSection() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={styles.footerActions}>
+        <Link href="/projects" className={styles.viewAllBtn}>
+          View All Projects <span className={styles.btnArrow}>→</span>
+        </Link>
       </div>
     </section>
   );

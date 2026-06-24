@@ -115,6 +115,43 @@
   opacity: 0.5;
 }
 
+.footerActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  padding: 1rem 3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.viewAllBtn:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.btnArrow {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.viewAllBtn:hover .btnArrow {
+  transform: translateX(4px);
+}
+
 @media (max-width: 992px) {
   .staggered {
     margin-top: 0;
