@@ -126,36 +126,23 @@
     flex: 0 0 80vw;
   }
   .footer {
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* Tighten the gap so the text reads like a single thought */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
   }
   .controls {
     display: none;
   }
   .paragraph {
-    font-size: 1.25rem; /* Larger, more premium font size for mobile reading */
-    line-height: 1.5;
-    opacity: 0.8;
-  }
-  .para1 {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .para2 {
-    grid-column: 1;
-    grid-row: 2;
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
+    line-height: 1.6;
+    opacity: 0.7;
+    font-weight: 400;
   }
   .linkWrapper {
-    grid-column: 1;
-    grid-row: 3;
-    margin-top: 2rem;
-    width: 100%;
-  }
-  .linkBtn {
-    width: 100%;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.25rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
   }
 }
