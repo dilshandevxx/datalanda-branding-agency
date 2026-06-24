@@ -12,8 +12,8 @@ export default function Hero() {
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
           <Image
-            src="/hero-hands.png"
-            alt="Hero Connection Illustration"
+            src="/hero-hands-premium.png"
+            alt="Premium Hero Connection Illustration"
             fill
             priority
             sizes="100vw"
