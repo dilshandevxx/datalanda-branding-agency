@@ -5,7 +5,7 @@ import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import ServicesSection from '@/components/ServicesSection';
-import WorkSection from '@/components/WorkSection';
+import InteractivePortfolio from '@/components/InteractivePortfolio';
 import StudioSection from '@/components/StudioSection';
 import PartnersSection from '@/components/PartnersSection';
 import TestimonialSection from '@/components/TestimonialSection';
@@ -22,7 +22,7 @@ export default function Home() {
       <Marquee />
       <IntroSection />
       <ServicesSection />
-      <WorkSection />
+      <InteractivePortfolio />
       <StudioSection />
       <PartnersSection />
       <TestimonialSection />
