@@ -5,7 +5,7 @@ export default function IntroSection() {
     <section className={styles.intro}>
       <div className={styles.container}>
         <div className={styles.labelWrapper}>
-          <span className={styles.label}>[ Who We Are ]</span>
+          <span className={styles.label}>Who We Are</span>
         </div>
         <div className={styles.textWrapper}>
           <h2 className={styles.headline}>

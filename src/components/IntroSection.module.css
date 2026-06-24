@@ -66,15 +66,47 @@
 }
 
 @media (max-width: 768px) {
+  .intro {
+    padding: 20vw 4vw; /* Give more top/bottom breathing room */
+  }
   .container {
     grid-template-columns: 1fr;
-    gap: 8vw;
+    gap: 6vw;
   }
   .labelWrapper {
     padding-top: 0;
+    margin-bottom: 2vw;
+  }
+  .label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+  }
+  .headline {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 400;
   }
   .stats {
-    flex-direction: column;
-    gap: 6vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8vw 4vw;
+    padding-top: 6vw;
+  }
+  .stat {
+    flex: 1 1 40%; /* Let stats sit 2-per-row */
+    gap: 0.25rem;
+  }
+  .statNumber {
+    font-size: 2.5rem;
+  }
+  .statLabel {
+    font-size: 0.7rem;
   }
 }
