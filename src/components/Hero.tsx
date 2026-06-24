@@ -6,7 +6,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={`${styles.titleContainer} animate-fade-in`}>
         <h1 className={styles.title}>
-          TIMELESS BRANDS,<br />DRIVEN BY MODERN<br />HERITAGE
+          CRAFTING DIGITAL<br />LANDSCAPES. DRIVEN<br />BY DATA & DESIGN.
         </h1>
       </div>
       <div className={styles.imageContainer}>

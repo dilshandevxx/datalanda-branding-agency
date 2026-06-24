@@ -10,7 +10,7 @@ export default function FaqSection() {
   const faqs = [
     {
       q: "Do you provide services outside your local area?",
-      a: "Yes, we are a global digital agency and partner with clients worldwide. Our communication processes are perfectly optimized for remote collaboration."
+      a: "Yes, DataLands is a global digital agency. We partner with clients worldwide, and our communication processes are perfectly optimized for remote collaboration."
     },
     {
       q: "What technologies do you use for development?",
@@ -53,7 +53,7 @@ export default function FaqSection() {
             <div className={styles.contactIcon}>?</div>
             <div className={styles.contactText}>
               Get in touch with us via email at 
-              <a href="mailto:hello@weareprologue.com">hello@weareprologue.com</a> 
+              <a href="mailto:hello@datalands.com">hello@datalands.com</a> 
               or use the chat widget in the bottom right corner of the page.
             </div>
           </div>

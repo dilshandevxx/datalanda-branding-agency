@@ -45,9 +45,9 @@ export default function ServicesSection() {
     },
     {
       num: "06.",
-      title: "AUTOMATION & SCALING",
-      desc: "Achieve hyper-growth through relentless automation. By identifying bottlenecks, we ensure your tech stack can handle rapid expansion.",
-      tags: ["#SCALING", "#PERFORMANCE"],
+      title: "BRAND IDENTITY & STRATEGY",
+      desc: "We don't just create logos; we forge comprehensive brand identities that resonate emotionally and stand out visually in crowded markets.",
+      tags: ["#BRANDING", "#STRATEGY"],
       img: "/service_2.png",
     },
     {
