@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import WhyUsSection from '@/components/WhyUsSection';
 import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -15,6 +16,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+      <WhyUsSection />
       <Marquee />
       <IntroSection />
       <ServicesSection />
