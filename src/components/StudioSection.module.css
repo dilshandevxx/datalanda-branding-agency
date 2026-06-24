@@ -40,6 +40,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
   align-items: start;
+}
+
 .controls {
   grid-column: 1;
   grid-row: 1;
