@@ -4,17 +4,20 @@ import Magnetic from './Magnetic';
 export default function CtaSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.bgGlow}></div>
       <div className={styles.content}>
+        <p className={styles.subtitle}>Have a project in mind?</p>
         <h2 className={styles.title}>
-          <span>Let's Work</span>
-          <span>Together</span>
+          LET'S CONNECT<br />
+          TOGETHER
         </h2>
-        <Magnetic>
-          <button className={styles.button}>
-            Contact Now <span className={styles.arrow}>↗</span>
-          </button>
-        </Magnetic>
+        
+        <div className={styles.actionWrapper}>
+          <Magnetic>
+            <a href="mailto:hello@datalands.com" className={styles.button}>
+              hello@datalands.com <span className={styles.arrow}>↗</span>
+            </a>
+          </Magnetic>
+        </div>
       </div>
     </section>
   );

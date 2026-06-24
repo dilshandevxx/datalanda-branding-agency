@@ -3,7 +3,6 @@ import Hero from '@/components/Hero';
 import WhyUsSection from '@/components/WhyUsSection';
 import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
-import WaitlistSection from '@/components/WaitlistSection';
 import ServicesSection from '@/components/ServicesSection';
 import InteractivePortfolio from '@/components/InteractivePortfolio';
 import StudioSection from '@/components/StudioSection';
@@ -27,7 +26,6 @@ export default function Home() {
       <PartnersSection />
       <TestimonialSection />
       <FaqSection />
-      <WaitlistSection />
       <CtaSection />
       <FooterSection />
     </main>

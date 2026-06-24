@@ -1,5 +1,5 @@
 .section {
-  padding: 15vw 4vw;
+  padding: 15vw 4vw 20vw 4vw;
   background-color: var(--background);
   color: var(--foreground);
   display: flex;
@@ -9,12 +9,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Removed glow for cleaner aesthetic */
-.bgGlow {
-  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .content {
@@ -23,73 +18,80 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4vw;
+  gap: 2rem;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin: 0;
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 8rem);
-  font-weight: 400;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.actionWrapper {
   display: flex;
-  flex-direction: column;
-}
-
-.title span {
-  display: block;
-}
-
-.title span:last-child {
-  /* Removed stagger for perfect centering */
+  justify-content: center;
 }
 
 .button {
   background-color: transparent;
   color: var(--foreground);
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 1.5rem 4rem;
-  border-radius: 0;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2vw;
+  gap: 1.5rem;
+  text-decoration: none;
 }
 
 .button:hover {
-  border-color: var(--foreground);
-  background-color: var(--foreground);
+  border-color: #ffffff;
+  background-color: #ffffff;
   color: var(--background);
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
 
 .arrow {
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .button:hover .arrow {
-  transform: translate(4px, -4px); /* Diagonal arrow movement */
+  transform: translate(6px, -6px) rotate(15deg);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 25vw 4vw; /* Give it more breathing room on mobile */
+    padding: 30vw 4vw;
   }
   .title {
-    font-size: clamp(2.5rem, 12vw, 4rem);
-    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
   }
   .button {
-    margin-top: 6vw;
-    width: 100%; /* Make button full width on mobile */
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    width: 100%;
     justify-content: center;
-    padding: 1.25rem;
   }
 }
