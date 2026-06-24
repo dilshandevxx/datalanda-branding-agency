@@ -46,51 +46,28 @@ export default function WorkSection() {
       </div>
 
       <div className={styles.grid}>
-        {/* Left Column (Evens) */}
-        <div className={styles.colLeft}>
-          {projects.filter((_, i) => i % 2 === 0).map((project) => (
-            <div key={project.id} className={styles.projectCard}>
-              <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
-                <div className={styles.imageInner}>
-                  <Image 
-                    src={project.img} 
-                    alt={project.title} 
-                    fill 
-                    sizes="(max-width: 992px) 100vw, 50vw"
-                    style={{ objectFit: 'cover' }} 
-                  />
-                </div>
-              </div>
-              <div className={styles.projectInfo}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <span className={styles.projectCategory}>{project.category}</span>
+        {projects.map((project, i) => (
+          <div 
+            key={project.id} 
+            className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
+          >
+            <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
+              <div className={styles.imageInner}>
+                <Image 
+                  src={project.img} 
+                  alt={project.title} 
+                  fill 
+                  sizes="(max-width: 768px) 85vw, 50vw"
+                  style={{ objectFit: 'cover' }} 
+                />
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Right Column (Odds) - Staggered */}
-        <div className={styles.colRight}>
-          {projects.filter((_, i) => i % 2 !== 0).map((project) => (
-            <div key={project.id} className={styles.projectCard}>
-              <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
-                <div className={styles.imageInner}>
-                  <Image 
-                    src={project.img} 
-                    alt={project.title} 
-                    fill 
-                    sizes="(max-width: 992px) 100vw, 50vw"
-                    style={{ objectFit: 'cover' }} 
-                  />
-                </div>
-              </div>
-              <div className={styles.projectInfo}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <span className={styles.projectCategory}>{project.category}</span>
-              </div>
+            <div className={styles.projectInfo}>
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <span className={styles.projectCategory}>{project.category}</span>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
