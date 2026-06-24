@@ -122,6 +122,22 @@ export default function ServicesSection() {
           );
         })}
       </div>
+      <div className={styles.mobileList}>
+        <ul>
+          <li>Branding</li>
+          <li>Brand Strategy</li>
+          <li>Motion graphics</li>
+          <li>Video editing</li>
+          <li>3D animation</li>
+          <li>Audio production</li>
+          <li>Web design</li>
+          <li>Photography</li>
+          <li>Naming</li>
+          <li>Packaging</li>
+          <li>Advertising</li>
+          <li>Brand art<span className={styles.trademark}>®</span></li>
+        </ul>
+      </div>
     </section>
   );
 }

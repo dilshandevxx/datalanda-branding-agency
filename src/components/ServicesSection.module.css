@@ -39,6 +39,10 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.mobileList {
+  display: none;
+}
+
 .item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   cursor: pointer;
@@ -205,6 +209,45 @@
 }
 
 @media (max-width: 768px) {
+  .list {
+    display: none;
+  }
+  
+  .mobileList {
+    display: block;
+    margin-top: 1rem;
+    padding: 0 4vw;
+  }
+  
+  .mobileList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .mobileList li {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
+    font-family: var(--font-family);
+  }
+
+  .mobileList li:hover {
+    color: #ffffff;
+  }
+
+  .trademark {
+    font-size: 0.4em;
+    vertical-align: super;
+    margin-left: 2px;
+  }
+
   .item {
     grid-template-columns: 30px 1fr;
     padding: 1.25rem 0;
