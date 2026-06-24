@@ -21,13 +21,13 @@ export default function Home() {
       <WhyUsSection />
       <Marquee />
       <IntroSection />
-      <WaitlistSection />
       <ServicesSection />
       <WorkSection />
       <StudioSection />
       <PartnersSection />
       <TestimonialSection />
       <FaqSection />
+      <WaitlistSection />
       <CtaSection />
       <FooterSection />
     </main>
