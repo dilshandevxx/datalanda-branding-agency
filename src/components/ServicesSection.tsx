@@ -4,9 +4,13 @@ import styles from './ServicesSection.module.css';
 
 export default function ServicesSection() {
   const desktopServices = [
-    { num: "01", title: "Visual identity" },
-    { num: "02", title: "Packaging design" },
-    { num: "03", title: "Editorial design" }
+    { num: "01.", title: "AI CONSULTING & STRATEGY" },
+    { num: "02.", title: "AGENTIC & AUTOMATION SYSTEMS" },
+    { num: "03.", title: "SOFTWARE DEVELOPMENT" },
+    { num: "04.", title: "UI/UX DESIGN" },
+    { num: "05.", title: "CLOUD & DEVOPS" },
+    { num: "06.", title: "BRAND IDENTITY & STRATEGY" },
+    { num: "07.", title: "MOBILE & CROSS-PLATFORM" }
   ];
 
   return (
