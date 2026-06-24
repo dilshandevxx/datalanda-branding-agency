@@ -206,22 +206,22 @@
 
 @media (max-width: 768px) {
   .item {
-    grid-template-columns: 35px 1fr;
-    padding: 1.5rem 0;
+    grid-template-columns: 30px 1fr;
+    padding: 1.25rem 0;
     gap: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   .item:hover {
-    padding-left: 0; /* Hover shift feels janky on touch screens */
+    padding-left: 0;
   }
   .colNum {
-    display: block; /* Bring the numbers back for mobile */
-    font-family: var(--font-family);
-    font-size: 1.125rem;
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
     font-weight: 500;
-    opacity: 1;
-    padding-top: 0;
-    transform: none; /* Disable hover shifting */
+    opacity: 0.5;
+    padding-top: 0.2rem;
+    transform: none;
   }
   .item:hover .colNum {
     transform: none;
@@ -229,10 +229,33 @@
   .colTitle {
     white-space: normal;
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 400;
     padding-top: 0;
+    line-height: 1.3;
   }
   .colIcon {
-    display: none; /* Hide the + icon entirely to match the design */
+    display: none;
+  }
+  .item.active .imageInner {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 4 / 3; /* Taller, more elegant card aspect on mobile */
+    border-radius: 4px;
+  }
+  .item.active .textInner {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .desc {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-transform: none; /* Make description readable on mobile */
+    opacity: 0.7;
+    font-family: var(--font-family);
+  }
+  .tags {
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
