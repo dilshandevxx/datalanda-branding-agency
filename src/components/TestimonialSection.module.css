@@ -80,10 +80,22 @@
   .marqueeTrack {
     animation: scroll 20s linear infinite;
   }
+  .marqueeGroup {
+    gap: 10vw;
+    padding-right: 10vw;
+  }
   .card {
-    width: 80vw;
+    width: 85vw;
+    opacity: 0.9; /* Force full opacity since there's no hover on mobile */
+    transform: scale(1);
+  }
+  .avatar {
+    margin-bottom: 1.5rem;
   }
   .quote {
     max-width: 100%;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
   }
 }
