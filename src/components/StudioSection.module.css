@@ -127,10 +127,15 @@
   }
   .footer {
     grid-template-columns: 1fr;
-    gap: 8vw;
+    gap: 1.5rem; /* Tighten the gap so the text reads like a single thought */
   }
   .controls {
     display: none;
+  }
+  .paragraph {
+    font-size: 1.25rem; /* Larger, more premium font size for mobile reading */
+    line-height: 1.5;
+    opacity: 0.8;
   }
   .para1 {
     grid-column: 1;
@@ -143,6 +148,14 @@
   .linkWrapper {
     grid-column: 1;
     grid-row: 3;
-    margin-top: 0;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .linkBtn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.25rem;
   }
 }
