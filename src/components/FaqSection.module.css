@@ -184,6 +184,7 @@
     align-items: center;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
+    margin-top: 1rem;
   }
   .contactIcon {
     font-size: 1.5rem;
@@ -194,5 +195,18 @@
   }
   .title {
     margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .faqItem {
+    padding: 1.25rem 0;
+  }
+  .faqItem:hover {
+    padding-left: 0; /* Disable the desktop indent hover effect on mobile */
+  }
+  .question {
+    font-size: 1.125rem; /* Make the question a bit larger on mobile */
+  }
+  .faqHeader {
+    gap: 1rem;
   }
 }
