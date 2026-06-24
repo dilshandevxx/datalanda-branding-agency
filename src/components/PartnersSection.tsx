@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from 'react';
 import styles from './PartnersSection.module.css';
 
 const partners = [
@@ -9,52 +6,31 @@ const partners = [
   { name: "Stripe", color: "#635BFF" },
   { name: "Vercel", color: "#FFFFFF" },
   { name: "Apple", color: "#A2AAAD" },
-  { name: "Spotify", color: "#1DB954" },
-  { name: "Nike", color: "#FF6600" },
-  { name: "Tesla", color: "#E82127" }
+  { name: "Spotify", color: "#1DB954" }
 ];
 
 export default function PartnersSection() {
-  const [activeColor, setActiveColor] = useState<string | null>(null);
-
   return (
-    <section 
-      className={styles.section} 
-      style={{ '--glow-color': activeColor || 'transparent' } as React.CSSProperties}
-    >
-      <div className={styles.glowBackground}></div>
-      
+    <section className={styles.section}>
       <div className={styles.container}>
-        {/* Infinite Marquee Layer */}
-        <div className={styles.marqueeContainer}>
-          <div className={styles.marqueeGroup}>
-            {partners.map((partner, i) => (
-              <div 
-                key={i} 
-                className={styles.partnerLogo}
-                onMouseEnter={() => setActiveColor(partner.color)}
-                onMouseLeave={() => setActiveColor(null)}
-              >
-                {partner.name}
+        
+        {/* Glassmorphic Grid */}
+        <div className={styles.grid}>
+          {partners.map((partner, i) => (
+            <div 
+              key={i} 
+              className={styles.glassCard}
+              style={{ '--hover-color': partner.color } as React.CSSProperties}
+            >
+              <div className={styles.glowLayer}></div>
+              <div className={styles.glassLayer}>
+                <h3 className={styles.logoText}>{partner.name}</h3>
               </div>
-            ))}
-          </div>
-          {/* Duplicate for seamless looping */}
-          <div className={styles.marqueeGroup} aria-hidden="true">
-            {partners.map((partner, i) => (
-              <div 
-                key={`dup-${i}`} 
-                className={styles.partnerLogo}
-                onMouseEnter={() => setActiveColor(partner.color)}
-                onMouseLeave={() => setActiveColor(null)}
-              >
-                {partner.name}
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
         
-        {/* Text Content Layer */}
+        {/* Text Content */}
         <div className={styles.content}>
           <h2 className={styles.heading}>Partners & Approach</h2>
           <div className={styles.textWrapper}>
@@ -73,6 +49,7 @@ export default function PartnersSection() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
