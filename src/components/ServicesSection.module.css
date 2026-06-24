@@ -206,10 +206,24 @@
 
 @media (max-width: 768px) {
   .item {
-    padding: 1.5rem 0;
+    grid-template-columns: 1fr auto;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .item:hover {
+    padding-left: 0; /* Hover shift feels janky on touch screens */
+  }
+  .colNum {
+    display: none; /* Hide the tiny numbers for a cleaner mobile layout */
   }
   .colTitle {
     white-space: normal;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    padding-top: 0;
+  }
+  .iconWrapper {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 }
