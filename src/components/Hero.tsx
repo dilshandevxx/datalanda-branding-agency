@@ -12,14 +12,16 @@ export default function Hero() {
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
           <video
-            src="/hero-video.mp4"
             autoPlay
             loop
             muted
             playsInline
             poster="/hero-hands-premium.png"
             className={styles.video}
-          />
+          >
+            <source src="/hero-video.webm" type="video/webm" />
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
