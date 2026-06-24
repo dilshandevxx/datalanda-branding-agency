@@ -206,24 +206,33 @@
 
 @media (max-width: 768px) {
   .item {
-    grid-template-columns: 1fr auto;
-    padding: 2rem 0;
-    gap: 1.5rem;
+    grid-template-columns: 35px 1fr;
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .item:hover {
     padding-left: 0; /* Hover shift feels janky on touch screens */
   }
   .colNum {
-    display: none; /* Hide the tiny numbers for a cleaner mobile layout */
+    display: block; /* Bring the numbers back for mobile */
+    font-family: var(--font-family);
+    font-size: 1.125rem;
+    font-weight: 500;
+    opacity: 1;
+    padding-top: 0;
+    transform: none; /* Disable hover shifting */
+  }
+  .item:hover .colNum {
+    transform: none;
   }
   .colTitle {
     white-space: normal;
-    font-size: 1.75rem;
+    font-size: 1.125rem;
+    font-weight: 500;
     padding-top: 0;
   }
-  .iconWrapper {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
+  .colIcon {
+    display: none; /* Hide the + icon entirely to match the design */
   }
 }
