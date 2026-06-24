@@ -11,13 +11,14 @@ export default function Hero() {
       </div>
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
-          <Image
-            src="/hero-hands-premium.png"
-            alt="Premium Hero Connection Illustration"
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: 'cover' }}
+          <video
+            src="/hero-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero-hands-premium.png"
+            className={styles.video}
           />
         </div>
       </div>
