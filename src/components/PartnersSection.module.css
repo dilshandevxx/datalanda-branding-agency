@@ -3,6 +3,7 @@
   background-color: var(--background);
   color: var(--foreground);
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
@@ -17,34 +18,37 @@
 .cardsWrapper {
   flex: 1;
   position: relative;
-  height: 300px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 500px;
+  perspective: 1000px;
 }
 
 .card {
   position: absolute;
-  width: 240px;
-  height: 160px;
-  border-radius: 16px;
+  width: 260px;
+  height: 180px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  transition: transform 0.4s ease;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  cursor: pointer;
 }
 
 .cardWhite {
   background-color: #ffffff;
   color: #000000;
   z-index: 1;
-  transform: translateX(-40%) rotate(-6deg);
+  transform: translateX(-50%) translateY(-10%) rotate(-10deg) translateZ(-50px);
 }
 
 .cardWhite:hover {
-  transform: translateX(-45%) rotate(-8deg) scale(1.05);
+  transform: translateX(-60%) translateY(-15%) rotate(-12deg) scale(1.05) translateZ(0);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8);
   z-index: 10;
 }
 
@@ -52,11 +56,12 @@
   background-color: #ED2224;
   color: #ffffff;
   z-index: 2;
-  transform: translateX(0) rotate(2deg);
+  transform: translateX(0) rotate(0deg) translateZ(50px);
 }
 
 .cardRed:hover {
-  transform: translateX(0) rotate(0deg) scale(1.05);
+  transform: translateX(0) translateY(-5%) rotate(0deg) scale(1.05) translateZ(100px);
+  box-shadow: 0 40px 80px rgba(237, 34, 36, 0.4);
   z-index: 10;
 }
 
@@ -64,31 +69,32 @@
   background-color: #1A73E8;
   color: #ffffff;
   z-index: 0;
-  transform: translateX(40%) rotate(8deg);
+  transform: translateX(50%) translateY(10%) rotate(10deg) translateZ(-100px);
 }
 
 .cardBlue:hover {
-  transform: translateX(45%) rotate(10deg) scale(1.05);
+  transform: translateX(60%) translateY(15%) rotate(12deg) scale(1.05) translateZ(0);
+  box-shadow: 0 40px 80px rgba(26, 115, 232, 0.4);
   z-index: 10;
 }
 
 .hiIbiza {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.75rem;
+  font-weight: 900;
   letter-spacing: -0.05em;
   display: flex;
   align-items: flex-start;
 }
 
 .reg {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 400;
   margin-top: 0.2rem;
   margin-left: 0.1rem;
 }
 
 .adobe {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -97,13 +103,15 @@
 }
 
 .adobeIcon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .genericBrand {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   opacity: 0.9;
 }
 
@@ -111,44 +119,73 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
 }
 
 .text {
-  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
-  line-height: 1.6;
+  font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+  line-height: 1.7;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight {
+  display: block;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .ctaWrapper {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .ctaText {
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .ctaButton {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaButton svg {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ctaButton:hover {
   background-color: #ffffff;
   color: #000000;
+  transform: scale(1.05);
+}
+
+.ctaButton:hover svg {
   transform: translateX(4px);
 }
 
@@ -156,20 +193,49 @@
   .container {
     flex-direction: column;
     text-align: center;
-    gap: 4rem;
+    gap: 6rem;
   }
   
   .cardsWrapper {
     width: 100%;
     max-width: 100%;
-    transform: scale(0.8);
+    height: 450px;
+    transform: scale(0.9);
   }
   
+  /* Mobile Vertical Stacking */
+  .cardWhite {
+    transform: translateY(-80px) rotate(-6deg) translateZ(-50px);
+  }
+  
+  .cardWhite:hover {
+    transform: translateY(-100px) rotate(-8deg) scale(1.05) translateZ(0);
+  }
+  
+  .cardRed {
+    transform: translateY(0) rotate(0deg) translateZ(50px);
+  }
+  
+  .cardBlue {
+    transform: translateY(80px) rotate(6deg) translateZ(-100px);
+  }
+  
+  .cardBlue:hover {
+    transform: translateY(100px) rotate(8deg) scale(1.05) translateZ(0);
+  }
+
   .content {
     align-items: center;
   }
   
   .ctaWrapper {
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsWrapper {
+    transform: scale(0.75);
+    height: 350px;
   }
 }

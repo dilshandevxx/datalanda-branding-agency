@@ -28,9 +28,10 @@ export default function PartnersSection() {
         </div>
         
         <div className={styles.content}>
+          <h2 className={styles.heading}>Partners & Approach</h2>
           <p className={styles.text}>
-            Big multinational companies or small local brands.<br />
-            Partner approach with one universal goal - to create<br />
+            <span className={styles.highlight}>Big multinational companies or small local brands.</span>
+            Partner approach with one universal goal – to create<br />
             authentic, functional, and beautiful design.
           </p>
           <div className={styles.ctaWrapper}>
