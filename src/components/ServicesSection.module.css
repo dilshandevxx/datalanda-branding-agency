@@ -1,0 +1,160 @@
+.section {
+  padding: 12vw 4vw;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.header {
+  margin-bottom: 8vw;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--foreground);
+  border-radius: 50%;
+}
+
+.title {
+  font-size: clamp(4rem, 12vw, 14rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.itemHeader {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  padding: 1.5rem 0;
+  transition: padding-left 0.4s ease;
+}
+
+.item:hover .itemHeader {
+  padding-left: 2vw;
+}
+
+.itemNum {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  opacity: 0.4;
+}
+
+.itemTitle {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: color 0.4s ease;
+}
+
+.item:hover .itemTitle {
+  color: var(--accent);
+}
+
+.iconWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: all 0.4s ease;
+}
+
+.item:hover .iconWrapper {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.iconWrapper.active {
+  transform: rotate(45deg);
+  background-color: var(--accent);
+  color: var(--background);
+  border-color: var(--accent);
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contentWrapper.active {
+  grid-template-rows: 1fr;
+}
+
+.contentInner {
+  overflow: hidden;
+}
+
+.contentBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  padding: 0 0 4vw 0;
+}
+
+.desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  padding-top: 1vw;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease 0.2s; /* delay so it animates after accordion opens */
+}
+
+.contentWrapper.active .imageWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageWrapper img {
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .itemHeader {
+    grid-template-columns: auto 1fr auto;
+    gap: 4vw;
+  }
+  .contentBody {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+  .itemTitle {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+}

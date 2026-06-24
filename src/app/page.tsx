@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import IntroSection from '@/components/IntroSection';
-import NextSection from '@/components/NextSection';
+import ServicesSection from '@/components/ServicesSection';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <IntroSection />
-      <NextSection />
+      <ServicesSection />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 :root {
   --background: #111111;
   --foreground: #ffffff;
-  --accent: #ff4d00;
+  --accent: #ffffff;
   --font-family: var(--font-geist-sans), "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
   
