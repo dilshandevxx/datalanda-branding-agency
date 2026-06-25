@@ -121,7 +121,7 @@
   opacity: 0.5;
 }
 
-.mobileTextCard {
+.mobileCardInfo {
   display: none; /* Hidden on desktop */
 }
 
@@ -177,22 +177,33 @@
   }
 
   .projectCard {
+    background-color: #1a1a1a;
+    border-radius: 16px;
     margin-bottom: 0;
+    overflow: hidden; /* So image respects rounded corners at the top */
+    padding-bottom: 2rem; /* padding at the bottom of the card */
+    gap: 0; /* Remove desktop gap since we control padding directly in mobileCardInfo */
   }
 
-  /* Hide Desktop Image & Info */
-  .imageWrapper, .projectInfo {
+  /* Show Image on Mobile inside Card */
+  .imageWrapper {
+    display: block !important;
+    border-radius: 0; /* Top corners get rounded by parent's overflow:hidden */
+    aspect-ratio: 4/3 !important; /* Uniform ratio for all mobile images */
+    width: 100%;
+  }
+
+  /* Hide Desktop Text Info */
+  .projectInfo {
     display: none !important;
   }
 
-  /* Show Mobile Text Card */
-  .mobileTextCard {
+  /* Show Mobile Card Info */
+  .mobileCardInfo {
     display: flex;
     flex-direction: column;
-    background-color: #1a1a1a; /* Dark gray card background */
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    gap: 1.5rem;
+    padding: 2rem 2rem 0 2rem;
+    gap: 0.5rem;
   }
 
   .mobileTitle {
@@ -202,64 +213,18 @@
     color: #ffffff;
   }
 
+  .mobileCategory {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
   .mobileDesc {
     font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
-  }
-
-  /* Abstract CSS Icons */
-  .mobileIcon {
-    margin-bottom: 1rem;
-  }
-
-  .iconBlueWrapper {
-    position: relative;
-    width: 48px;
-    height: 48px;
-  }
-  .blueCircle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
-    background-color: #60c5ff;
-    border-radius: 50%;
-  }
-  .blueSquare {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 24px;
-    background-color: #3b82f6;
-    border-radius: 4px;
-  }
-
-  .iconGreenOrangeWrapper {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .orangeCircle {
-    width: 16px;
-    height: 16px;
-    background-color: #fb923c;
-    border-radius: 50%;
-    margin-bottom: -4px; /* overlap */
-    z-index: 2;
-  }
-  .greenSemiCircle {
-    width: 40px;
-    height: 20px;
-    background-color: #22c55e;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
   }
 }

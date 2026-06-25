@@ -10,8 +10,7 @@ export default function WorkSection() {
       category: "UI/UX DESIGN",
       description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_1.png",
-      ratioClass: styles.ratioStandard, 
-      iconVariant: "blue"
+      ratioClass: styles.ratioStandard
     },
     {
       id: 2,
@@ -19,8 +18,7 @@ export default function WorkSection() {
       category: "BRANDING",
       description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_2.png",
-      ratioClass: styles.ratioPortrait, 
-      iconVariant: "greenOrange"
+      ratioClass: styles.ratioPortrait
     },
     {
       id: 3,
@@ -28,8 +26,7 @@ export default function WorkSection() {
       category: "PRODUCT DESIGN",
       description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_1.png", 
-      ratioClass: styles.ratioWide,
-      iconVariant: "blue"
+      ratioClass: styles.ratioWide
     },
     {
       id: 4,
@@ -37,30 +34,9 @@ export default function WorkSection() {
       category: "E-COMMERCE",
       description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_2.png", 
-      ratioClass: styles.ratioSquare,
-      iconVariant: "greenOrange"
+      ratioClass: styles.ratioSquare
     }
   ];
-
-  const renderIcon = (variant: string) => {
-    if (variant === 'blue') {
-      return (
-        <div className={styles.iconBlueWrapper}>
-          <div className={styles.blueCircle}></div>
-          <div className={styles.blueSquare}></div>
-        </div>
-      );
-    }
-    if (variant === 'greenOrange') {
-      return (
-        <div className={styles.iconGreenOrangeWrapper}>
-          <div className={styles.orangeCircle}></div>
-          <div className={styles.greenSemiCircle}></div>
-        </div>
-      );
-    }
-    return null;
-  };
 
   return (
     <section className={styles.section}>
@@ -79,7 +55,7 @@ export default function WorkSection() {
             key={project.id} 
             className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
           >
-            {/* Desktop View: Image Wrapper */}
+            {/* Image Wrapper */}
             <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
               <div className={styles.imageInner}>
                 <Image 
@@ -104,12 +80,10 @@ export default function WorkSection() {
               </div>
             </div>
 
-            {/* Mobile View: Text/Icon Card (Hidden on Desktop) */}
-            <div className={styles.mobileTextCard}>
-               <div className={styles.mobileIcon}>
-                 {renderIcon(project.iconVariant)}
-               </div>
-               <h3 className={styles.mobileTitle}>{project.category}</h3>
+            {/* Mobile View: Text Info inside Card */}
+            <div className={styles.mobileCardInfo}>
+               <h3 className={styles.mobileTitle}>{project.title}</h3>
+               <span className={styles.mobileCategory}>{project.category}</span>
                <p className={styles.mobileDesc}>{project.description}</p>
             </div>
           </div>
