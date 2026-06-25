@@ -37,50 +37,57 @@
 }
 
 .faqItem {
-  padding: 2.5rem 0;
+  padding: 3rem 0;
   cursor: pointer;
   group: faq; /* For hover state targeting */
-  border-bottom: 1px solid transparent; /* Remove visible borders */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Re-added very subtle border for structure */
+}
+
+.faqItem:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faqItem:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faqHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
 }
 
 .question {
-  font-size: clamp(1.25rem, 1.5vw, 1.75rem); /* Refined, slightly smaller text */
+  flex: 1;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  align-items: start;
+  gap: 4vw;
+  font-size: clamp(1.25rem, 1.8vw, 2rem);
   font-weight: 400;
   letter-spacing: -0.01em;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 4vw; /* Generous gap between number and text */
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .num {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  opacity: 0.25;
+  font-size: 0.85rem;
+  opacity: 0.3;
   font-weight: 500;
   letter-spacing: 0.05em;
-  /* Removed translateY to keep it perfectly vertically aligned */
+  margin-top: 0.45em; /* Perfectly aligns number with the first line of text */
 }
 
 .text {
   transition: color 0.5s ease, opacity 0.5s ease;
+  line-height: 1.3;
 }
 
 /* Awwwards specific interaction: Hovering makes it italic serif and shifts right */
 .faqItem:hover .question {
-  transform: translateX(15px);
+  transform: translateX(10px);
 }
 
 .faqItem:hover .text {
@@ -91,19 +98,20 @@
 }
 
 .icon {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 200; /* Very thin elegant plus icon */
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  opacity: 0.2;
+  opacity: 0.4;
+  margin-top: 0.1rem;
 }
 
 .faqItem:hover .icon {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .faqItem.active .icon {
   transform: rotate(45deg);
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .answerWrapper {
