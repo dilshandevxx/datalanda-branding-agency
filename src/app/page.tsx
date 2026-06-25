@@ -1,16 +1,19 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import WhyUsSection from '@/components/WhyUsSection';
 import Marquee from '@/components/Marquee';
-import IntroSection from '@/components/IntroSection';
-import ServicesSection from '@/components/ServicesSection';
-import WorkSection from '@/components/WorkSection';
-import StudioSection from '@/components/StudioSection';
-import SpotlightSection from '@/components/SpotlightSection';
-import TestimonialSection from '@/components/TestimonialSection';
-import FaqSection from '@/components/FaqSection';
-import CtaSection from '@/components/CtaSection';
-import FooterSection from '@/components/FooterSection';
+import dynamic from 'next/dynamic';
+
+// Lazy loaded below-the-fold components
+const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'));
+const IntroSection = dynamic(() => import('@/components/IntroSection'));
+const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
+const WorkSection = dynamic(() => import('@/components/WorkSection'));
+const StudioSection = dynamic(() => import('@/components/StudioSection'));
+const SpotlightSection = dynamic(() => import('@/components/SpotlightSection'));
+const TestimonialSection = dynamic(() => import('@/components/TestimonialSection'));
+const FaqSection = dynamic(() => import('@/components/FaqSection'));
+const CtaSection = dynamic(() => import('@/components/CtaSection'));
+const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
 export default function Home() {
   return (
