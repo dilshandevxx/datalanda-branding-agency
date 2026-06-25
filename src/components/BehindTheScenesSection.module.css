@@ -1,86 +1,76 @@
 .section {
   position: relative;
   width: 100%;
-  height: 120vh; /* Taller than viewport for parallax scrolling space */
-  overflow: hidden;
+  height: 300vh; /* Extremely tall to allow a long scroll sequence */
   background-color: var(--background);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .videoWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  overflow: hidden;
+  will-change: transform, border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5); /* Shadow visible when scaled down */
 }
 
 .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5; /* Slightly dim the video */
-  filter: saturate(1.1) contrast(1.1); /* Subtle, natural colors */
 }
 
-/* Gradient overlays to smoothly blend with surrounding sections */
-.overlayTop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20vh;
-  background: linear-gradient(to bottom, var(--background) 0%, transparent 100%);
-  z-index: 3;
-}
-
-.overlayBottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20vh;
-  background: linear-gradient(to top, var(--background) 0%, transparent 100%);
-  z-index: 3;
-}
-
-.colorfulOverlay {
+.darkOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 204, 255, 0.1));
+  background: black;
   z-index: 2;
   pointer-events: none;
 }
 
 .contentWrapper {
-  position: relative;
-  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0 4vw; /* Same side padding as container */
+  height: 100%;
+  z-index: 4;
+  padding: 0 4vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* Let users click through text if needed */
+  pointer-events: none;
 }
 
 .text {
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 700;
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
-  color: var(--foreground);
+  color: #ffffff; /* Explicitly white so it contrasts with the dark overlay */
   margin: 0;
   max-width: 1600px;
-  /* Add a subtle text shadow in case the video underneath is bright */
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  will-change: transform, opacity;
 }
 
 .accent {
@@ -92,20 +82,9 @@
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 2vh;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
-  .section {
-    height: 100vh; /* Slightly shorter on mobile */
-  }
-  
-  .text {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-  }
-}
-
-/* Hide entirely on desktop */
+/* Hide entirely on desktop if you prefer, or let it work on desktop too! */
 @media (min-width: 769px) {
   .section {
     display: none !important;
