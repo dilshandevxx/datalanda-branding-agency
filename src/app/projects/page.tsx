@@ -37,8 +37,8 @@ const ALL_PROJECTS = [
   },
   {
     id: 5,
-    title: "Synth AI Assistant",
-    category: "AI",
+    title: "Onyx Packaging",
+    category: "Branding",
     img: "/work_1.png",
     ratioClass: styles.ratioPortrait
   },
@@ -51,8 +51,8 @@ const ALL_PROJECTS = [
   },
   {
     id: 7,
-    title: "Banking App Redesign",
-    category: "UI/UX",
+    title: "Fitness Tracker App",
+    category: "Mobile",
     img: "/work_1.png",
     ratioClass: styles.ratioWide
   },
@@ -62,10 +62,24 @@ const ALL_PROJECTS = [
     category: "Web",
     img: "/work_2.png",
     ratioClass: styles.ratioSquare
+  },
+  {
+    id: 9,
+    title: "Aura Skincare",
+    category: "E-Commerce",
+    img: "/work_1.png",
+    ratioClass: styles.ratioStandard
+  },
+  {
+    id: 10,
+    title: "Crypto Wallet App",
+    category: "Web3",
+    img: "/work_2.png",
+    ratioClass: styles.ratioPortrait
   }
 ];
 
-const CATEGORIES = ["All", "Web", "AI", "ML", "UI/UX"];
+const CATEGORIES = ["All", "Web", "Mobile", "UI/UX", "Branding", "AI", "ML", "E-Commerce", "Web3"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
