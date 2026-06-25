@@ -52,14 +52,6 @@
   align-items: center;
   gap: 2rem;
   padding: 4rem 2rem;
-  
-  /* Glassmorphic backdrop to guarantee legibility */
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 .quoteIcon {
@@ -114,7 +106,6 @@
     padding: 3rem 1.5rem;
     gap: 1.5rem;
     width: 100%;
-    border-radius: 20px;
   }
   
   .quote {
