@@ -39,7 +39,9 @@ export default function Home() {
       <StudioSection />
       <SpotlightSection />
       <TestimonialSection />
-      <FaqSection />
+      <ThemeInversionController>
+        <FaqSection />
+      </ThemeInversionController>
       <CtaSection />
       <FooterSection />
     </main>
