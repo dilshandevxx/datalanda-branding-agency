@@ -25,7 +25,7 @@ const pillars = [
     num: "03",
     title: "Execution",
     description: "Seamless digital product delivery.",
-    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389597/app-scroll_afnkat.webm",
+    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782405943/scrolling_mshca0.webm",
   },
 ];
 
