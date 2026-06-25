@@ -2,81 +2,13 @@
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: var(--background);
-  color: var(--foreground);
-  overflow: hidden;
-  cursor: crosshair;
-}
-
-/* Foreground - Default visible layer (Black background, white text) */
-.foreground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #050505; /* Deep black */
-  z-index: 1;
-}
-
-.content {
-  text-align: center;
-  max-width: 1000px;
-  padding: 0 4vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  pointer-events: none; /* Let mouse events pass through to the section */
-}
-
-.subtitle {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.title {
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  margin: 0;
-  color: #ffffff;
-}
-
-.title span {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-}
-
-.description {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 600px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-
-/* Masked Video Layer - Revealed by hover */
-.videoMaskContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none; /* Let mouse events pass to the root section */
-  transition: mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out;
-  /* Next.js doesn't natively support animating mask-image smoothly without JS, 
-     but React state updates (60fps) handle the cursor tracking smoothly */
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  padding: 10vw 4vw; /* Ensure padding on all sides */
 }
 
 .backgroundVideo {
@@ -86,61 +18,135 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-  /* We don't grayscale here because we want the video to pop inside the flashlight! */
+  z-index: 0;
+  opacity: 0.85; /* Slightly dim the video */
+  filter: contrast(1.1) brightness(0.9);
 }
 
-/* Masked Content - Text that appears INSIDE the flashlight (usually inverse colors) */
-.maskedContent {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  /* Cinematic movie poster gradient: dark at top and bottom, clear in middle */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh; /* Stretch to fill space between padding */
+}
+
+/* Meta tags at the top of the poster */
+.topMeta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  text-align: center;
-  padding: 0 4vw;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.subtitleDark {
+.metaText {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #000000;
-  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.titleDark {
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
+.metaLine {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Massive cinematic title */
+.title {
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
-  margin: 0;
-  max-width: 1000px;
-  color: #000000; /* Deep black text over the video */
+  margin: auto 0; /* Push to vertical center */
+  max-width: 1200px;
 }
 
-.solidText {
-  color: #000000;
-  -webkit-text-stroke: 0; /* Remove stroke for the masked version */
+/* Bottom description and button */
+.bottomBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 2rem;
+  gap: 2rem;
 }
 
-.descriptionDark {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  color: #000000;
-  max-width: 600px;
+.description {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 450px;
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 300;
+  margin: 0;
+}
+
+.button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1.25rem 2.5rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.arrow {
+  transition: transform 0.4s ease;
+}
+
+.button:hover .arrow {
+  transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
-  .title, .titleDark {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+  .section {
+    padding: 20vw 4vw;
+  }
+  
+  .bottomBlock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .title {
+    font-size: clamp(3rem, 12vw, 4rem);
+    margin: 4rem 0;
   }
 }
