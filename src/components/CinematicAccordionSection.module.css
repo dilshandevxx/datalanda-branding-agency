@@ -1,0 +1,134 @@
+.section {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.accordionContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.pillar {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pillar:last-child {
+  border-right: none;
+}
+
+.videoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+  opacity: 0.5;
+  filter: grayscale(80%) contrast(1.1);
+}
+
+.pillarActive .video {
+  opacity: 0.9;
+  filter: grayscale(0%) contrast(1.1) saturate(1.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%);
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.pillarActive .overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.4) 100%);
+}
+
+.contentWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4vw;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0 0 1rem 0;
+  white-space: nowrap;
+  color: var(--foreground);
+}
+
+.description {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--foreground);
+  max-width: 600px;
+}
+
+/* Mobile: Vertical Accordion */
+@media (max-width: 768px) {
+  .section {
+    height: 120vh;
+    min-height: 600px;
+  }
+  
+  .accordionContainer {
+    flex-direction: column;
+  }
+  
+  .pillar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .pillar:last-child {
+    border-bottom: none;
+  }
+  
+  .contentWrapper {
+    padding: var(--section-padding) 4vw;
+  }
+  
+  .title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-size: 1.75rem;
+  }
+}

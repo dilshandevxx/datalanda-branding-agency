@@ -4,6 +4,7 @@ import Marquee from '@/components/Marquee';
 import dynamic from 'next/dynamic';
 
 // Lazy loaded below-the-fold components
+const CinematicAccordionSection = dynamic(() => import('@/components/CinematicAccordionSection'));
 const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'));
 const IntroSection = dynamic(() => import('@/components/IntroSection'));
 const BehindTheScenesSection = dynamic(() => import('@/components/BehindTheScenesSection'));
@@ -24,6 +25,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Marquee />
+      <CinematicAccordionSection />
       <WhyUsSection />
       <IntroSection />
       <BehindTheScenesSection />
