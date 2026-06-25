@@ -160,10 +160,23 @@
     display: flex;
     gap: 0.5rem;
     align-self: flex-start;
+    margin-bottom: 1rem;
   }
   .arrowBtn {
     width: 3rem;
     height: 3rem;
     font-size: 1rem;
+  }
+  
+  /* Apply dark card style to the text block */
+  .textContent {
+    background-color: #1a1a1a;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+    border-radius: 0;
+  }
+  
+  .paragraph {
+    font-size: 1.125rem; /* Resize for mobile card readability */
   }
 }
