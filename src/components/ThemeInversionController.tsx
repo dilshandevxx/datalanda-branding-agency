@@ -33,7 +33,7 @@ export default function ThemeInversionController({ children }: { children: React
   const fgSync = useTransform(
     scrollYProgress, 
     [0, 0.3, 0.6, 1], 
-    ["#ffffff", "#ffffff", "#000000", "#000000"]
+    ["#ffffff", "#ffffff", "#ffffff", "#ffffff"]
   );
 
   // Reliably apply the motion values as CSS variables to the container
