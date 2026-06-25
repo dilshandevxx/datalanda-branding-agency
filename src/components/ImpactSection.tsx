@@ -48,7 +48,6 @@ function StatCard({ endValue, prefix = "", suffix = "", label }: any) {
   
   return (
     <div ref={ref} className={styles.statCard}>
-      <div className={styles.glowAura}></div>
       <h2 className={styles.number}>
         <span className={styles.affix}>{prefix}</span>
         {count}
