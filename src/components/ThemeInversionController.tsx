@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
 export default function ThemeInversionController({ children }: { children: React.ReactNode }) {
@@ -12,15 +12,24 @@ export default function ThemeInversionController({ children }: { children: React
     margin: "-40% 0px -40% 0px",
   });
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Check on mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
 
-    if (isInView) {
-      // Invert theme to stark Light Mode
+    if (isInView && !isMobile) {
+      // Invert theme to stark Light Mode only on Desktop
       root.style.setProperty("--background", "#ffffff");
       root.style.setProperty("--foreground", "#111111");
     } else {
-      // Restore premium Dark Mode
+      // Restore premium Dark Mode (or if on mobile, keep it dark)
       root.style.setProperty("--background", "#111111");
       root.style.setProperty("--foreground", "#ffffff");
     }
@@ -30,7 +39,7 @@ export default function ThemeInversionController({ children }: { children: React
       root.style.setProperty("--background", "#111111");
       root.style.setProperty("--foreground", "#ffffff");
     };
-  }, [isInView]);
+  }, [isInView, isMobile]);
 
   return <div ref={ref}>{children}</div>;
 }
