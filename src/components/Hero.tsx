@@ -15,8 +15,7 @@ export default function Hero() {
             className={styles.video} 
             preload="auto"
           >
-            <source src="/hero-video.webm" type="video/webm" />
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389244/hero-video_dimbpq.webm" />
           </SmartVideo>
         </div>
       </div>
