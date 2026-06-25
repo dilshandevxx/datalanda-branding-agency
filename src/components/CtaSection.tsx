@@ -8,25 +8,15 @@ export default function CtaSection() {
     <section id="contact" className={styles.section}>
       <div className={styles.content}>
         
-        <div className={styles.textBlock}>
-          <div className={styles.subtitleWrapper}>
-            <div className={styles.line}></div>
-            <p className={styles.subtitle}>Have a project in mind?</p>
-          </div>
-          
-          <h2 className={styles.title}>
-            Let's build something <br />
-            <i>extraordinary.</i>
-          </h2>
-        </div>
+        <p className={styles.subtitle}>Have a project in mind?</p>
         
-        <div className={styles.actionWrapper}>
-          <Magnetic>
-            <a href="mailto:hello@datalands.com" className={styles.circleButton}>
-              <span className={styles.btnText}>Get in<br />Touch</span>
-            </a>
-          </Magnetic>
-        </div>
+        <Magnetic>
+          <a href="mailto:hello@datalands.com" className={styles.hugeLink}>
+            LET'S WORK <br />
+            TOGETHER <span className={styles.arrow}>↗</span>
+          </a>
+        </Magnetic>
+
       </div>
     </section>
   );
