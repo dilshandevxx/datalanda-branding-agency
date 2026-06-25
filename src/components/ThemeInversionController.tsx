@@ -24,18 +24,28 @@ export default function ThemeInversionController({ children }: { children: React
   }, []);
 
   // Map scroll progress to color changes
-  // It pins for 200vh total.
-  // 0 -> 0.5: Dark to Orange transition
-  // 0.5 -> 1.0: Stays Orange while pinned
-  const bgSync = useTransform(scrollYProgress, [0, 0.4, 1], ["#111111", "#FF5F00", "#FF5F00"]);
-  const fgSync = useTransform(scrollYProgress, [0, 0.4, 1], ["#ffffff", "#000000", "#000000"]);
+  // Make the container 300vh total so there is plenty of scroll room.
+  // 0.0 -> 0.3: Wait (stay Dark) so it doesn't change accidentally
+  // 0.3 -> 0.6: Transition from Dark to Orange
+  // 0.6 -> 1.0: Wait (stay Orange) before unpinning to the next section
+  const bgSync = useTransform(
+    scrollYProgress, 
+    [0, 0.3, 0.6, 1], 
+    ["#111111", "#111111", "#FF5F00", "#FF5F00"]
+  );
+  
+  const fgSync = useTransform(
+    scrollYProgress, 
+    [0, 0.3, 0.6, 1], 
+    ["#ffffff", "#ffffff", "#000000", "#000000"]
+  );
 
   return (
     <div 
       ref={containerRef}
       style={{
-        // Make the container tall enough to allow scroll-pinning
-        height: isMobile ? "auto" : "200vh", 
+        // Taller container requires MORE scrolling, creating the delays
+        height: isMobile ? "auto" : "300vh", 
         position: "relative"
       }}
     >
