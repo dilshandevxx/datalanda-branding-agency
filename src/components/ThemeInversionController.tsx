@@ -25,8 +25,8 @@ export default function ThemeInversionController({ children }: { children: React
     const root = document.documentElement;
 
     if (isInView && !isMobile) {
-      // Invert theme to a premium Soft Sand/Pearl color only on Desktop
-      root.style.setProperty("--background", "#EBE9E1");
+      // Invert theme to a premium Muted Sage color only on Desktop
+      root.style.setProperty("--background", "#A5B3A0");
       root.style.setProperty("--foreground", "#111111");
     } else {
       // Restore premium Dark Mode (or if on mobile, keep it dark)
