@@ -178,7 +178,7 @@
 
   .projectCard {
     background-color: #1a1a1a;
-    border-radius: 16px;
+    border-radius: 0;
     margin-bottom: 0;
     overflow: hidden; /* So image respects rounded corners at the top */
     padding-bottom: 2rem; /* padding at the bottom of the card */

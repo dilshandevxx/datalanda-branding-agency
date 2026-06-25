@@ -140,7 +140,7 @@
 
   .mobileCard {
     background-color: #1a1a1a;
-    border-radius: 16px; /* Matched portfolio radius exactly */
+    border-radius: 0; /* Removed border radius */
     padding: 2rem; /* Increased padding to match the beefy portfolio feel */
     display: flex;
     flex-direction: row;
