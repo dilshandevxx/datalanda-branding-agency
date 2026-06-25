@@ -27,9 +27,10 @@
 
 .hugeTitle {
   font-size: clamp(4rem, 8vw, 8rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
+  text-transform: uppercase;
   margin: 0;
 }
 
@@ -127,7 +128,8 @@
   }
   
   .hugeTitle {
-    font-size: 4rem;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    word-break: break-word;
   }
   
   .emailLink {
