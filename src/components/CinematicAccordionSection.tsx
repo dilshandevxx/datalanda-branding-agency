@@ -10,19 +10,19 @@ const pillars = [
     id: "strategy",
     title: "01 Strategy",
     description: "Human-centric brand positioning.",
-    videoSrc: "/walking-people.webm",
+    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389596/walking-people_chkyso.webm",
   },
   {
     id: "design",
     title: "02 Design",
     description: "Pixel-perfect visual identity.",
-    videoSrc: "/typing.webm",
+    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm",
   },
   {
     id: "execution",
     title: "03 Execution",
     description: "Seamless digital product delivery.",
-    videoSrc: "/app-scroll.webm",
+    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389597/app-scroll_afnkat.webm",
   },
 ];
 

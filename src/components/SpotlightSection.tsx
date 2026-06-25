@@ -7,7 +7,7 @@ import styles from "./SpotlightSection.module.css";
 export default function SpotlightSection() {
   return (
     <section className={styles.section}>
-      <SmartVideo src="/walking-people.webm" className={styles.backgroundVideo} />
+      <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389596/walking-people_chkyso.webm" className={styles.backgroundVideo} />
       <div className={styles.overlay}></div>
       <div className="container">
         <motion.div 

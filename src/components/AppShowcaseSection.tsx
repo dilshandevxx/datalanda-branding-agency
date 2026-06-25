@@ -62,7 +62,7 @@ export default function AppShowcaseSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={styles.videoWrapper}
           >
-            <SmartVideo src="/app-scroll.webm" className={styles.video} />
+            <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389597/app-scroll_afnkat.webm" className={styles.video} />
           </motion.div>
 
         </div>

@@ -21,7 +21,7 @@ export default function BehindTheScenesSection() {
   return (
     <section ref={containerRef} className={styles.section}>
       <motion.div className={styles.videoWrapper} style={{ scale: scaleVideo }}>
-        <SmartVideo src="/typing.webm" className={styles.video} />
+        <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm" className={styles.video} />
       </motion.div>
 
       <div className={styles.colorfulOverlay}></div>
