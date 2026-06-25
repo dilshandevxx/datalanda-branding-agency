@@ -1,98 +1,122 @@
 .section {
-  padding: var(--section-padding) 0;
+  padding: clamp(6rem, 15vw, 12rem) 0;
   background-color: var(--background);
   color: var(--foreground);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-}
-
-.marqueeTrack {
   display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-
-.marqueeGroup {
-  display: flex;
-  gap: 6vw;
-  padding-right: 6vw;
-  width: max-content;
-}
-
-.card {
-  width: 45vw;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  opacity: 0.5;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: scale(0.95);
-  user-select: none;
 }
 
-.card:hover {
-  opacity: 1;
-  transform: scale(1);
+.sliderContainer {
+  /* Give it a minimum height so the container doesn't jump when text changes */
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  pointer-events: none;
-}
-
-.avatar img {
-  object-fit: cover;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
 }
 
 .quote {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  line-height: 1.8;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+  max-width: 1000px;
+}
+
+/* Mixed italic serif styling for a premium Awwwards feel */
+.quote i, .quote em {
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  font-style: italic;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 2rem;
-  max-width: 80%;
+  color: rgba(255, 255, 255, 0.6); /* Slightly dim the serif text for contrast */
+}
+
+/* Specific support for light mode if it gets toggled by ThemeController */
+:global([data-theme="light"]) .quote i {
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.authorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background-color: var(--foreground);
 }
 
 .author {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.author span {
+  font-weight: 400;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  text-transform: none;
 }
 
-@media (max-width: 992px) {
-  .marqueeTrack {
-    animation: scroll 20s linear infinite;
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.dotActive {
+  background-color: var(--foreground);
+  transform: scale(1.5);
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    min-height: 400px;
   }
-  .marqueeGroup {
-    gap: 10vw;
-    padding-right: 10vw;
-  }
-  .card {
-    width: 85vw;
-    opacity: 1; /* Make full opacity since there's no hover on mobile */
-    transform: scale(1);
-  }
-  .avatar {
-    margin-bottom: 1.5rem;
+  .content {
+    gap: 2.5rem;
   }
   .quote {
-    max-width: 100%;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 }
