@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
 import SmartVideo from "./SmartVideo";
 
@@ -31,15 +31,6 @@ const pillars = [
 
 export default function CinematicAccordionSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  
-  // Mobile Scroll Logic
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-  
-  // 3 items = 300vw total width. To show the last item, we need to translate by -66.66%
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
 
   return (
     <>
@@ -95,27 +86,30 @@ export default function CinematicAccordionSection() {
         </div>
       </section>
 
-      {/* MOBILE VIEW: Sticky Horizontal Scroll */}
-      <section ref={targetRef} className={styles.mobileView}>
-        <div className={styles.stickyContainer}>
-          <motion.div style={{ x }} className={styles.horizontalScrollWrapper}>
-            {pillars.map((pillar) => (
-              <div key={`mobile-${pillar.id}`} className={styles.mobileCard}>
-                <div className={styles.videoWrapper}>
-                  <SmartVideo src={pillar.videoSrc} className={styles.videoMobile} />
-                </div>
-                <div className={styles.overlayMobile}></div>
-                <div className={styles.contentWrapper}>
+      {/* MOBILE VIEW: Sticky Stacking Cards */}
+      <section className={styles.mobileView}>
+        <div className={styles.stackingContainer}>
+          {pillars.map((pillar, index) => (
+            <div 
+              key={`mobile-${pillar.id}`} 
+              className={styles.mobileCard}
+              style={{ zIndex: index + 1 }}
+            >
+              <div className={styles.videoWrapper}>
+                <SmartVideo src={pillar.videoSrc} className={styles.videoMobile} />
+              </div>
+              <div className={styles.overlayMobile}></div>
+              
+              <div className={styles.contentWrapperMobile}>
                 <div className={styles.titleBlock}>
                   <span className={styles.num}>{pillar.num}</span>
                   <div className={styles.line}></div>
                   <h3 className={styles.title}>{pillar.title}</h3>
                 </div>
-                <p className={styles.description}>{pillar.description}</p>
+                <p className={styles.descriptionMobile}>{pillar.description}</p>
               </div>
-              </div>
-            ))}
-          </motion.div>
+            </div>
+          ))}
         </div>
       </section>
     </>

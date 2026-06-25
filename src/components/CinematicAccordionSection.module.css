@@ -123,7 +123,7 @@
 }
 
 /* =========================================
-   MOBILE VIEW (Sticky Horizontal Scroll)
+   MOBILE VIEW (Sticky Stacking Cards)
    ========================================= */
 .mobileView {
   display: none; /* Hidden on desktop */
@@ -137,33 +137,29 @@
   .mobileView {
     display: block;
     width: 100%;
-    /* 3 screens tall, so the user can scroll to reveal 3 horizontal cards */
-    height: 300vh;
     position: relative;
     background-color: var(--background);
   }
 
-  .stickyContainer {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100vh; /* Locks to the viewport height */
-    overflow: hidden;
-  }
-
-  .horizontalScrollWrapper {
+  .stackingContainer {
     display: flex;
-    width: 300vw; /* 3 cards * 100vw */
-    height: 100%;
-    will-change: transform;
+    flex-direction: column;
+    width: 100%;
   }
 
   .mobileCard {
-    position: relative;
-    width: 100vw; /* Each card takes up exactly one mobile screen */
-    height: 100%;
-    flex-shrink: 0;
+    position: sticky;
+    top: 0; /* Sticks perfectly to the top of the screen */
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
+    /* Massive drop shadow makes it look like the card is physically sliding over the previous one */
+    box-shadow: 0 -20px 40px rgba(0,0,0,0.8);
+  }
+
+  /* The first card doesn't need a shadow since it's the bottom layer */
+  .mobileCard:nth-child(1) {
+    box-shadow: none;
   }
 
   .videoMobile {
@@ -171,7 +167,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0.9;
-    filter: contrast(1.1) saturate(1.2);
+    filter: grayscale(0%) contrast(1.1) saturate(1.2);
   }
 
   .overlayMobile {
@@ -195,5 +191,15 @@
     flex-direction: column;
     justify-content: flex-end;
     pointer-events: none;
+  }
+
+  .descriptionMobile {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--foreground);
+    max-width: 800px;
   }
 }
