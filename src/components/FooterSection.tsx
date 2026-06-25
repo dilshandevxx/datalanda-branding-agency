@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import styles from './FooterSection.module.css';
 
 export default function FooterSection() {
@@ -7,50 +8,39 @@ export default function FooterSection() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         
-        <div className={styles.grid}>
-          {/* Column 1: Sitemap */}
-          <div className={styles.col}>
-            <h4 className={styles.colTitle}>Sitemap</h4>
-            <nav className={styles.nav}>
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Work</a>
-              <a href="#">Pricing</a>
-              <a href="#">Style Guide</a>
-              <a href="#">Image Licensing</a>
-            </nav>
+        <div className={styles.topGrid}>
+          {/* Main Brand / Call to action */}
+          <div className={styles.brandCol}>
+            <h2 className={styles.hugeTitle}>Let's talk.</h2>
+            <a href="mailto:contact@datalands.com" className={styles.emailLink}>contact@datalands.com</a>
           </div>
 
-          {/* Column 2: Contact */}
-          <div className={styles.col}>
-            <h4 className={styles.colTitle}>Contact</h4>
-            <div className={styles.contactInfo}>
-              <p>741 New South Head Rd,<br/>Triple Bay SWFW 3148,<br/>New York</p>
-              <br/>
-              <p>P: 3740 213 301</p>
-              <p>E: contact@datalands.com</p>
+          {/* Links */}
+          <div className={styles.linksCol}>
+            <div className={styles.navGroup}>
+              <h4 className={styles.navTitle}>Menu</h4>
+              <nav className={styles.nav}>
+                <Link href="#">Work</Link>
+                <Link href="#">Studio</Link>
+                <Link href="#">Services</Link>
+                <Link href="#">Contact</Link>
+              </nav>
             </div>
-          </div>
-
-          {/* Column 3: Newsletter */}
-          <div className={styles.col}>
-            <h4 className={styles.colTitle}>Newsletter</h4>
-            <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Enter your email..." 
-                className={styles.input} 
-                required
-              />
-              <button type="submit" className={styles.submitBtn}>→</button>
-            </form>
+            <div className={styles.navGroup}>
+              <h4 className={styles.navTitle}>Social</h4>
+              <nav className={styles.nav}>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+              </nav>
+            </div>
           </div>
         </div>
 
         <div className={styles.bottomRow}>
-          <p className={styles.copyright}>
-            © This is a <span className={styles.brandName}>DataLands</span> template powered by <span className={styles.brandName}>React</span>
-          </p>
+          <div className={styles.copyright}>© {new Date().getFullYear()} DataLands. All rights reserved.</div>
+          <div className={styles.brandLogo}>DATALANDS</div>
         </div>
         
       </div>
