@@ -9,6 +9,7 @@ const IntroSection = dynamic(() => import('@/components/IntroSection'));
 const BehindTheScenesSection = dynamic(() => import('@/components/BehindTheScenesSection'));
 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
+const AppShowcaseSection = dynamic(() => import('@/components/AppShowcaseSection'));
 const WorkSection = dynamic(() => import('@/components/WorkSection'));
 const StudioSection = dynamic(() => import('@/components/StudioSection'));
 const SpotlightSection = dynamic(() => import('@/components/SpotlightSection'));
@@ -28,6 +29,7 @@ export default function Home() {
       <BehindTheScenesSection />
 
       <ServicesSection />
+      <AppShowcaseSection />
       <WorkSection />
       <StudioSection />
       <SpotlightSection />
