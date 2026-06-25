@@ -31,22 +31,34 @@
   margin: 0;
 }
 
-.subtitle {
-  font-size: 1rem;
-  text-align: right;
-  line-height: 1.6;
-  opacity: 0.7;
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 
-.subtitle a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.contactLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+.contactEmail {
+  font-size: 1.5rem;
+  font-weight: 500;
   color: var(--foreground);
-  transition: opacity 0.3s ease;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
 }
 
-.subtitle a:hover {
-  opacity: 0.5;
+.contactEmail:hover {
+  border-bottom-color: var(--foreground);
+  opacity: 0.8;
 }
 
 .accordion {
@@ -156,8 +168,8 @@
     gap: 1.5rem;
     margin-bottom: 3rem;
   }
-  .subtitle {
-    text-align: left;
+  .contactBlock {
+    align-items: flex-start;
   }
   
   .title {
