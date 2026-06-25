@@ -20,27 +20,8 @@ export default function SpotlightSection() {
       <div className={styles.content}>
         <div className={styles.quoteIcon}>"</div>
         <h2 className={styles.quote}>
-          They deeply understand how people move, think, and interact. Working with DataLands didn't just give us a website—it gave us a digital destination.
+          Designed for Human Connection.
         </h2>
-        
-        <div className={styles.authorBlock}>
-          <div className={styles.avatarWrapper}>
-            <Image 
-              src="/studio_2.png" 
-              alt="Elena Rostova" 
-              fill 
-              style={{ objectFit: 'cover' }} 
-            />
-          </div>
-          <div className={styles.authorInfo}>
-            <span className={styles.authorName}>Elena Rostova</span>
-            <span className={styles.authorTitle}>Founder & CEO, Aura Skincare</span>
-          </div>
-          
-          <button className={styles.playButton}>
-            <span className={styles.playIcon}>▶</span> Watch Client Story
-          </button>
-        </div>
       </div>
     </section>
   );
