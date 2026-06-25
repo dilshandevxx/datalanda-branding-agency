@@ -12,9 +12,12 @@ export default function Hero() {
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
           <SmartVideo 
-            src="/hero-video.webm" 
             className={styles.video} 
-          />
+            preload="auto"
+          >
+            <source src="/hero-video.webm" type="video/webm" />
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </SmartVideo>
         </div>
       </div>
     </section>

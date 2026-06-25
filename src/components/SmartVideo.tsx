@@ -4,10 +4,10 @@ import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 interface SmartVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
-  src: string;
+  src?: string;
 }
 
-export default function SmartVideo({ src, className, ...props }: SmartVideoProps) {
+export default function SmartVideo({ src, className, children, preload = "none", ...props }: SmartVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // margin: "200px" means the video will start playing when it is 200px away from entering the screen
@@ -33,10 +33,10 @@ export default function SmartVideo({ src, className, ...props }: SmartVideoProps
       loop
       muted
       playsInline
-      preload="none" // Don't download the video until it's actually needed
+      preload={preload} // Allow overriding for above-the-fold videos
       {...props}
     >
-      <source src={src} type="video/webm" />
+      {children || (src && <source src={src} type="video/webm" />)}
     </video>
   );
 }
