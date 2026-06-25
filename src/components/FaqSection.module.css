@@ -37,10 +37,10 @@
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   cursor: pointer;
   group: faq; /* For hover state targeting */
+  border-bottom: 1px solid transparent; /* Remove visible borders */
 }
 
 .faqItem:last-child {
@@ -55,23 +55,23 @@
 }
 
 .question {
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-size: clamp(1.25rem, 1.5vw, 1.75rem); /* Refined, slightly smaller text */
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 3vw;
+  gap: 4vw; /* Generous gap between number and text */
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .num {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  opacity: 0.3;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  transform: translateY(-10px);
+  font-size: 0.8rem;
+  opacity: 0.25;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  /* Removed translateY to keep it perfectly vertically aligned */
 }
 
 .text {
@@ -80,30 +80,30 @@
 
 /* Awwwards specific interaction: Hovering makes it italic serif and shifts right */
 .faqItem:hover .question {
-  transform: translateX(20px);
+  transform: translateX(15px);
 }
 
 .faqItem:hover .text {
   font-family: "Georgia", "Times New Roman", serif;
   font-style: italic;
   color: var(--foreground);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .icon {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 200; /* Very thin elegant plus icon */
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .faqItem:hover .icon {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .faqItem.active .icon {
   transform: rotate(45deg);
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .answerWrapper {
