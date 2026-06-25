@@ -27,11 +27,11 @@ export default function Header() {
           <Link href="/#services" className={styles.navLink}>Services</Link>
           <Link href="/projects" className={styles.navLink}>Projects</Link>
           <Link href="/#studio" className={styles.navLink}>Studio</Link>
-          <Link href="#contact" className={styles.navLink}>Contact</Link>
+          <Link href="/#contact" className={styles.navLink}>Contact</Link>
         </nav>
-        <button className={styles.ctaButton}>
+        <Link href="/#contact" className={styles.ctaButton}>
           Let&apos;s talk <span className={styles.arrow}>→</span>
-        </button>
+        </Link>
         <button 
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`} 
           aria-label="Toggle menu"
@@ -49,7 +49,7 @@ export default function Header() {
           <Link href="/#services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>
           <Link href="/projects" className={styles.mobileNavLink} onClick={toggleMenu}>Projects</Link>
           <Link href="/#studio" className={styles.mobileNavLink} onClick={toggleMenu}>Studio</Link>
-          <Link href="#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
+          <Link href="/#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
         </nav>
         <div className={styles.mobileFooter}>
           <a href="mailto:hello@datalands.com" className={styles.mobileEmail}>hello@datalands.com</a>

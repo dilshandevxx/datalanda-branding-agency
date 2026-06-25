@@ -3,7 +3,7 @@ import Magnetic from './Magnetic';
 
 export default function CtaSection() {
   return (
-    <section className={styles.section}>
+    <section id="contact" className={styles.section}>
       <div className={styles.content}>
         <p className={styles.subtitle}>Have a project in mind?</p>
         <h2 className={styles.title}>
