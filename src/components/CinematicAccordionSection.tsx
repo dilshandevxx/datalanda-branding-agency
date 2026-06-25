@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
 import SmartVideo from "./SmartVideo";
@@ -28,16 +28,6 @@ const pillars = [
 
 export default function CinematicAccordionSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
   
   // Mobile Scroll Logic
   const targetRef = useRef<HTMLDivElement>(null);
@@ -48,13 +38,10 @@ export default function CinematicAccordionSection() {
   // 3 items = 300vw total width. To show the last item, we need to translate by -66.66%
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
 
-  if (!isMounted) return <section className={styles.section} style={{ minHeight: '100vh' }}></section>;
-
   return (
     <>
       {/* DESKTOP VIEW: Hover Accordion */}
-      {!isMobile && (
-        <section className={styles.desktopView}>
+      <section className={styles.desktopView}>
         <div 
           className={styles.accordionContainer}
           onMouseLeave={() => setActiveIndex(0)}
@@ -104,12 +91,10 @@ export default function CinematicAccordionSection() {
             );
           })}
         </div>
-        </section>
-      )}
+      </section>
 
       {/* MOBILE VIEW: Sticky Horizontal Scroll */}
-      {isMobile && (
-        <section ref={targetRef} className={styles.mobileView}>
+      <section ref={targetRef} className={styles.mobileView}>
         <div className={styles.stickyContainer}>
           <motion.div style={{ x }} className={styles.horizontalScrollWrapper}>
             {pillars.map((pillar) => (
@@ -127,7 +112,6 @@ export default function CinematicAccordionSection() {
           </motion.div>
         </div>
       </section>
-      )}
     </>
   );
 }
