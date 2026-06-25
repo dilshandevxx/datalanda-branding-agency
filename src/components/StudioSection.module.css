@@ -42,15 +42,14 @@
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  align-items: start;
   gap: 4vw;
   margin-top: 2rem;
 }
 
 .controls {
-  flex: 0 0 auto;
   display: flex;
   gap: 1rem;
 }
@@ -76,28 +75,27 @@
   transform: scale(1.05);
 }
 
-.textContent {
+.colMiddle {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  flex: 1;
 }
 
-.paragraphs {
+.colRight {
   display: flex;
-  gap: 4vw;
+  flex-direction: column;
 }
 
 .paragraph {
-  flex: 1;
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
   line-height: 1.6;
   font-weight: 400;
   opacity: 0.9;
+  margin: 0;
 }
 
 .linkWrapper {
-  margin-top: 1rem;
+  margin-top: auto; /* Pushes the button to the bottom if needed, but flex-col + gap works too */
 }
 
 .linkBtn {
@@ -135,48 +133,36 @@
     flex: 0 0 80vw;
   }
   .footer {
-    flex-direction: column;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
   .controls {
-    align-self: flex-end;
+    order: 3; /* Move arrows to bottom on mobile */
+    align-self: flex-start;
   }
-  .paragraphs {
-    flex-direction: column;
-    gap: 1.5rem;
+  .colMiddle {
+    order: 1;
+    gap: 2rem;
+  }
+  .colRight {
+    order: 2;
   }
   .paragraph {
     font-size: 1.35rem;
     line-height: 1.4;
-    opacity: 0.9;
   }
 }
 
 @media (max-width: 768px) {
-  .linkWrapper {
-    margin-top: 1rem;
-  }
   .controls {
-    display: flex;
     gap: 0.5rem;
-    align-self: flex-start;
-    margin-bottom: 1rem;
   }
   .arrowBtn {
     width: 3rem;
     height: 3rem;
     font-size: 1rem;
   }
-  
-  /* Apply dark card style to the text block */
-  .textContent {
-    background-color: #1a1a1a;
-    padding: 3rem 1.5rem;
-    gap: 2rem;
-    border-radius: 0;
-  }
-  
   .paragraph {
-    font-size: 1.125rem; /* Resize for mobile card readability */
+    font-size: 1.125rem;
   }
 }
