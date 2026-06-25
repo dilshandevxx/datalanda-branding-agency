@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <Link href="/" className={styles.logo}>DataLands</Link>
+      <Link href="/#hero" className={styles.logo}>DataLands</Link>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>
           <Link href="/#services" className={styles.navLink}>Services</Link>
