@@ -158,19 +158,35 @@
   .subtitle {
     text-align: left;
   }
+  
+  .accordion {
+    gap: 1rem;
+  }
+  
+  .faqItem {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-bottom: none;
+    border-radius: 0; /* Sharp edges */
+  }
+  
   .faqItem:hover .question {
     transform: none; /* Disable horizontal shift on mobile */
   }
+  
   .answer {
     padding-left: 0;
     max-width: 100%;
     font-size: 1rem;
+    padding-bottom: 0;
   }
+  
   .question {
     align-items: flex-start;
     flex-direction: column;
     gap: 1rem;
   }
+  
   .num {
     transform: none;
   }
