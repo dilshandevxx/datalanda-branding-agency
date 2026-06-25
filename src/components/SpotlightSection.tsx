@@ -16,12 +16,13 @@ export default function SpotlightSection() {
         <source src="/walking-people.webm" type="video/webm" />
       </video>
       <div className={styles.overlay}></div>
-      
-      <div className={styles.content}>
-        <div className={styles.quoteIcon}>"</div>
-        <h2 className={styles.quote}>
-          Designed for Human Connection.
-        </h2>
+      <div className="container">
+        <div className={styles.content}>
+          <div className={styles.quoteIcon}>"</div>
+          <h2 className={styles.quote}>
+            Designed for Human Connection.
+          </h2>
+        </div>
       </div>
     </section>
   );

@@ -52,9 +52,15 @@
   
   .container {
     gap: 2rem;
+    width: 100%;
   }
   
   .text {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 1.25rem;
   }
 }

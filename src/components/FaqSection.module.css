@@ -1,5 +1,5 @@
 .section {
-  padding: var(--section-padding) 4vw;
+  padding: var(--section-padding) 0;
   background-color: var(--background);
   color: var(--foreground);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -8,6 +8,7 @@
 .container {
   max-width: 1600px;
   margin: 0 auto;
+  padding: 0 4vw;
 }
 
 .grid {

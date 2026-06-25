@@ -9,7 +9,7 @@
   --header-height: 80px;
   
   /* Standardized responsive padding to fix excessive empty spaces */
-  --section-padding: clamp(5rem, 8vw, 10rem);
+  --section-padding: clamp(3.5rem, 10vw, 10rem);
 }
 
 * {
