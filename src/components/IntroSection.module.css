@@ -1,5 +1,5 @@
 .intro {
-  padding: 12vw 4vw;
+  padding: var(--section-padding) 4vw;
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -7,7 +7,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 4vw;
+  gap: clamp(2rem, 4vw, 4rem);
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -67,7 +67,7 @@
 
 @media (max-width: 768px) {
   .intro {
-    padding: 20vw 4vw; /* Give more top/bottom breathing room */
+    padding: var(--section-padding) 4vw;
   }
   .container {
     grid-template-columns: 1fr;

@@ -15,7 +15,8 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className={styles.section}>
-      <div className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.header}>
         <div className={styles.label}>
           <div className={styles.dot}></div>
           <span>What We Do</span>
@@ -51,6 +52,7 @@ export default function ServicesSection() {
           <li>Advertising</li>
           <li>Brand art<span className={styles.trademark}>®</span></li>
         </ul>
+      </div>
       </div>
     </section>
   );

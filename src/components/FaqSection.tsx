@@ -36,7 +36,8 @@ export default function FaqSection() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.grid}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
         
         {/* Left Column: Visuals & Contact */}
         <div className={styles.visualsCol}>
@@ -89,6 +90,7 @@ export default function FaqSection() {
           </div>
         </div>
 
+      </div>
       </div>
     </section>
   );

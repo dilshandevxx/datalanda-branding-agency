@@ -19,7 +19,8 @@ export default function StudioSection() {
 
   return (
     <section id="studio" className={styles.section}>
-      <div className={styles.gallery} ref={galleryRef}>
+      <div className={styles.container}>
+        <div className={styles.gallery} ref={galleryRef}>
         <div className={styles.imageWrapper}>
           <Image src="/studio_1.png" alt="Studio Graphic" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
         </div>
@@ -58,6 +59,7 @@ export default function StudioSection() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

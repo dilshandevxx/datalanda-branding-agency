@@ -38,7 +38,8 @@ export default function WorkSection() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.header}>
         <div className={styles.label}>
           <div className={styles.dot}></div>
           <span>Selected Work</span>
@@ -81,6 +82,7 @@ export default function WorkSection() {
         <Link href="/projects" className={styles.viewAllBtn}>
           View All Projects <span className={styles.btnArrow}>→</span>
         </Link>
+      </div>
       </div>
     </section>
   );

@@ -7,6 +7,9 @@
   
   --spacing-unit: 8px;
   --header-height: 80px;
+  
+  /* Standardized responsive padding to fix excessive empty spaces */
+  --section-padding: clamp(5rem, 8vw, 10rem);
 }
 
 * {
@@ -34,7 +37,7 @@ a {
 /* Utilities */
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 4vw;
 }

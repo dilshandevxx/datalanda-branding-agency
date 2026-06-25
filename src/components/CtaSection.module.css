@@ -1,5 +1,5 @@
 .section {
-  padding: 15vw 4vw 20vw 4vw;
+  padding: calc(var(--section-padding) * 1.5) 4vw;
   background-color: var(--background);
   color: var(--foreground);
   display: flex;
@@ -19,6 +19,8 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .subtitle {
@@ -83,7 +85,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 30vw 4vw;
+    padding: calc(var(--section-padding) * 1.5) 4vw;
   }
   .title {
     margin-bottom: 1rem;

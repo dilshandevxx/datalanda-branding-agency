@@ -1,5 +1,5 @@
 .hero {
-  padding-top: calc(var(--header-height) + 6vw);
+  padding-top: calc(var(--header-height) + clamp(2rem, 5vw, 5rem));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
 .titleContainer {
   text-align: center;
   max-width: 90vw;
-  margin-bottom: 4vw;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
 .title {
@@ -21,8 +21,9 @@
 
 .imageContainer {
   width: 100%;
+  max-width: 1600px;
   padding: 0 4vw;
-  margin-bottom: 6vw;
+  margin-bottom: var(--section-padding);
 }
 
 .imageWrapper {
