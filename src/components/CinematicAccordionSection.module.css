@@ -1,4 +1,7 @@
-.section {
+/* =========================================
+   DESKTOP VIEW (Hover Accordion)
+   ========================================= */
+.desktopView {
   width: 100%;
   height: 100vh;
   min-height: 800px;
@@ -99,42 +102,96 @@
   max-width: 600px;
 }
 
-/* Mobile: Vertical Accordion */
+/* =========================================
+   MOBILE VIEW (Sticky Horizontal Scroll)
+   ========================================= */
+.mobileView {
+  display: none; /* Hidden on desktop */
+}
+
 @media (max-width: 768px) {
-  .section {
-    height: 100vh;
-    min-height: 600px;
+  .desktopView {
+    display: none;
   }
   
-  .accordionContainer {
+  .mobileView {
+    display: block;
+    width: 100%;
+    /* 3 screens tall, so the user can scroll to reveal 3 horizontal cards */
+    height: 300vh;
+    position: relative;
+    background-color: var(--background);
+  }
+
+  .stickyContainer {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh; /* Locks to the viewport height */
+    overflow: hidden;
+  }
+
+  .horizontalScrollWrapper {
+    display: flex;
+    width: 300vw; /* 3 cards * 100vw */
+    height: 100%;
+    will-change: transform;
+  }
+
+  .mobileCard {
+    position: relative;
+    width: 100vw; /* Each card takes up exactly one mobile screen */
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .videoMobile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: contrast(1.1) saturate(1.2);
+  }
+
+  .overlayMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.4) 100%);
+    z-index: 2;
+  }
+
+  .contentWrapperMobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10vh 5vw; /* Lots of bottom padding for mobile */
+    z-index: 3;
+    display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
   }
-  
-  .pillar {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .pillar:last-child {
-    border-bottom: none;
-  }
-  
-  .contentWrapper {
-    /* Much smaller padding so text fits perfectly inside collapsed mobile rows */
-    padding: 1.5rem 5vw;
-  }
-  
-  .title {
+
+  .titleMobile {
+    font-family: var(--font-mono);
     font-size: 1.125rem;
-    margin-bottom: 0;
-    transition: margin-bottom 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 0.5rem 0;
+    color: var(--foreground);
   }
-  
-  .pillarActive .title {
-    margin-bottom: 0.5rem;
-  }
-  
-  .description {
-    font-size: 1.5rem;
+
+  .descriptionMobile {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--foreground);
   }
 }
