@@ -104,3 +104,10 @@
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
 }
+
+/* Hide entirely on desktop */
+@media (min-width: 769px) {
+  .section {
+    display: none !important;
+  }
+}
