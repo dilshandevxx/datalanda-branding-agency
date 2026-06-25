@@ -14,7 +14,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className={styles.section}>
+    <section id="services" className={styles.section}>
       <div className={styles.header}>
         <div className={styles.label}>
           <div className={styles.dot}></div>
