@@ -21,25 +21,20 @@ export default function ThemeInversionController({ children }: { children: React
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    const root = document.documentElement;
-
-    if (isInView && !isMobile) {
-      // Invert theme to Safety Orange / Pitch Black
-      root.style.setProperty("--background", "#FF5F00");
-      root.style.setProperty("--foreground", "#000000");
-    } else {
-      // Restore premium Dark Mode (or if on mobile, keep it dark)
-      root.style.setProperty("--background", "#111111");
-      root.style.setProperty("--foreground", "#ffffff");
-    }
-
-    // Cleanup in case the component unmounts while in view
-    return () => {
-      root.style.setProperty("--background", "#111111");
-      root.style.setProperty("--foreground", "#ffffff");
-    };
-  }, [isInView, isMobile]);
-
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div 
+      ref={ref}
+      style={{
+        // Define local CSS variables that override the global ones for children
+        '--background': (isInView && !isMobile) ? '#FF5F00' : '#111111',
+        '--foreground': (isInView && !isMobile) ? '#000000' : '#ffffff',
+        // Apply the background color locally with a smooth transition
+        backgroundColor: 'var(--background)',
+        color: 'var(--foreground)',
+        transition: 'background-color 0.7s cubic-bezier(0.16, 1, 0.3, 1), color 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
+      } as React.CSSProperties}
+    >
+      {children}
+    </div>
+  );
 }
