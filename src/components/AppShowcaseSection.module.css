@@ -31,7 +31,7 @@
   align-items: center;
   padding: 0.5rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
+  border-radius: 0; /* Sharp corners */
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -64,7 +64,7 @@
   color: var(--foreground);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem 2rem;
-  border-radius: 100px;
+  border-radius: 0; /* Sharp corners */
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -83,7 +83,7 @@
 .videoWrapper {
   position: relative;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 0; /* No rounded corners for the video */
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -124,5 +124,25 @@
   .videoWrapper {
     max-width: 500px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0; /* Reduce outer padding */
+  }
+
+  .grid {
+    background-color: #1a1a1a; /* Dark card styling */
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
   }
 }
