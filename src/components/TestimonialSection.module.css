@@ -5,13 +5,34 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .marqueeTrack {
   display: flex;
   width: max-content;
   animation: scroll 40s linear infinite;
+  padding-bottom: 2rem;
 }
 
 .marqueeTrack:hover {
@@ -20,76 +41,92 @@
 
 .marqueeGroup {
   display: flex;
-  gap: 4vw;
-  padding-right: 4vw;
+  gap: 2vw;
+  padding-left: 2vw;
   width: max-content;
 }
 
 .card {
-  width: 50vw;
-  max-width: 800px;
+  width: 45vw;
+  max-width: 700px;
+  background-color: #1a1a1a;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  /* Instead of extreme fading, we keep them readable but soft */
-  opacity: 0.6;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: scale(0.98);
+  justify-content: space-between;
+  text-align: left;
   user-select: none;
   cursor: grab;
-  padding: 2rem;
+  transition: background-color 0.4s ease;
 }
 
 .card:hover {
-  opacity: 1;
-  transform: scale(1);
+  background-color: #222222;
 }
 
 .card:active {
   cursor: grabbing;
 }
 
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  pointer-events: none;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.avatar img {
-  object-fit: cover;
+.quoteIcon {
+  font-family: "Georgia", serif;
+  font-size: 5rem;
+  line-height: 0.5;
+  color: #5b8cf0; /* Use the brand blue for accent */
+  margin-bottom: 1.5rem;
 }
 
 .quote {
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   line-height: 1.6;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.95); /* Bright white instead of muddy grey */
-  margin-bottom: 2rem;
-  max-width: 100%;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 4rem;
+  flex-grow: 1;
 }
 
 :global([data-theme="light"]) .quote {
   color: rgba(17, 17, 17, 0.95);
 }
 
-.author {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--foreground);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.author span {
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  object-fit: cover;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.authorName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.authorTitle {
+  font-size: 0.875rem;
   font-weight: 400;
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
 }
 
 @keyframes scroll {
@@ -98,24 +135,57 @@
 }
 
 @media (max-width: 992px) {
+  .card {
+    width: 60vw;
+    padding: 3rem;
+  }
+  
+  .title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+  
   .marqueeTrack {
     animation: scroll 25s linear infinite;
   }
+  
   .marqueeGroup {
-    gap: 8vw;
-    padding-right: 8vw;
+    gap: 4vw;
+    padding-left: 4vw;
   }
+  
   .card {
     width: 85vw;
-    opacity: 1; /* Always fully visible on mobile */
-    transform: scale(1);
-    padding: 1rem;
+    padding: 2.5rem 2rem;
   }
-  .avatar {
-    margin-bottom: 2rem;
+  
+  .quoteIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
   }
+  
   .quote {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .authorName {
+    font-size: 1rem;
+  }
+  
+  .authorTitle {
+    font-size: 0.8rem;
   }
 }

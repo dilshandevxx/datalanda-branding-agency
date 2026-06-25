@@ -31,15 +31,28 @@ export default function TestimonialSection() {
 
   return (
     <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>CLIENT STORIES.</h2>
+        </div>
+      </div>
+      
       <div className={styles.marqueeTrack}>
         <div className={styles.marqueeGroup}>
           {testimonials.map((testi) => (
             <div key={`g1-${testi.id}`} className={styles.card}>
-              <div className={styles.avatar}>
-                <Image src={testi.img} alt={testi.name} fill sizes="80px" />
-              </div>
+              <div className={styles.quoteIcon}>"</div>
               <p className={styles.quote}>{testi.quote}</p>
-              <p className={styles.author}>{testi.name} — <span>{testi.title}</span></p>
+              
+              <div className={styles.authorRow}>
+                <div className={styles.avatar}>
+                  <Image src={testi.img} alt={testi.name} fill sizes="60px" />
+                </div>
+                <div className={styles.authorInfo}>
+                  <p className={styles.authorName}>{testi.name}</p>
+                  <p className={styles.authorTitle}>{testi.title}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -47,11 +60,18 @@ export default function TestimonialSection() {
         <div className={styles.marqueeGroup} aria-hidden="true">
           {testimonials.map((testi) => (
             <div key={`g2-${testi.id}`} className={styles.card}>
-              <div className={styles.avatar}>
-                <Image src={testi.img} alt={testi.name} fill sizes="80px" />
-              </div>
+              <div className={styles.quoteIcon}>"</div>
               <p className={styles.quote}>{testi.quote}</p>
-              <p className={styles.author}>{testi.name} — <span>{testi.title}</span></p>
+              
+              <div className={styles.authorRow}>
+                <div className={styles.avatar}>
+                  <Image src={testi.img} alt={testi.name} fill sizes="60px" />
+                </div>
+                <div className={styles.authorInfo}>
+                  <p className={styles.authorName}>{testi.name}</p>
+                  <p className={styles.authorTitle}>{testi.title}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
