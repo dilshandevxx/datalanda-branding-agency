@@ -21,13 +21,13 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.logo}>DataLands</div>
+      <Link href="/" className={styles.logo}>DataLands</Link>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>
-          <Link href="#" className={styles.navLink}>Services</Link>
-          <Link href="#" className={styles.navLink}>Projects</Link>
-          <Link href="#" className={styles.navLink}>Studio</Link>
-          <Link href="#" className={styles.navLink}>Contact</Link>
+          <Link href="/#services" className={styles.navLink}>Services</Link>
+          <Link href="/projects" className={styles.navLink}>Projects</Link>
+          <Link href="/#studio" className={styles.navLink}>Studio</Link>
+          <Link href="#contact" className={styles.navLink}>Contact</Link>
         </nav>
         <button className={styles.ctaButton}>
           Let&apos;s talk <span className={styles.arrow}>→</span>
@@ -46,10 +46,10 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
         <nav className={styles.mobileNav}>
-          <Link href="#" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>
-          <Link href="#" className={styles.mobileNavLink} onClick={toggleMenu}>Projects</Link>
-          <Link href="#" className={styles.mobileNavLink} onClick={toggleMenu}>Studio</Link>
-          <Link href="#" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
+          <Link href="/#services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>
+          <Link href="/projects" className={styles.mobileNavLink} onClick={toggleMenu}>Projects</Link>
+          <Link href="/#studio" className={styles.mobileNavLink} onClick={toggleMenu}>Studio</Link>
+          <Link href="#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
         </nav>
         <div className={styles.mobileFooter}>
           <a href="mailto:hello@datalands.com" className={styles.mobileEmail}>hello@datalands.com</a>
