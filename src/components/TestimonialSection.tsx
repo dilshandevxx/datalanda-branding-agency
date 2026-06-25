@@ -1,76 +1,58 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import styles from './TestimonialSection.module.css';
 
 export default function TestimonialSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
     {
       id: 1,
-      quote: <>The engineering quality and design aesthetic completely <i>revolutionized</i> our market positioning.</>,
+      quote: "The engineering quality and design aesthetic they brought to our product completely revolutionized our market positioning. Absolute masters of their craft.",
       name: "Sarah Jenkins",
       title: "Chief Product Officer",
+      img: "/studio_1.png"
     },
     {
       id: 2,
-      quote: <>Their architectural decisions and <i>brutalist</i> design approach saved us months of development.</>,
+      quote: "Working with them felt like an extension of our own team. Their architectural decisions and brutalist design approach saved us months of development time.",
       name: "Marcus Thorne",
       title: "Founder & CEO",
+      img: "/studio_2.png"
     },
     {
       id: 3,
-      quote: <>They don't just build software; they build <i>digital legacies</i>. Unmatched in the industry.</>,
+      quote: "They don't just build software; they build digital legacies. The attention to micro-interactions and performance optimization is simply unmatched in the industry.",
       name: "Elena Rostova",
       title: "Creative Director",
+      img: "/studio_3.png"
     }
   ];
 
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
-
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.sliderContainer}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className={styles.content}
-            >
-              <h2 className={styles.quote}>
-                "{testimonials[currentIndex].quote}"
-              </h2>
-              
-              <div className={styles.authorWrapper}>
-                <div className={styles.line}></div>
-                <p className={styles.author}>
-                  {testimonials[currentIndex].name} <span>— {testimonials[currentIndex].title}</span>
-                </p>
+      <div className={styles.marqueeTrack}>
+        <div className={styles.marqueeGroup}>
+          {testimonials.map((testi) => (
+            <div key={`g1-${testi.id}`} className={styles.card}>
+              <div className={styles.avatar}>
+                <Image src={testi.img} alt={testi.name} fill sizes="80px" />
               </div>
-            </motion.div>
-          </AnimatePresence>
+              <p className={styles.quote}>{testi.quote}</p>
+              <p className={styles.author}>{testi.name} — <span>{testi.title}</span></p>
+            </div>
+          ))}
         </div>
-        
-        <div className={styles.controls}>
-          {testimonials.map((_, i) => (
-            <button 
-              key={i} 
-              aria-label={`Go to testimonial ${i + 1}`}
-              className={`${styles.dot} ${i === currentIndex ? styles.dotActive : ''}`}
-              onClick={() => setCurrentIndex(i)}
-            />
+        {/* Duplicate group for seamless infinite scrolling */}
+        <div className={styles.marqueeGroup} aria-hidden="true">
+          {testimonials.map((testi) => (
+            <div key={`g2-${testi.id}`} className={styles.card}>
+              <div className={styles.avatar}>
+                <Image src={testi.img} alt={testi.name} fill sizes="80px" />
+              </div>
+              <p className={styles.quote}>{testi.quote}</p>
+              <p className={styles.author}>{testi.name} — <span>{testi.title}</span></p>
+            </div>
           ))}
         </div>
       </div>

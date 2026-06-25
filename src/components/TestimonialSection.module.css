@@ -1,122 +1,121 @@
 .section {
-  padding: clamp(6rem, 15vw, 12rem) 0;
+  padding: var(--section-padding) 0;
   background-color: var(--background);
   color: var(--foreground);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 4vw;
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.marqueeGroup {
+  display: flex;
+  gap: 4vw;
+  padding-right: 4vw;
+  width: max-content;
+}
+
+.card {
+  width: 50vw;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  /* Instead of extreme fading, we keep them readable but soft */
+  opacity: 0.6;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(0.98);
+  user-select: none;
+  cursor: grab;
+  padding: 2rem;
 }
 
-.sliderContainer {
-  /* Give it a minimum height so the container doesn't jump when text changes */
-  min-height: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.card:hover {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  width: 100%;
+.card:active {
+  cursor: grabbing;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.avatar img {
+  object-fit: cover;
 }
 
 .quote {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin: 0;
-  max-width: 1000px;
-}
-
-/* Mixed italic serif styling for a premium Awwwards feel */
-.quote i, .quote em {
-  font-family: "Georgia", "Times New Roman", Times, serif;
-  font-style: italic;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.6;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6); /* Slightly dim the serif text for contrast */
+  color: rgba(255, 255, 255, 0.95); /* Bright white instead of muddy grey */
+  margin-bottom: 2rem;
+  max-width: 100%;
 }
 
-/* Specific support for light mode if it gets toggled by ThemeController */
-:global([data-theme="light"]) .quote i {
-  color: rgba(17, 17, 17, 0.6);
-}
-
-.authorWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--foreground);
+:global([data-theme="light"]) .quote {
+  color: rgba(17, 17, 17, 0.95);
 }
 
 .author {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0;
 }
 
 .author span {
   font-weight: 400;
-  opacity: 0.5;
-  letter-spacing: 0.05em;
-  text-transform: none;
+  opacity: 0.6;
 }
 
-.controls {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0;
-}
-
-.dotActive {
-  background-color: var(--foreground);
-  transform: scale(1.5);
-}
-
-@media (max-width: 768px) {
-  .sliderContainer {
-    min-height: 400px;
+@media (max-width: 992px) {
+  .marqueeTrack {
+    animation: scroll 25s linear infinite;
   }
-  .content {
-    gap: 2.5rem;
+  .marqueeGroup {
+    gap: 8vw;
+    padding-right: 8vw;
+  }
+  .card {
+    width: 85vw;
+    opacity: 1; /* Always fully visible on mobile */
+    transform: scale(1);
+    padding: 1rem;
+  }
+  .avatar {
+    margin-bottom: 2rem;
   }
   .quote {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
