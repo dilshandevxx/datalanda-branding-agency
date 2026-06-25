@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import styles from "./AppShowcaseSection.module.css";
+import { useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import SmartVideo from './SmartVideo';
+import styles from './AppShowcaseSection.module.css';
 
 export default function AppShowcaseSection() {
   return (
@@ -60,16 +62,7 @@ export default function AppShowcaseSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={styles.videoWrapper}
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={styles.video}
-            >
-              <source src="/app-scroll.webm" type="video/webm" />
-              {/* Optional fallback if you had an mp4: <source src="/app-scroll.mp4" type="video/mp4" /> */}
-            </video>
+            <SmartVideo src="/app-scroll.webm" className={styles.video} />
           </motion.div>
 
         </div>

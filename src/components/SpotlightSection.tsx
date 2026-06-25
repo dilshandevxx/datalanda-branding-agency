@@ -1,20 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SmartVideo from "./SmartVideo";
 import styles from "./SpotlightSection.module.css";
 
 export default function SpotlightSection() {
   return (
     <section className={styles.section}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className={styles.backgroundVideo}
-      >
-        <source src="/walking-people.webm" type="video/webm" />
-      </video>
+      <SmartVideo src="/walking-people.webm" className={styles.backgroundVideo} />
       <div className={styles.overlay}></div>
       <div className="container">
         <motion.div 

@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import SmartVideo from './SmartVideo';
+import SmartVideo from './SmartVideo';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -11,16 +12,10 @@ export default function Hero() {
       </div>
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={styles.video}
-          >
-            <source src="/hero-video.webm" type="video/webm" />
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
+          <SmartVideo 
+            src="/hero-video.webm" 
+            className={styles.video} 
+          />
         </div>
       </div>
     </section>

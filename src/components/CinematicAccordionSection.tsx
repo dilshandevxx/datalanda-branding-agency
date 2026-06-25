@@ -48,8 +48,6 @@ export default function CinematicAccordionSection() {
   // 3 items = 300vw total width. To show the last item, we need to translate by -66.66%
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
-
   if (!isMounted) return <section className={styles.section} style={{ minHeight: '100vh' }}></section>;
 
   return (

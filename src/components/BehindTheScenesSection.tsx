@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SmartVideo from "./SmartVideo";
 import styles from "./BehindTheScenesSection.module.css";
 
 export default function BehindTheScenesSection() {
@@ -20,15 +21,7 @@ export default function BehindTheScenesSection() {
   return (
     <section ref={containerRef} className={styles.section}>
       <motion.div className={styles.videoWrapper} style={{ scale: scaleVideo }}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={styles.video}
-        >
-          <source src="/typing.webm" type="video/webm" />
-        </video>
+        <SmartVideo src="/typing.webm" className={styles.video} />
       </motion.div>
 
       <div className={styles.colorfulOverlay}></div>
