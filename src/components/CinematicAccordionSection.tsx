@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
 
@@ -27,6 +27,14 @@ const pillars = [
 
 export default function CinematicAccordionSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Check immediately on mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section className={styles.section}>
@@ -41,8 +49,12 @@ export default function CinematicAccordionSection() {
             <motion.div
               key={pillar.id}
               className={`${styles.pillar} ${isActive ? styles.pillarActive : ""}`}
-              onMouseEnter={() => setActiveIndex(index)}
-              onClick={() => setActiveIndex(index)} // For mobile tap
+              onMouseEnter={() => !isMobile && setActiveIndex(index)}
+              onClick={() => setActiveIndex(index)} // Still allow tapping just in case
+              onViewportEnter={() => {
+                if (isMobile) setActiveIndex(index);
+              }}
+              viewport={{ margin: "-40% 0px -40% 0px", amount: "some" }}
               initial={false}
               animate={{
                 flex: isActive ? 3 : 1,
