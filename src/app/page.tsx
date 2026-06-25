@@ -17,8 +17,8 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <WhyUsSection />
       <Marquee />
+      <WhyUsSection />
       <IntroSection />
       <ServicesSection />
       <WorkSection />
