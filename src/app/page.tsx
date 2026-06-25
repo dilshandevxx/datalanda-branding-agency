@@ -10,6 +10,7 @@ const IntroSection = dynamic(() => import('@/components/IntroSection'));
 const BehindTheScenesSection = dynamic(() => import('@/components/BehindTheScenesSection'));
 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
+const ThemeInversionController = dynamic(() => import('@/components/ThemeInversionController'));
 const AppShowcaseSection = dynamic(() => import('@/components/AppShowcaseSection'));
 const WorkSection = dynamic(() => import('@/components/WorkSection'));
 const StudioSection = dynamic(() => import('@/components/StudioSection'));
@@ -30,7 +31,9 @@ export default function Home() {
       <IntroSection />
       <BehindTheScenesSection />
 
-      <ServicesSection />
+      <ThemeInversionController>
+        <ServicesSection />
+      </ThemeInversionController>
       <AppShowcaseSection />
       <WorkSection />
       <StudioSection />
