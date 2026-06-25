@@ -14,33 +14,13 @@ export default function ServicesSection() {
   ];
 
   const mobileServices = [
-    { title: "UI/UX Design", iconVariant: "blue" },
-    { title: "App Development", iconVariant: "greenOrange" },
-    { title: "Brand Identity", iconVariant: "blue" },
-    { title: "Cloud & DevOps", iconVariant: "greenOrange" },
-    { title: "AI Consulting", iconVariant: "blue" },
-    { title: "Agentic Systems", iconVariant: "greenOrange" },
+    { title: "UI/UX Design" },
+    { title: "App Development" },
+    { title: "Brand Identity" },
+    { title: "Cloud & DevOps" },
+    { title: "AI Consulting" },
+    { title: "Agentic Systems" },
   ];
-
-  const renderIcon = (variant: string) => {
-    if (variant === 'blue') {
-      return (
-        <div className={styles.iconBlueWrapper}>
-          <div className={styles.blueCircle}></div>
-          <div className={styles.blueSquare}></div>
-        </div>
-      );
-    }
-    if (variant === 'greenOrange') {
-      return (
-        <div className={styles.iconGreenOrangeWrapper}>
-          <div className={styles.orangeCircle}></div>
-          <div className={styles.greenSemiCircle}></div>
-        </div>
-      );
-    }
-    return null;
-  };
 
   return (
     <section id="services" className={styles.section}>
@@ -69,7 +49,6 @@ export default function ServicesSection() {
         <div className={styles.mobileGrid}>
           {mobileServices.map((svc, i) => (
              <div key={i} className={styles.mobileCard}>
-                <div className={styles.mobileIcon}>{renderIcon(svc.iconVariant)}</div>
                 <h4 className={styles.mobileCardTitle}>{svc.title}</h4>
              </div>
           ))}
