@@ -16,7 +16,6 @@ export default function Hero() {
             loop
             muted
             playsInline
-            poster="/hero-hands-premium.png"
             className={styles.video}
           >
             <source src="/hero-video.webm" type="video/webm" />
