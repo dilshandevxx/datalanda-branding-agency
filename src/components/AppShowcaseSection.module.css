@@ -1,11 +1,15 @@
 .section {
-  padding: var(--section-padding) 0;
-  background-color: var(--background);
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: transparent; /* inherit from ThemeInversionController */
   color: var(--foreground);
 }
 
 .container {
   max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 4vw;
 }
@@ -14,13 +18,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
-  align-items: start;
+  align-items: center;
 }
 
-/* Left Column: Sticky Text */
+/* Left Column: Text */
 .textContent {
-  position: sticky;
-  top: 30vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -84,6 +86,7 @@
 .videoWrapper {
   position: relative;
   width: 100%;
+  max-height: 80vh; /* Constrain height to not overflow the 100vh container */
   border-radius: 0; /* No rounded corners for the video */
   overflow: hidden;
   background: color-mix(in srgb, var(--foreground) 2%, transparent);

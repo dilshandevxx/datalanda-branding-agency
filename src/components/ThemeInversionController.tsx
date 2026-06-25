@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function ThemeInversionController({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
-  // Triggers when the element occupies the middle 20% of the screen.
-  // Using -40% margins means the trigger zone is the middle 20% of the viewport.
-  const isInView = useInView(ref, {
-    margin: "-40% 0px -40% 0px",
+  // Track scroll progress of this container
+  // start start: when top of container hits top of viewport
+  // end end: when bottom of container hits bottom of viewport
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
   });
 
   const [isMobile, setIsMobile] = useState(false);
@@ -21,20 +23,43 @@ export default function ThemeInversionController({ children }: { children: React
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Map scroll progress to color changes
+  // It pins for 200vh total.
+  // 0 -> 0.5: Dark to Orange transition
+  // 0.5 -> 1.0: Stays Orange while pinned
+  const bgSync = useTransform(scrollYProgress, [0, 0.4, 1], ["#111111", "#FF5F00", "#FF5F00"]);
+  const fgSync = useTransform(scrollYProgress, [0, 0.4, 1], ["#ffffff", "#000000", "#000000"]);
+
   return (
     <div 
-      ref={ref}
+      ref={containerRef}
       style={{
-        // Define local CSS variables that override the global ones for children
-        '--background': (isInView && !isMobile) ? '#FF5F00' : '#111111',
-        '--foreground': (isInView && !isMobile) ? '#000000' : '#ffffff',
-        // Apply the background color locally with a smooth transition
-        backgroundColor: 'var(--background)',
-        color: 'var(--foreground)',
-        transition: 'background-color 0.7s cubic-bezier(0.16, 1, 0.3, 1), color 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
-      } as React.CSSProperties}
+        // Make the container tall enough to allow scroll-pinning
+        height: isMobile ? "auto" : "200vh", 
+        position: "relative"
+      }}
     >
-      {children}
+      <motion.div
+        style={{
+          // Pin the content to the screen while scrolling through the 200vh container
+          position: isMobile ? "relative" : "sticky",
+          top: 0,
+          height: isMobile ? "auto" : "100vh",
+          display: "flex",
+          alignItems: "center",
+          overflow: "hidden",
+          
+          backgroundColor: isMobile ? "#111111" : bgSync,
+          color: isMobile ? "#ffffff" : fgSync,
+          // Pass the motion values down as CSS variables
+          // @ts-ignore
+          "--background": isMobile ? "#111111" : bgSync,
+          // @ts-ignore
+          "--foreground": isMobile ? "#ffffff" : fgSync,
+        }}
+      >
+        {children}
+      </motion.div>
     </div>
   );
 }
