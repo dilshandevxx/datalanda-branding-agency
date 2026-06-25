@@ -1,0 +1,84 @@
+.section {
+  background-color: #111111; /* Matching the footer background */
+  padding: 4rem 4vw 0 4vw;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.imageCol {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.textCol {
+  background-color: #5b8cf0; /* The specific blue from the screenshot */
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.category {
+  opacity: 0.9;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.desc {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 90%;
+}
+
+@media (max-width: 992px) {
+  .textCol {
+    padding: 4rem 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0 0 0; /* Full bleed on mobile */
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .imageCol {
+    display: none; /* In the screenshot, only the blue card is visible on mobile */
+  }
+  
+  .textCol {
+    padding: 4rem 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
