@@ -39,10 +39,6 @@ export default function FaqSection() {
         
         <div className={styles.header}>
           <h2 className={styles.title}>FAQ.</h2>
-          <div className={styles.contactBlock}>
-            <span className={styles.contactLabel}>Have a question?</span>
-            <a href="mailto:hello@datalands.com" className={styles.contactEmail}>hello@datalands.com</a>
-          </div>
         </div>
 
         <div className={styles.accordion}>

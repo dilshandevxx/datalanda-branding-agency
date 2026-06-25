@@ -31,36 +31,6 @@
   margin: 0;
 }
 
-.contactBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.contactLabel {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.6;
-}
-
-.contactEmail {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--foreground);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  transition: all 0.3s ease;
-}
-
-.contactEmail:hover {
-  border-bottom-color: var(--foreground);
-  opacity: 0.8;
-}
-
 .accordion {
   display: flex;
   flex-direction: column;
@@ -167,9 +137,6 @@
     align-items: flex-start;
     gap: 1.5rem;
     margin-bottom: 3rem;
-  }
-  .contactBlock {
-    align-items: flex-start;
   }
   
   .title {
