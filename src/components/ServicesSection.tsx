@@ -36,21 +36,20 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      {/* Mobile-only list */}
       <div className={styles.mobileList}>
         <ul>
           <li>Branding</li>
-          <li>Brand Strategy</li>
-          <li>Motion graphics</li>
-          <li>Video editing</li>
-          <li>3D animation</li>
-          <li>Audio production</li>
-          <li>Web design</li>
-          <li>Photography</li>
-          <li>Naming</li>
-          <li>Packaging</li>
-          <li>Advertising</li>
-          <li>Brand art<span className={styles.trademark}>®</span></li>
+          <li>Creative Dev</li>
+          <li>Motion Graphics</li>
+          <li>Website Design</li>
+          <li>User Interface</li>
+          <li>Development</li>
+          <li>Design Systems</li>
+          <li>Marketing</li>
+          <li>Product Design</li>
+          <li>Logo Design</li>
+          <li>Illustration</li>
+          <li>& Much more</li>
         </ul>
       </div>
       </div>

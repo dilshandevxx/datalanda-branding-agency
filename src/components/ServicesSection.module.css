@@ -107,6 +107,20 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    margin-bottom: 4rem;
+  }
+  
+  .label {
+    display: none;
+  }
+
+  .title {
+    font-size: clamp(3rem, 15vw, 5rem);
+    text-align: center;
+    width: 100%;
+  }
+
   .list {
     display: none;
   }
@@ -121,29 +135,20 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3.5rem;
+    column-gap: 1rem;
+    text-align: center;
   }
   
   .mobileList li {
-    font-size: clamp(2.5rem, 11vw, 4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     color: var(--foreground);
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
     font-family: var(--font-family);
-  }
-
-  .mobileList li:hover {
-    opacity: 1;
-  }
-
-  .trademark {
-    font-size: 0.4em;
-    vertical-align: super;
-    margin-left: 2px;
   }
 }
