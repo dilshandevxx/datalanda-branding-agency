@@ -22,8 +22,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7; /* Brighter video */
-  filter: saturate(1.5) contrast(1.1); /* Vibrant colors */
+  opacity: 0.5; /* Slightly dim the video */
+  filter: saturate(1.1) contrast(1.1); /* Subtle, natural colors */
 }
 
 /* Gradient overlays to smoothly blend with surrounding sections */
@@ -53,8 +53,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 0, 128, 0.4), rgba(0, 204, 255, 0.4), rgba(112, 0, 255, 0.4));
-  mix-blend-mode: overlay;
+  background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 204, 255, 0.1));
   z-index: 2;
   pointer-events: none;
 }
