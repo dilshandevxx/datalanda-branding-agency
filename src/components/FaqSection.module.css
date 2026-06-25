@@ -152,22 +152,22 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
   .subtitle {
     text-align: left;
   }
   
   .accordion {
-    gap: 1rem;
+    gap: 0.5rem; /* Tighter gap between cards */
   }
   
   .faqItem {
     background-color: #1a1a1a;
-    padding: 2rem;
+    padding: 1.25rem 1.25rem; /* Much smaller, cleaner padding */
     border-bottom: none;
-    border-radius: 0; /* Sharp edges */
+    border-radius: 0;
   }
   
   .faqItem:hover .question {
@@ -177,17 +177,30 @@
   .answer {
     padding-left: 0;
     max-width: 100%;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller text for elegance */
+    padding-top: 1rem;
     padding-bottom: 0;
   }
   
   .question {
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row; /* Keep number and text side-by-side */
     gap: 1rem;
+    font-size: 1.125rem; /* Smaller question text */
+  }
+  
+  .faqHeader {
+    gap: 1rem;
+    align-items: flex-start; /* Ensure the + icon stays top aligned with text */
   }
   
   .num {
     transform: none;
+    font-size: 0.75rem;
+    margin-top: 0.2rem; /* Align number vertically with first line of text */
+  }
+  
+  .icon {
+    font-size: 1.25rem;
   }
 }
