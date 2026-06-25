@@ -25,8 +25,8 @@ export default function ThemeInversionController({ children }: { children: React
     const root = document.documentElement;
 
     if (isInView && !isMobile) {
-      // Invert theme to a soft pastel clay color only on Desktop
-      root.style.setProperty("--background", "#DCA491");
+      // Invert theme to a premium Bone/Pearl color only on Desktop
+      root.style.setProperty("--background", "#F5F5F0");
       root.style.setProperty("--foreground", "#111111");
     } else {
       // Restore premium Dark Mode (or if on mobile, keep it dark)
