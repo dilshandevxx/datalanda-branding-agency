@@ -13,6 +13,35 @@ export default function ServicesSection() {
     { num: "07.", title: "MOBILE & CROSS-PLATFORM" }
   ];
 
+  const mobileServices = [
+    { title: "UI/UX Design", iconVariant: "blue" },
+    { title: "App Development", iconVariant: "greenOrange" },
+    { title: "Brand Identity", iconVariant: "blue" },
+    { title: "Cloud & DevOps", iconVariant: "greenOrange" },
+    { title: "AI Consulting", iconVariant: "blue" },
+    { title: "Agentic Systems", iconVariant: "greenOrange" },
+  ];
+
+  const renderIcon = (variant: string) => {
+    if (variant === 'blue') {
+      return (
+        <div className={styles.iconBlueWrapper}>
+          <div className={styles.blueCircle}></div>
+          <div className={styles.blueSquare}></div>
+        </div>
+      );
+    }
+    if (variant === 'greenOrange') {
+      return (
+        <div className={styles.iconGreenOrangeWrapper}>
+          <div className={styles.orangeCircle}></div>
+          <div className={styles.greenSemiCircle}></div>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <section id="services" className={styles.section}>
       <div className={styles.container}>
@@ -37,20 +66,14 @@ export default function ServicesSection() {
       </div>
 
       <div className={styles.mobileList}>
-        <ul>
-          <li>Branding</li>
-          <li>Creative Dev</li>
-          <li>Motion Graphics</li>
-          <li>Website Design</li>
-          <li>User Interface</li>
-          <li>Development</li>
-          <li>Design Systems</li>
-          <li>Marketing</li>
-          <li>Product Design</li>
-          <li>Logo Design</li>
-          <li>Illustration</li>
-          <li>& Much more</li>
-        </ul>
+        <div className={styles.mobileGrid}>
+          {mobileServices.map((svc, i) => (
+             <div key={i} className={styles.mobileCard}>
+                <div className={styles.mobileIcon}>{renderIcon(svc.iconVariant)}</div>
+                <h4 className={styles.mobileCardTitle}>{svc.title}</h4>
+             </div>
+          ))}
+        </div>
       </div>
       </div>
     </section>
