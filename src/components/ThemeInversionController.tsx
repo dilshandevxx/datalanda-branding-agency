@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 
 export default function ThemeInversionController({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,10 +24,6 @@ export default function ThemeInversionController({ children }: { children: React
   }, []);
 
   // Map scroll progress to color changes
-  // Make the container 300vh total so there is plenty of scroll room.
-  // 0.0 -> 0.3: Wait (stay Dark) so it doesn't change accidentally
-  // 0.3 -> 0.6: Transition from Dark to Orange
-  // 0.6 -> 1.0: Wait (stay Orange) before unpinning to the next section
   const bgSync = useTransform(
     scrollYProgress, 
     [0, 0.3, 0.6, 1], 
@@ -40,32 +36,35 @@ export default function ThemeInversionController({ children }: { children: React
     ["#ffffff", "#ffffff", "#000000", "#000000"]
   );
 
+  // Reliably apply the motion values as CSS variables to the container
+  const innerRef = useRef<HTMLDivElement>(null);
+
+  useMotionValueEvent(scrollYProgress, "change", () => {
+    if (innerRef.current && !isMobile) {
+      innerRef.current.style.setProperty("--background", bgSync.get());
+      innerRef.current.style.setProperty("--foreground", fgSync.get());
+    }
+  });
+
   return (
     <div 
       ref={containerRef}
       style={{
-        // Taller container requires MORE scrolling, creating the delays
         height: isMobile ? "auto" : "300vh", 
         position: "relative"
       }}
     >
       <motion.div
+        ref={innerRef}
         style={{
-          // Pin the content to the screen while scrolling through the 200vh container
           position: isMobile ? "relative" : "sticky",
           top: 0,
           height: isMobile ? "auto" : "100vh",
           display: "flex",
           alignItems: "center",
           overflow: "hidden",
-          
           backgroundColor: isMobile ? "#111111" : bgSync,
           color: isMobile ? "#ffffff" : fgSync,
-          // Pass the motion values down as CSS variables
-          // @ts-ignore
-          "--background": isMobile ? "#111111" : bgSync,
-          // @ts-ignore
-          "--foreground": isMobile ? "#ffffff" : fgSync,
         }}
       >
         {children}
