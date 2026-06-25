@@ -47,20 +47,30 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--section-padding) 4vw;
+    padding: 2rem 4vw;
   }
   
   .container {
-    gap: 2rem;
+    background-color: #1a1a1a;
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
     width: 100%;
+    align-items: flex-start;
+    text-align: left;
   }
   
   .text {
     font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .break {
+    display: none; /* Let text wrap naturally on mobile */
   }
 
   .button {
-    width: 100%;
-    padding: 1.25rem;
+    width: fit-content;
+    padding: 1rem 2.5rem;
+    margin-top: 0.5rem;
   }
 }
