@@ -1,5 +1,4 @@
 import SmartVideo from './SmartVideo';
-import SmartVideo from './SmartVideo';
 import styles from './Hero.module.css';
 
 export default function Hero() {
