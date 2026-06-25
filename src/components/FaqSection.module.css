@@ -1,5 +1,5 @@
 .section {
-  padding: var(--section-padding) 0;
+  padding: clamp(6rem, 15vw, 15rem) 0;
   background-color: var(--background);
   color: var(--foreground);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -9,110 +9,59 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 4vw;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 4fr 6fr;
-  gap: 8vw;
-  align-items: start;
-}
-
-/* Left side */
-.visualsCol {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
-.imagesRow {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 1.5rem;
-  height: 60vh;
-  min-height: 450px;
-}
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.imageWrapper img {
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.imageWrapper:hover img {
-  transform: scale(1.05);
-}
-
-.contactBox {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.5rem 2rem;
-  border-radius: 4px;
+.header {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.contactIcon {
-  font-size: 1.25rem;
-  opacity: 0.5;
-  padding-top: 0.2rem;
+.title {
+  font-size: clamp(3rem, 10vw, 12rem);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  margin: 0;
 }
 
-.contactText {
-  font-size: 0.875rem;
+.subtitle {
+  font-size: 1rem;
+  text-align: right;
   line-height: 1.6;
   opacity: 0.7;
 }
 
-.contactText a {
-  color: var(--foreground);
-  font-weight: 600;
+.subtitle a {
   text-decoration: underline;
   text-underline-offset: 4px;
-  margin: 0 0.25rem;
+  color: var(--foreground);
+  transition: opacity 0.3s ease;
 }
 
-.contactText a:hover {
-  color: var(--accent);
-}
-
-/* Right side */
-.faqCol {
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: clamp(2rem, 3.5vw, 4rem);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 4rem;
-  max-width: 90%;
+.subtitle a:hover {
+  opacity: 0.5;
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .faqItem {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem 0;
+  padding: 3vw 0;
   cursor: pointer;
-  transition: padding-left 0.4s ease;
+  group: faq; /* For hover state targeting */
 }
 
-.faqItem:hover {
-  padding-left: 1rem;
+.faqItem:last-child {
+  border-bottom: none;
 }
 
 .faqHeader {
@@ -123,31 +72,64 @@
 }
 
 .question {
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: clamp(1.5rem, 4vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.num {
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+  opacity: 0.3;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  transform: translateY(-10px);
+}
+
+.text {
+  transition: color 0.5s ease;
+}
+
+/* Awwwards specific interaction: Hovering makes it italic serif and shifts right */
 .faqItem:hover .question {
-  color: var(--accent);
+  transform: translateX(20px);
+}
+
+.faqItem:hover .text {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+:global([data-theme="light"]) .faqItem:hover .text {
+  color: rgba(17, 17, 17, 0.7);
 }
 
 .icon {
-  font-size: 1.5rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 300;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0.3;
+}
+
+.faqItem:hover .icon {
+  opacity: 1;
 }
 
 .faqItem.active .icon {
   transform: rotate(45deg);
-  color: var(--foreground);
+  opacity: 1;
 }
 
 .answerWrapper {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .faqItem.active .answerWrapper {
@@ -159,60 +141,40 @@
 }
 
 .answer {
-  padding-top: 1.5rem;
-  font-size: 0.875rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: clamp(2.5rem, 4.5vw, 5rem); /* Align with the text, skipping the num */
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
   line-height: 1.6;
   opacity: 0.6;
-  max-width: 90%;
-}
-
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 12vw;
-  }
-  .imagesRow {
-    height: 40vh;
-  }
+  max-width: 80%;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .grid {
-    display: flex;
-    flex-direction: column-reverse; /* Put FAQ above visual column */
-    gap: 8vw;
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
-  .imagesRow {
-    display: none; /* Hide decorative images on mobile to keep it clean */
+  .subtitle {
+    text-align: left;
   }
-  .contactBox {
-    padding: 1.25rem 1.5rem;
-    align-items: center;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    margin-top: 1rem;
+  .faqItem:hover .question {
+    transform: none; /* Disable horizontal shift on mobile */
   }
-  .contactIcon {
-    font-size: 1.5rem;
-    padding-top: 0;
-  }
-  .contactText {
-    font-size: 0.8rem;
-  }
-  .title {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-  .faqItem {
-    padding: 1.25rem 0;
-  }
-  .faqItem:hover {
-    padding-left: 0; /* Disable the desktop indent hover effect on mobile */
+  .answer {
+    padding-left: 0;
+    max-width: 100%;
+    font-size: 1rem;
   }
   .question {
-    font-size: 1.125rem; /* Make the question a bit larger on mobile */
-  }
-  .faqHeader {
+    align-items: flex-start;
+    flex-direction: column;
     gap: 1rem;
+  }
+  .num {
+    transform: none;
   }
 }

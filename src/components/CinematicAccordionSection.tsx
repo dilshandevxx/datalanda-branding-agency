@@ -8,19 +8,22 @@ import SmartVideo from "./SmartVideo";
 const pillars = [
   {
     id: "strategy",
-    title: "01 Strategy",
+    num: "01",
+    title: "Strategy",
     description: "Human-centric brand positioning.",
     videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389596/walking-people_chkyso.webm",
   },
   {
     id: "design",
-    title: "02 Design",
+    num: "02",
+    title: "Design",
     description: "Pixel-perfect visual identity.",
     videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm",
   },
   {
     id: "execution",
-    title: "03 Execution",
+    num: "03",
+    title: "Execution",
     description: "Seamless digital product delivery.",
     videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389597/app-scroll_afnkat.webm",
   },
@@ -66,12 +69,11 @@ export default function CinematicAccordionSection() {
                 <div className={styles.overlay}></div>
 
                 <div className={styles.contentWrapper}>
-                  <motion.h3 
-                    className={styles.title}
-                    layout="position"
-                  >
-                    {pillar.title}
-                  </motion.h3>
+                  <motion.div className={styles.titleBlock} layout="position">
+                    <span className={styles.num}>{pillar.num}</span>
+                    <div className={styles.line}></div>
+                    <h3 className={styles.title}>{pillar.title}</h3>
+                  </motion.div>
                   
                   <AnimatePresence>
                     {isActive && (
@@ -103,10 +105,14 @@ export default function CinematicAccordionSection() {
                   <SmartVideo src={pillar.videoSrc} className={styles.videoMobile} />
                 </div>
                 <div className={styles.overlayMobile}></div>
-                <div className={styles.contentWrapperMobile}>
-                  <h3 className={styles.titleMobile}>{pillar.title}</h3>
-                  <p className={styles.descriptionMobile}>{pillar.description}</p>
+                <div className={styles.contentWrapper}>
+                <div className={styles.titleBlock}>
+                  <span className={styles.num}>{pillar.num}</span>
+                  <div className={styles.line}></div>
+                  <h3 className={styles.title}>{pillar.title}</h3>
                 </div>
+                <p className={styles.description}>{pillar.description}</p>
+              </div>
               </div>
             ))}
           </motion.div>
