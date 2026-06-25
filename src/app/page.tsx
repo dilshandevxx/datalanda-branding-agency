@@ -32,9 +32,11 @@ export default function Home() {
       <IntroSection />
       <BehindTheScenesSection />
 
-      <ServicesSection />
-      <AppShowcaseSection />
-      <WorkSection />
+      <ThemeInversionController>
+        <ServicesSection />
+        <AppShowcaseSection />
+        <WorkSection />
+      </ThemeInversionController>
       <StudioSection />
       <SpotlightSection />
       <TestimonialSection />
