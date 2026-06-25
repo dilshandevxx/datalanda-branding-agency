@@ -85,15 +85,16 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: calc(var(--section-padding) * 1.5) 4vw;
+    padding: 6rem 4vw;
   }
   .title {
-    margin-bottom: 1rem;
+    font-size: clamp(3rem, 12vw, 5rem);
+    margin-bottom: 2rem;
   }
   .button {
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
-    width: 100%;
+    font-size: 1rem;
+    padding: 0.875rem 2rem;
+    width: auto;
     justify-content: center;
   }
 }
