@@ -6,21 +6,34 @@ import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+      
+      // Hide when scrolling down (past 100px), show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
       <Link href="/#hero" className={styles.logo}>DataLands</Link>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>

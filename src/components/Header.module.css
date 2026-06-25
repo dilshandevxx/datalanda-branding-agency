@@ -21,6 +21,10 @@
   background: rgba(17, 17, 17, 0.85);
 }
 
+.hidden {
+  transform: translateY(-100%);
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 900;
