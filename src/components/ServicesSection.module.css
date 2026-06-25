@@ -43,7 +43,7 @@
 
 /* DESKTOP MINIMAL LIST */
 .list {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 15%, transparent);
   margin-top: 4rem;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--foreground) 15%, transparent);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,14 +63,15 @@
 .item:hover {
   padding-left: 5vw;
   padding-right: 5vw;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: color-mix(in srgb, var(--foreground) 3%, transparent);
 }
 
 .colTitle {
   flex: 1;
   font-size: 1.125rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.9;
 }
 
 .colNum {
@@ -89,8 +90,8 @@
 
 .readMoreBtn {
   background: transparent;
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--foreground) 30%, transparent);
   padding: 0.75rem 2rem;
   border-radius: 50px;
   font-size: 0.875rem;
@@ -100,9 +101,9 @@
 }
 
 .readMoreBtn:hover {
-  border-color: #ffffff;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--background);
+  color: var(--background);
+  background: var(--foreground);
 }
 
 @media (max-width: 768px) {
@@ -130,13 +131,14 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    color: rgba(255, 255, 255, 0.4);
-    transition: color 0.3s ease;
+    color: var(--foreground);
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
     font-family: var(--font-family);
   }
 
   .mobileList li:hover {
-    color: #ffffff;
+    opacity: 1;
   }
 
   .trademark {
