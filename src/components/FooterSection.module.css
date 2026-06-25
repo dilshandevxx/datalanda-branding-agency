@@ -124,11 +124,11 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 3rem 4vw; /* Removed huge top padding */
+    padding: 2rem 4vw;
   }
   
   .container {
-    gap: 3rem; /* Tighter container gap */
+    gap: 2rem;
   }
   
   .hugeTitle {
@@ -142,11 +142,11 @@
   
   .linksCol {
     grid-template-columns: 1fr;
-    gap: 2rem; /* Tighter gap */
+    gap: 1.5rem;
   }
 
   .navGroup {
-    gap: 1rem; /* Tighter navigation items */
+    gap: 0.5rem;
   }
   
   .brandLogo {
@@ -156,6 +156,6 @@
 
   .bottomRow {
     padding-top: 1rem;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }
