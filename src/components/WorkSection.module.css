@@ -5,13 +5,13 @@
 }
 
 .container {
-  max-width: 1200px; /* Tighter container for the grid */
+  max-width: 1400px; /* Wider container for bigger gaps */
   margin: 0 auto;
   padding: 0 4vw;
 }
 
 .header {
-  margin-bottom: 8vw;
+  margin-bottom: 10vw; /* More space before grid */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,15 +40,15 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4vw;
+  gap: 8vw; /* Doubled the horizontal gap */
 }
 
 .staggered {
-  margin-top: 15vw;
+  margin-top: 20vw; /* Increased stagger to match larger gaps */
 }
 
 .projectCard {
-  margin-bottom: 6vw;
+  margin-bottom: 12vw; /* Doubled the vertical margin between items */
   display: flex;
   flex-direction: column;
   cursor: pointer;
