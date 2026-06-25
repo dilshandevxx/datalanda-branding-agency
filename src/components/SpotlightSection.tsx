@@ -13,7 +13,7 @@ export default function SpotlightSection() {
         playsInline
         className={styles.backgroundVideo}
       >
-        <source src="/walking-people.mp4" type="video/mp4" />
+        <source src="/walking-people.webm" type="video/webm" />
       </video>
       <div className={styles.overlay}></div>
       
