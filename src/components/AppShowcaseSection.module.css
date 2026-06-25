@@ -133,18 +133,31 @@
   }
 
   .grid {
-    background-color: #1a1a1a; /* Dark card styling */
-    padding: 3rem 1.5rem;
-    gap: 2rem;
+    background-color: #1a1a1a;
+    padding: 3rem 4vw 0 4vw; /* Remove bottom padding so video touches bottom */
+    gap: 3rem;
     overflow: hidden;
+    width: calc(100% + 8vw); /* Break out of container 4vw padding */
+    margin-left: -4vw;
+    margin-right: -4vw;
   }
 
   .title {
     font-size: clamp(2rem, 10vw, 3.5rem);
-    word-break: break-word; /* Prevent ECOSYSTEMS from breaking layout */
+    word-break: break-word; 
   }
 
   .description {
     font-size: 1rem;
+  }
+  
+  .videoWrapper {
+    width: calc(100% + 8vw); /* Break out of grid 4vw padding */
+    margin-left: -4vw;
+    margin-right: -4vw;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
   }
 }
