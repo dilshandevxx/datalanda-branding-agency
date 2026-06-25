@@ -6,7 +6,7 @@ import IntroSection from '@/components/IntroSection';
 import ServicesSection from '@/components/ServicesSection';
 import WorkSection from '@/components/WorkSection';
 import StudioSection from '@/components/StudioSection';
-import ImpactSection from '@/components/ImpactSection';
+import SpotlightSection from '@/components/SpotlightSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
@@ -23,7 +23,7 @@ export default function Home() {
       <ServicesSection />
       <WorkSection />
       <StudioSection />
-      <ImpactSection />
+      <SpotlightSection />
       <TestimonialSection />
       <FaqSection />
       <CtaSection />

@@ -1,0 +1,142 @@
+.section {
+  padding: 15vw 4vw;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image overlay to make it cinematic */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-image: url('/studio_3.png'); /* reusing an image as background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* parallax effect */
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--background) 0%, transparent 50%, var(--background) 100%);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+}
+
+.quoteIcon {
+  font-family: serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: -2vw;
+}
+
+.quote {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.authorBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2vw;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.authorName {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.authorTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.playButton {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.playButton:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.playIcon {
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 25vw 4vw;
+  }
+  
+  .quote {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  
+  .avatarWrapper {
+    width: 60px;
+    height: 60px;
+  }
+}
