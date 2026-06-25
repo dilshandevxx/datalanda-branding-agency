@@ -114,7 +114,7 @@
 @media (max-width: 992px) {
   .topGrid {
     grid-template-columns: 1fr;
-    gap: 6rem;
+    gap: 4rem; /* Reduced gap */
   }
   
   .linksCol {
@@ -124,7 +124,11 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 16vw 4vw 4vw 4vw;
+    padding: 3rem 4vw; /* Removed huge top padding */
+  }
+  
+  .container {
+    gap: 3rem; /* Tighter container gap */
   }
   
   .hugeTitle {
@@ -138,11 +142,20 @@
   
   .linksCol {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem; /* Tighter gap */
+  }
+
+  .navGroup {
+    gap: 1rem; /* Tighter navigation items */
   }
   
   .brandLogo {
     font-size: clamp(3rem, 16vw, 6rem);
-    text-align: left; /* Better for mobile to flush left */
+    text-align: left;
+  }
+
+  .bottomRow {
+    padding-top: 1rem;
+    gap: 1rem;
   }
 }
