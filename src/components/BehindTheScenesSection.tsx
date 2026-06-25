@@ -31,6 +31,7 @@ export default function BehindTheScenesSection() {
         </video>
       </motion.div>
 
+      <div className={styles.colorfulOverlay}></div>
       <div className={styles.overlayTop}></div>
       <div className={styles.overlayBottom}></div>
 
