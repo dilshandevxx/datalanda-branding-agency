@@ -6,13 +6,21 @@ import styles from './SpotlightSection.module.css';
 export default function SpotlightSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.background}></div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={styles.backgroundVideo}
+      >
+        <source src="/walking-people.mp4" type="video/mp4" />
+      </video>
       <div className={styles.overlay}></div>
       
       <div className={styles.content}>
         <div className={styles.quoteIcon}>"</div>
         <h2 className={styles.quote}>
-          DataLands didn't just build our platform—they completely reimagined our digital presence. Working with them is the ultimate creative partnership.
+          They deeply understand how people move, think, and interact. Working with DataLands didn't just give us a website—it gave us a digital destination.
         </h2>
         
         <div className={styles.authorBlock}>

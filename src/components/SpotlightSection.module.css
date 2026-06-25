@@ -11,19 +11,17 @@
   overflow: hidden;
 }
 
-/* Background image overlay to make it cinematic */
-.background {
+/* Background video overlay to make it cinematic */
+.backgroundVideo {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.15;
-  background-image: url('/studio_3.png'); /* reusing an image as background */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* parallax effect */
+  opacity: 0.2; /* slightly brighter for video */
+  object-fit: cover;
   z-index: 0;
+  filter: grayscale(100%); /* Optional: makes it moody */
 }
 
 .overlay {
