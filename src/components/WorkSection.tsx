@@ -3,38 +3,64 @@ import Image from 'next/image';
 import styles from './WorkSection.module.css';
 
 export default function WorkSection() {
-  // We define specific aspect ratios for each project to get the "different size cards" look 
-  // without messing up the clean staggered grid layout.
   const projects = [
     {
       id: 1,
       title: "Audio Space App",
       category: "UI/UX DESIGN",
+      description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_1.png",
-      ratioClass: styles.ratioStandard // 4:3
+      ratioClass: styles.ratioStandard, 
+      iconVariant: "blue"
     },
     {
       id: 2,
       title: "Onyx Packaging",
       category: "BRANDING",
+      description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_2.png",
-      ratioClass: styles.ratioPortrait // 3:4 (Tall)
+      ratioClass: styles.ratioPortrait, 
+      iconVariant: "greenOrange"
     },
     {
       id: 3,
       title: "Fintech Dashboard",
       category: "PRODUCT DESIGN",
+      description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_1.png", 
-      ratioClass: styles.ratioWide // 16:9 (Wide)
+      ratioClass: styles.ratioWide,
+      iconVariant: "blue"
     },
     {
       id: 4,
       title: "Aura Skincare",
       category: "E-COMMERCE",
+      description: "Lorem ipsum dolor sit amet, consect adipis elit. Suspend varius enim in eros element tristique.",
       img: "/work_2.png", 
-      ratioClass: styles.ratioSquare // 1:1 (Square)
+      ratioClass: styles.ratioSquare,
+      iconVariant: "greenOrange"
     }
   ];
+
+  const renderIcon = (variant: string) => {
+    if (variant === 'blue') {
+      return (
+        <div className={styles.iconBlueWrapper}>
+          <div className={styles.blueCircle}></div>
+          <div className={styles.blueSquare}></div>
+        </div>
+      );
+    }
+    if (variant === 'greenOrange') {
+      return (
+        <div className={styles.iconGreenOrangeWrapper}>
+          <div className={styles.orangeCircle}></div>
+          <div className={styles.greenSemiCircle}></div>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <section className={styles.section}>
@@ -53,6 +79,7 @@ export default function WorkSection() {
             key={project.id} 
             className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
           >
+            {/* Desktop View: Image Wrapper */}
             <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
               <div className={styles.imageInner}>
                 <Image 
@@ -64,6 +91,8 @@ export default function WorkSection() {
                 />
               </div>
             </div>
+
+            {/* Desktop View: Text Info */}
             <div className={styles.projectInfo}>
               <div className={styles.textStack}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
@@ -73,6 +102,15 @@ export default function WorkSection() {
                 <span>VIEW</span>
                 <span>PROJECT</span>
               </div>
+            </div>
+
+            {/* Mobile View: Text/Icon Card (Hidden on Desktop) */}
+            <div className={styles.mobileTextCard}>
+               <div className={styles.mobileIcon}>
+                 {renderIcon(project.iconVariant)}
+               </div>
+               <h3 className={styles.mobileTitle}>{project.category}</h3>
+               <p className={styles.mobileDesc}>{project.description}</p>
             </div>
           </div>
         ))}

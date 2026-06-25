@@ -101,7 +101,7 @@
 }
 
 .viewBadge {
-  display: none; /* Hidden on desktop, we use custom cursor */
+  display: none;
 }
 
 .projectTitle {
@@ -119,6 +119,10 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   opacity: 0.5;
+}
+
+.mobileTextCard {
+  display: none; /* Hidden on desktop */
 }
 
 .footerActions {
@@ -158,6 +162,7 @@
   transform: translateX(4px);
 }
 
+/* Mobile Overrides */
 @media (max-width: 992px) {
   .staggered {
     margin-top: 0;
@@ -165,81 +170,96 @@
 }
 
 @media (max-width: 768px) {
-  /* Force all cards to 1:1 Aspect Ratio on Mobile */
-  .ratioStandard, .ratioWide, .ratioPortrait, .ratioSquare {
-    aspect-ratio: 1 / 1 !important;
-  }
-
   .grid {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 4vw;
-    padding-bottom: 2rem;
-    scrollbar-width: none; /* Firefox */
+    flex-direction: column;
+    gap: 1.5rem;
   }
-  .grid::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
+
   .projectCard {
-    position: relative;
-    min-width: 85vw;
-    scroll-snap-align: center;
     margin-bottom: 0;
   }
-  .projectInfo {
+
+  /* Hide Desktop Image & Info */
+  .imageWrapper, .projectInfo {
+    display: none !important;
+  }
+
+  /* Show Mobile Text Card */
+  .mobileTextCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a; /* Dark gray card background */
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .mobileTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .mobileDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  /* Abstract CSS Icons */
+  .mobileIcon {
+    margin-bottom: 1rem;
+  }
+
+  .iconBlueWrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+  }
+  .blueCircle {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 50%;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    border-bottom: none;
-    margin-top: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-  }
-  .textStack {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    width: 100%;
-  }
-  .projectTitle {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-  .projectCategory {
-    font-family: var(--font-family);
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-    opacity: 1;
-  }
-  .viewBadge {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    width: 55px;
-    height: 55px;
-    background-color: #000000;
-    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    background-color: #60c5ff;
     border-radius: 50%;
-    font-size: 0.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    text-align: center;
   }
-  .viewAllBtn {
-    width: 100%;
-    justify-content: center;
-    padding: 1.25rem;
+  .blueSquare {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #3b82f6;
+    border-radius: 4px;
+  }
+
+  .iconGreenOrangeWrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .orangeCircle {
+    width: 16px;
+    height: 16px;
+    background-color: #fb923c;
+    border-radius: 50%;
+    margin-bottom: -4px; /* overlap */
+    z-index: 2;
+  }
+  .greenSemiCircle {
+    width: 40px;
+    height: 20px;
+    background-color: #22c55e;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
 }
