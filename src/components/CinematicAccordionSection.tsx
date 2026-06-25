@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
+import SmartVideo from "./SmartVideo";
 
 const pillars = [
   {
@@ -27,6 +28,16 @@ const pillars = [
 
 export default function CinematicAccordionSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   
   // Mobile Scroll Logic
   const targetRef = useRef<HTMLDivElement>(null);
@@ -37,10 +48,15 @@ export default function CinematicAccordionSection() {
   // 3 items = 300vw total width. To show the last item, we need to translate by -66.66%
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
 
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.666%"]);
+
+  if (!isMounted) return <section className={styles.section} style={{ minHeight: '100vh' }}></section>;
+
   return (
     <>
       {/* DESKTOP VIEW: Hover Accordion */}
-      <section className={styles.desktopView}>
+      {!isMobile && (
+        <section className={styles.desktopView}>
         <div 
           className={styles.accordionContainer}
           onMouseLeave={() => setActiveIndex(0)}
@@ -60,9 +76,7 @@ export default function CinematicAccordionSection() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className={styles.videoWrapper}>
-                  <video autoPlay loop muted playsInline className={styles.video}>
-                    <source src={pillar.videoSrc} type="video/webm" />
-                  </video>
+                  <SmartVideo src={pillar.videoSrc} className={styles.video} />
                 </div>
                 <div className={styles.overlay}></div>
 
@@ -92,18 +106,18 @@ export default function CinematicAccordionSection() {
             );
           })}
         </div>
-      </section>
+        </section>
+      )}
 
       {/* MOBILE VIEW: Sticky Horizontal Scroll */}
-      <section ref={targetRef} className={styles.mobileView}>
+      {isMobile && (
+        <section ref={targetRef} className={styles.mobileView}>
         <div className={styles.stickyContainer}>
           <motion.div style={{ x }} className={styles.horizontalScrollWrapper}>
             {pillars.map((pillar) => (
               <div key={`mobile-${pillar.id}`} className={styles.mobileCard}>
                 <div className={styles.videoWrapper}>
-                  <video autoPlay loop muted playsInline className={styles.videoMobile}>
-                    <source src={pillar.videoSrc} type="video/webm" />
-                  </video>
+                  <SmartVideo src={pillar.videoSrc} className={styles.videoMobile} />
                 </div>
                 <div className={styles.overlayMobile}></div>
                 <div className={styles.contentWrapperMobile}>
@@ -115,6 +129,7 @@ export default function CinematicAccordionSection() {
           </motion.div>
         </div>
       </section>
+      )}
     </>
   );
 }
