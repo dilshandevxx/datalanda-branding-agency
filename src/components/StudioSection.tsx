@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import styles from './StudioSection.module.css';
+import { siteConfig } from '../data/siteConfig';
 
 export default function StudioSection() {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -22,13 +23,13 @@ export default function StudioSection() {
       <div className={styles.container}>
         <div className={styles.gallery} ref={galleryRef}>
         <div className={styles.imageWrapper}>
-          <Image src="/studio_1.png" alt="Studio Graphic" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
+          <Image src={siteConfig.images.studio.image1} alt="Studio Graphic" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
         </div>
         <div className={styles.imageWrapper}>
-          <Image src="/studio_2.png" alt="Studio Interior" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
+          <Image src={siteConfig.images.studio.image2} alt="Studio Interior" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
         </div>
         <div className={styles.imageWrapper}>
-          <Image src="/studio_3.png" alt="Photo Studio" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
+          <Image src={siteConfig.images.studio.image3} alt="Photo Studio" fill sizes="(max-width: 992px) 80vw, 33vw" style={{ objectFit: 'cover' }} />
         </div>
       </div>
 

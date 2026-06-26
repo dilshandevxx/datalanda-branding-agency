@@ -9,5 +9,17 @@ export const siteConfig = {
       design: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm",
       execution: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782405943/scrolling_mshca0.webm",
     }
+  },
+  images: {
+    studio: {
+      image1: "/studio_1.png",
+      image2: "/studio_2.png",
+      image3: "/studio_3.png",
+    },
+    resources: {
+      image1: "/article_marketing.png",
+      image2: "/article_xcode.png",
+      image3: "/article_strategy.png",
+    }
   }
 };

@@ -2,10 +2,11 @@
 
 import Image from 'next/image';
 import styles from './BlogSection.module.css';
+import { siteConfig } from '../data/siteConfig';
 
 const posts = [
   {
-    image: "/work_1.png",
+    image: siteConfig.images.resources.image1,
     category: "Marketing",
     color: "#ff4d6d",
     date: "January 30, 2023",
@@ -13,7 +14,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "/work_2.png",
+    image: siteConfig.images.resources.image2,
     category: "Guides",
     color: "#10b981",
     date: "January 30, 2023",
@@ -21,7 +22,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "/hero-abstract.png",
+    image: siteConfig.images.resources.image3,
     category: "Strategy",
     color: "#8b5cf6",
     date: "January 30, 2023",
