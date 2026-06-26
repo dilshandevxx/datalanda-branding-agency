@@ -1,44 +1,61 @@
-.section {
-  padding: 0;
+.scrollTrack {
+  position: relative;
+  height: 300vh; /* Determines how long the animation lasts */
+  width: 100%;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  background-color: transparent; /* inherit from ThemeInversionController */
-  color: var(--foreground);
+  justify-content: center;
 }
 
-.container {
-  max-width: 1600px;
+.backgroundLayer {
+  position: absolute;
+  inset: 0;
+  background-color: #050505; /* Force very dark theme */
+  z-index: 0;
+}
+
+.contentWrapper {
+  position: relative;
   width: 100%;
+  height: 100%;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 4vw;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8vw;
-  align-items: center;
+  z-index: 1;
 }
 
 /* Left Column: Text */
 .textContent {
+  position: absolute;
+  left: 4vw;
+  top: 50%;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  color: #ffffff; /* Force white text */
+  transform: translateY(-50%); /* Start centered vertically */
+  z-index: 2; /* Keep above video initially */
 }
 
 .label {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1.5rem;
-  border: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent);
-  border-radius: 0; /* Sharp corners */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: color-mix(in srgb, var(--foreground) 3%, transparent);
+  background: rgba(255, 255, 255, 0.03);
   width: fit-content;
 }
 
@@ -54,9 +71,8 @@
 .description {
   font-size: clamp(1.125rem, 1.5vw, 1.5rem);
   line-height: 1.5;
-  color: var(--foreground);
-  opacity: 0.7;
-  max-width: 80%;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 90%;
   margin: 0;
 }
 
@@ -64,10 +80,10 @@
   margin-top: 2rem;
   width: fit-content;
   background: transparent;
-  color: var(--foreground);
-  border: 1px solid color-mix(in srgb, var(--foreground) 30%, transparent);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem 2rem;
-  border-radius: 0; /* Sharp corners */
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -77,23 +93,20 @@
 }
 
 .button:hover {
-  background: var(--foreground);
-  color: var(--background);
+  background: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
 }
 
-/* Right Column: Video Showcase */
+/* Video Showcase */
 .videoWrapper {
-  position: relative;
-  width: 100%;
-  max-height: 80vh; /* Constrain height to not overflow the 100vh container */
-  border-radius: 0; /* No rounded corners for the video */
+  position: absolute;
+  /* Top, left, width, height, and border-radius are animated via framer-motion */
   overflow: hidden;
-  background: color-mix(in srgb, var(--foreground) 2%, transparent);
-  border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px color-mix(in srgb, var(--foreground) 5%, transparent);
-  /* The video is portrait, so we can give it an aspect ratio */
-  aspect-ratio: 9 / 16;
+  background: #000;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  will-change: transform, width, height, border-radius;
 }
 
 .video {
@@ -103,49 +116,21 @@
   display: block;
 }
 
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
 @media (max-width: 992px) {
-  .grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 3rem;
-  }
-  
   .textContent {
-    position: relative;
-    top: 0;
-    align-items: flex-start;
-    text-align: left;
-  }
-  
-  .description {
-    max-width: 100%;
-  }
-  
-  .button {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .videoWrapper {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 80vw;
+    left: 10vw;
   }
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    background-color: #1a1a1a;
-    padding: 3rem 4vw 0 4vw; /* Remove bottom padding so video touches bottom */
-    gap: 3rem;
-    overflow: hidden;
-    width: calc(100% + 8vw); /* Break out of container 4vw padding */
-    margin-left: -4vw;
-    margin-right: -4vw;
-  }
-
   .title {
     font-size: clamp(2rem, 10vw, 3.5rem);
     word-break: break-word; 
@@ -153,15 +138,6 @@
 
   .description {
     font-size: 1rem;
-  }
-  
-  .videoWrapper {
-    width: calc(100% + 8vw); /* Break out of grid 4vw padding */
-    margin-left: -4vw;
-    margin-right: -4vw;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    border-radius: 0;
+    max-width: 100%;
   }
 }
