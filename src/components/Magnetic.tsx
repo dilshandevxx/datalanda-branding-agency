@@ -1,6 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function Magnetic({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
@@ -28,6 +28,6 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
       style={{ display: 'inline-block' }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

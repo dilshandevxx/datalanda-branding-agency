@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import SmartVideo from "./SmartVideo";
 import styles from "./BehindTheScenesSection.module.css";
 import { siteConfig } from "../data/siteConfig";
@@ -31,20 +31,20 @@ export default function BehindTheScenesSection() {
       <div className={styles.stickyContainer}>
         
         {/* The Video in the background */}
-        <motion.div 
+        <m.div 
           className={styles.videoWrapper}
           style={{ scale: videoScale }}
         >
           <SmartVideo src={siteConfig.videos.behindTheScenes} className={styles.video} />
-        </motion.div>
+        </m.div>
         
         {/* Dark overlay for text contrast */}
-        <motion.div 
+        <m.div 
           className={styles.darkOverlay}
           style={{ opacity: overlayOpacity }}
         />
         <div className={styles.contentWrapper}>
-          <motion.h2 
+          <m.h2 
             className={styles.text}
             style={{ 
               opacity: textOpacity,
@@ -54,7 +54,7 @@ export default function BehindTheScenesSection() {
             <span className={styles.accent}>Inside the Studio</span>
             WE DON'T JUST WRITE CODE.<br />
             WE CRAFT DIGITAL EXPERIENCES.
-          </motion.h2>
+          </m.h2>
         </div>
 
       </div>

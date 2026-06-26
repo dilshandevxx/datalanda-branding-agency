@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function Preloader() {
   const [isComplete, setIsComplete] = useState(false);
@@ -29,7 +29,7 @@ export default function Preloader() {
       }}
     >
       {Array.from({ length: columns }).map((_, i) => (
-        <motion.div
+        <m.div
           key={i}
           initial={{ y: 0 }}
           animate={isComplete ? { y: '-100vh' } : { y: 0 }}

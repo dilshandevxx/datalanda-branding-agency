@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import SmartVideo from './SmartVideo';
 import styles from './AppShowcaseSection.module.css';
 import { siteConfig } from '../data/siteConfig';
@@ -42,45 +42,45 @@ export default function AppShowcaseSection() {
     <section ref={containerRef} className={styles.scrollTrack}>
       <div className={styles.stickyContainer}>
         {/* Animated Background */}
-        <motion.div 
+        <m.div 
           className={styles.backgroundLayer} 
           style={{ backgroundColor: bgColor }} 
         />
         
         <div className={styles.contentWrapper}>
-          <motion.div 
+          <m.div 
             className={styles.textContent}
             style={{ 
               color: finalTextColor
             }}
           >
-            <motion.div 
+            <m.div 
               className={styles.label}
               style={{ borderColor: finalBorderColor, backgroundColor: finalLabelBg }}
             >
               Featured Product
-            </motion.div>
+            </m.div>
             
             <h2 className={styles.title}>
               DIGITAL ECOSYSTEMS.
             </h2>
             
-            <motion.p 
+            <m.p 
               className={styles.description}
               style={{ color: finalDescColor }}
             >
               We don't just design screens; we architect seamless digital product ecosystems that drive user engagement and business growth.
-            </motion.p>
+            </m.p>
             
-            <motion.button 
+            <m.button 
               className={styles.button}
               style={{ color: finalTextColor, borderColor: finalBorderColor }}
             >
               View Case Study
-            </motion.button>
-          </motion.div>
+            </m.button>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             className={styles.videoWrapper}
             style={{ 
               left: videoLeft,
@@ -94,7 +94,7 @@ export default function AppShowcaseSection() {
           >
             <SmartVideo src={siteConfig.videos.appShowcase} className={styles.video} />
             <div className={styles.videoOverlay}></div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

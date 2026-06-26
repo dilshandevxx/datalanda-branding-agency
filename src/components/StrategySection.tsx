@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import styles from './StrategySection.module.css';
 
 export default function StrategySection() {
@@ -43,7 +43,7 @@ export default function StrategySection() {
               <span className={styles.metaTitle}>STRATEGY & EXECUTION</span>
             </div>
             
-            <motion.h2 
+            <m.h2 
               className={styles.title}
               style={{ x: titleX, opacity: titleOpacity }}
             >
@@ -51,10 +51,10 @@ export default function StrategySection() {
               <span className={styles.titleLine}>
                 <em className={styles.titleItalic}>your brand</em> to chance.
               </span>
-            </motion.h2>
+            </m.h2>
           </div>
           
-          <motion.div 
+          <m.div 
             className={styles.bottomBlock}
             style={{ x: bottomX, opacity: bottomOpacity }}
           >
@@ -73,7 +73,7 @@ export default function StrategySection() {
                 </svg>
               </span>
             </button>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

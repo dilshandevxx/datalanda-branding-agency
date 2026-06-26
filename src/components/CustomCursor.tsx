@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -37,7 +37,7 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <motion.div
+    <m.div
       animate={{
         x: mousePosition.x - (isHovered ? 40 : 10),
         y: mousePosition.y - (isHovered ? 40 : 10),
@@ -60,7 +60,7 @@ export default function CustomCursor() {
       }}
     >
       {isHovered && (
-        <motion.span
+        <m.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
@@ -73,8 +73,8 @@ export default function CustomCursor() {
           }}
         >
           EXPLORE
-        </motion.span>
+        </m.span>
       )}
-    </motion.div>
+    </m.div>
   );
 }

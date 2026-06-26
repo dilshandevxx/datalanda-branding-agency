@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { m, useScroll, useTransform, MotionValue } from 'framer-motion';
 import styles from './IntroSection.module.css';
 
 const text = "We are a digital engineering collective. We blend cutting-edge technology with world-class design to build products that define the future.";
@@ -9,11 +9,11 @@ const text = "We are a digital engineering collective. We blend cutting-edge tec
 const Word = ({ children, progress, range }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number] }) => {
   const color = useTransform(progress, range, ["rgba(255,255,255,0.15)", "rgba(255,255,255,1)"]);
   return (
-    <motion.span 
+    <m.span 
       style={{ color, display: 'inline-block', marginRight: '0.25em' }}
     >
       {children}
-    </motion.span>
+    </m.span>
   );
 };
 

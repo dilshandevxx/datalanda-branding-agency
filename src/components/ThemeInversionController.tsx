@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
+import { useScroll, useTransform, m, useMotionValueEvent } from "framer-motion";
 
 export default function ThemeInversionController({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,7 +54,7 @@ export default function ThemeInversionController({ children }: { children: React
         position: "relative"
       }}
     >
-      <motion.div
+      <m.div
         ref={innerRef}
         style={{
           position: isMobile ? "relative" : "sticky",
@@ -68,7 +68,7 @@ export default function ThemeInversionController({ children }: { children: React
         }}
       >
         {children}
-      </motion.div>
+      </m.div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Header from "@/components/Header";
 import { getProjectById, ALL_PROJECTS, Project } from "@/data/projects";
 import styles from "./ProjectDetail.module.css";
@@ -40,7 +40,7 @@ export default function ProjectDetail() {
       <div className={styles.container}>
         
         {/* Hero Card */}
-        <motion.section 
+        <m.section 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -73,11 +73,11 @@ export default function ProjectDetail() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </m.section>
 
         {/* Content Cards Grid */}
         <section className={styles.contentGrid}>
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -86,9 +86,9 @@ export default function ProjectDetail() {
           >
             <h3 className={styles.cardLabel}>The Challenge</h3>
             <p className={styles.bodyText}>{project.challenge}</p>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -97,13 +97,13 @@ export default function ProjectDetail() {
           >
             <h3 className={styles.cardLabel}>Our Solution</h3>
             <p className={styles.bodyText}>{project.solution}</p>
-          </motion.div>
+          </m.div>
         </section>
 
         {/* Gallery Grid */}
         <section className={styles.galleryGrid}>
           {project.gallery.map((img, idx) => (
-            <motion.div 
+            <m.div 
               key={idx}
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -118,14 +118,14 @@ export default function ProjectDetail() {
                 sizes="(max-width: 992px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }} 
               />
-            </motion.div>
+            </m.div>
           ))}
         </section>
 
         {/* Next Project Card */}
         {nextProject && (
           <Link href={`/projects/${nextProject.id}`} passHref legacyBehavior>
-            <motion.a 
+            <m.a 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -134,7 +134,7 @@ export default function ProjectDetail() {
             >
               <span className={styles.nextLabel}>Next Project</span>
               <h2 className={styles.nextTitle}>{nextProject.title}</h2>
-            </motion.a>
+            </m.a>
           </Link>
         )}
         

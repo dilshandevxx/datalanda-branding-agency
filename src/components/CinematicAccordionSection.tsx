@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
 import SmartVideo from "./SmartVideo";
 import { siteConfig } from "../data/siteConfig";
@@ -45,7 +45,7 @@ export default function CinematicAccordionSection() {
             const isActive = activeIndex === index;
 
             return (
-              <motion.div
+              <m.div
                 key={pillar.id}
                 className={`${styles.pillar} ${isActive ? styles.pillarActive : ""}`}
                 onMouseEnter={() => setActiveIndex(index)}
@@ -61,15 +61,15 @@ export default function CinematicAccordionSection() {
                 <div className={styles.overlay}></div>
 
                 <div className={styles.contentWrapper}>
-                  <motion.div className={styles.titleBlock} layout="position">
+                  <m.div className={styles.titleBlock} layout="position">
                     <span className={styles.num}>{pillar.num}</span>
                     <div className={styles.line}></div>
                     <h3 className={styles.title}>{pillar.title}</h3>
-                  </motion.div>
+                  </m.div>
                   
                   <AnimatePresence>
                     {isActive && (
-                      <motion.p
+                      <m.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
@@ -77,11 +77,11 @@ export default function CinematicAccordionSection() {
                         className={styles.description}
                       >
                         {pillar.description}
-                      </motion.p>
+                      </m.p>
                     )}
                   </AnimatePresence>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

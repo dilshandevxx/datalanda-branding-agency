@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import CookieBanner from "@/components/CookieBanner";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,11 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}>
       <body>
-        <Preloader />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        <CookieBanner />
+        <LazyMotion features={domAnimation}>
+          <Preloader />
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <CookieBanner />
+        </LazyMotion>
       </body>
     </html>
   );
