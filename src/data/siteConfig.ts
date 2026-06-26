@@ -8,6 +8,7 @@ export const siteConfig = {
       strategy: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto:best/v1782389596/walking-people_chkyso.webm",
       design: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto:best/v1782389595/typing_ylyekm.webm",
       execution: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto:best/v1782405943/scrolling_mshca0.webm",
+      projectinmind: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto:best/v1782405943/scrolling_mshca0.webm",
     }
   },
   images: {

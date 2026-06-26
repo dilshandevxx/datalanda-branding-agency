@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { siteConfig } from '@/data/siteConfig';
 import styles from './VideoMaskCTA.module.css';
 
 export default function VideoMaskCTA() {
@@ -35,7 +36,7 @@ export default function VideoMaskCTA() {
             loop 
             muted 
             playsInline
-            src="https://cdn.coverr.co/videos/coverr-abstract-neon-light-trails-2580/1080p.mp4" 
+            src={siteConfig.videos.cinematicAccordion.projectinmind} 
           />
         </div>
 
