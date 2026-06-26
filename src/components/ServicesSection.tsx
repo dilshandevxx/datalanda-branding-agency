@@ -111,7 +111,7 @@ export default function ServicesSection() {
             <div className={styles.dot}></div>
             <span>OUR SERVICES</span>
           </div>
-          <h2 className={styles.title}>Start-to-end app<br/>development agency</h2>
+          <h2 className={styles.title}>Elevating brands through<br/>design and engineering</h2>
         </div>
 
         <div className={styles.grid}>
