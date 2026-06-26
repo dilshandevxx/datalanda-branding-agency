@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { Logo } from './Logo';
 import styles from './FooterSection.module.css';
 
 export default function FooterSection() {
@@ -11,7 +12,10 @@ export default function FooterSection() {
         <div className={styles.mainGrid}>
           {/* Column 1 */}
           <div className={styles.brandCol}>
-            <h2 className={styles.logo}>SKYLABS.</h2>
+            <h2 className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
+              <Logo />
+              SKYLABS.
+            </h2>
             <p className={styles.desc}>
               SKYLABS is a stunning and bold digital agency, perfectly suited for creative brands and enterprise platforms. With modern design and advanced engineering, it takes your website to the next level.
             </p>

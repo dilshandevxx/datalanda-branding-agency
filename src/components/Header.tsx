@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Logo } from './Logo';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -34,7 +35,10 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
-      <Link href="/#hero" className={styles.logo}>SKYLABS</Link>
+      <Link href="/#hero" className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
+        <Logo />
+        SKYLABS
+      </Link>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>
           <Link href="/#services" className={styles.navLink}>Services</Link>
