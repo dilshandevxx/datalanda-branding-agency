@@ -5,7 +5,7 @@ import styles from './BlogSection.module.css';
 
 const posts = [
   {
-    image: "/service_1.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     category: "Marketing",
     color: "#ff4d6d",
     date: "January 30, 2023",
@@ -13,7 +13,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "/service_2.png",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
     category: "Guides",
     color: "#10b981",
     date: "January 30, 2023",
@@ -21,7 +21,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "/service_3.png",
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop",
     category: "Strategy",
     color: "#8b5cf6",
     date: "January 30, 2023",
