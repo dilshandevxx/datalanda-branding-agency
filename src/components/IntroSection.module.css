@@ -37,6 +37,14 @@
   letter-spacing: -0.02em;
 }
 
+.serifWord {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent); /* Adds a slight highlight if accent is different, otherwise looks elegant */
+}
+
 .stats {
   display: flex;
   gap: 6vw;

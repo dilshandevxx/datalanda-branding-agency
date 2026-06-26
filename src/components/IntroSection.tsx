@@ -4,12 +4,35 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import styles from './IntroSection.module.css';
 
-const text = "We are a digital engineering collective. We blend cutting-edge technology with world-class design to build products that define the future.";
+const textWords = [
+  { word: "We", serif: false },
+  { word: "are", serif: false },
+  { word: "digital", serif: false },
+  { word: "artisans.", serif: true },
+  { word: "We", serif: false },
+  { word: "blend", serif: false },
+  { word: "visionary", serif: false },
+  { word: "technology", serif: false },
+  { word: "with", serif: false },
+  { word: "timeless", serif: true },
+  { word: "design", serif: true },
+  { word: "to", serif: false },
+  { word: "create", serif: false },
+  { word: "experiences", serif: false },
+  { word: "that", serif: false },
+  { word: "elevate", serif: true },
+  { word: "the", serif: false },
+  { word: "human", serif: false },
+  { word: "condition.", serif: false },
+];
 
-const Word = ({ children, progress, range }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number] }) => {
+const Word = ({ children, progress, range, isSerif }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number], isSerif?: boolean }) => {
   const opacity = useTransform(progress, range, [0.15, 1]);
   return (
-    <motion.span style={{ opacity, display: 'inline-block', marginRight: '0.25em' }}>
+    <motion.span 
+      className={isSerif ? styles.serifWord : ""}
+      style={{ opacity, display: 'inline-block', marginRight: '0.25em' }}
+    >
       {children}
     </motion.span>
   );
@@ -23,7 +46,7 @@ export default function IntroSection() {
     offset: ["start 75%", "end 50%"]
   });
 
-  const words = text.split(" ");
+
 
   return (
     <section className={styles.intro} ref={containerRef}>
@@ -33,12 +56,12 @@ export default function IntroSection() {
         </div>
         <div className={styles.textWrapper}>
           <h2 className={styles.headline}>
-            {words.map((word, i) => {
-              const start = i / words.length;
-              const end = start + (1 / words.length);
+            {textWords.map((item, i) => {
+              const start = i / textWords.length;
+              const end = start + (1 / textWords.length);
               return (
-                <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                  {word}
+                <Word key={i} progress={scrollYProgress} range={[start, end]} isSerif={item.serif}>
+                  {item.word}
                 </Word>
               );
             })}
