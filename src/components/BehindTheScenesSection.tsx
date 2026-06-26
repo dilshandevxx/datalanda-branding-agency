@@ -44,7 +44,7 @@ export default function BehindTheScenesSection() {
             className={styles.maskTextContainer}
             style={{ scale: maskScale }}
           >
-            <h1 className={styles.maskText}>BEHIND</h1>
+            <h1 className={styles.maskText}>STUDIO</h1>
           </motion.div>
         </div>
 
@@ -57,7 +57,7 @@ export default function BehindTheScenesSection() {
               y: textY 
             }}
           >
-            <span className={styles.accent}>Behind the Scenes</span>
+            <span className={styles.accent}>Inside the Studio</span>
             WE DON'T JUST WRITE CODE.<br />
             WE CRAFT DIGITAL EXPERIENCES.
           </motion.h2>

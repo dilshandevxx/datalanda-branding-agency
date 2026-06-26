@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: center;
   will-change: transform;
-  transform-origin: 48% 50%; /* Zoom into the solid part of the 'I' in BEHIND */
+  transform-origin: 54% 50%; /* Zoom into the thick stem of the 'D' in STUDIO */
 }
 
 .maskText {
