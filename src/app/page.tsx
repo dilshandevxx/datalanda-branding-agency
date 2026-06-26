@@ -17,6 +17,7 @@ const SpotlightSection = dynamic(() => import('@/components/SpotlightSection'));
 const TestimonialSection = dynamic(() => import('@/components/TestimonialSection'));
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
+const VideoMaskCTA = dynamic(() => import('@/components/VideoMaskCTA'));
 const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
@@ -38,6 +39,7 @@ export default function Home() {
       <TestimonialSection />
       <FaqSection />
       <BlogSection />
+      <VideoMaskCTA />
       <FooterCTASection />
       <FooterSection />
     </main>
