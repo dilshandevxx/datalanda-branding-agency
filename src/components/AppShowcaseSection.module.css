@@ -18,7 +18,7 @@
 .backgroundLayer {
   position: absolute;
   inset: 0;
-  /* background-color is now controlled by framer-motion inline style */
+  background-color: #050505; /* Default dark theme */
   z-index: 0;
 }
 
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* color and opacity are now controlled by framer-motion inline style */
+  color: #ffffff; /* Default white text */
   transform: translateY(-50%); /* Base position, modified by framer-motion 'y' */
   z-index: 2; /* Keep above video initially */
 }
@@ -57,7 +57,8 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   width: fit-content;
-  /* border-color and background-color are controlled by framer-motion */
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .title {
@@ -74,7 +75,7 @@
   line-height: 1.5;
   max-width: 90%;
   margin: 0;
-  /* color is controlled by framer-motion */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .button {
@@ -91,13 +92,11 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
-  /* color and border-color are controlled by framer-motion */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .button:hover {
-  /* On hover, invert the colors essentially, but since the color is dynamic, we'll just use a generic hover effect.
-     For simplicity in a dynamic theme, scaling or opacity is safer, or hardcoding an inversion based on current theme, 
-     but let's just make it slightly darker/lighter. */
   transform: translateY(-2px);
   background-color: rgba(128, 128, 128, 0.2); 
 }
