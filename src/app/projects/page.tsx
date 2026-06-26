@@ -60,11 +60,13 @@ export default function ProjectsPage() {
                   style={{ objectFit: 'cover' }} 
                 />
               </div>
+              <div className={styles.categoryBadge}>
+                {project.category}
+              </div>
             </div>
             <div className={styles.projectInfo}>
               <h3 className={styles.projectTitle}>{project.title}</h3>
               <p className={styles.projectDescription}>{project.shortDescription}</p>
-              <span className={styles.projectDate}>{project.date}</span>
             </div>
           </Link>
         ))}
