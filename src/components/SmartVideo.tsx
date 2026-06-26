@@ -36,7 +36,7 @@ export default function SmartVideo({ src, className, children, preload = "none",
       preload={preload} // Allow overriding for above-the-fold videos
       {...props}
     >
-      {children || (src && <source src={src} type="video/webm" />)}
+      {children || (src && <source src={src} />)}
     </video>
   );
 }
