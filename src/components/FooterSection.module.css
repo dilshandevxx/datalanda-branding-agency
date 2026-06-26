@@ -123,7 +123,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 50px; /* STRICTLY NO ROUND CORNERS */
+  border-radius: 0; /* STRICTLY NO ROUND CORNERS */
   transition: background-color 0.3s ease;
   width: fit-content;
 }
