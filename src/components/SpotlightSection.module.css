@@ -90,29 +90,31 @@
 }
 
 .button {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--foreground);
-  color: var(--background);
-  border: none;
-  padding: 1.25rem 2.5rem;
-  border-radius: 0;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.25rem 3rem;
+  border-radius: 50px; /* Elegant pill shape */
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .button:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  background: var(--accent);
-  color: var(--foreground);
+  transform: translateY(-4px);
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
