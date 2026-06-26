@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
-      <Link href="/#hero" className={styles.logo}>DataLands</Link>
+      <Link href="/#hero" className={styles.logo}>SKYLABS</Link>
       <div className={styles.rightSection}>
         <nav className={styles.nav}>
           <Link href="/#services" className={styles.navLink}>Services</Link>
@@ -65,7 +65,7 @@ export default function Header() {
           <Link href="/#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
         </nav>
         <div className={styles.mobileFooter}>
-          <a href="mailto:hello@datalands.com" className={styles.mobileEmail}>hello@datalands.com</a>
+          <a href="mailto:hello@skylabs.com" className={styles.mobileEmail}>hello@skylabs.com</a>
         </div>
       </div>
     </header>

@@ -9,7 +9,7 @@ export default function FaqSection() {
   const faqs = [
     {
       q: "Do you provide services outside your local area?",
-      a: "Yes, DataLands is a global digital agency. We partner with clients worldwide, and our communication processes are perfectly optimized for remote collaboration."
+      a: "Yes, SKYLABS is a global digital agency. We partner with clients worldwide, and our communication processes are perfectly optimized for remote collaboration."
     },
     {
       q: "What technologies do you use for development?",

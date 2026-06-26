@@ -11,9 +11,9 @@ export default function FooterSection() {
         <div className={styles.mainGrid}>
           {/* Column 1 */}
           <div className={styles.brandCol}>
-            <h2 className={styles.logo}>DataLands.</h2>
+            <h2 className={styles.logo}>SKYLABS.</h2>
             <p className={styles.desc}>
-              DataLands is a stunning and bold digital agency, perfectly suited for creative brands and enterprise platforms. With modern design and advanced engineering, it takes your website to the next level.
+              SKYLABS is a stunning and bold digital agency, perfectly suited for creative brands and enterprise platforms. With modern design and advanced engineering, it takes your website to the next level.
             </p>
             <div className={styles.socials}>
               <a href="#">in</a>
@@ -64,7 +64,7 @@ export default function FooterSection() {
         </div>
 
         <div className={styles.bottomRow}>
-          <div className={styles.copyright}>© DataLands — Powered by Next.js — Created by Agency</div>
+          <div className={styles.copyright}>© SKYLABS — Powered by Next.js — Created by Agency</div>
         </div>
         
       </div>

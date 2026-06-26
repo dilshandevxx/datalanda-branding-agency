@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "DataLands | Premium Brand Identity Agency",
+  title: "SKYLABS | Premium Brand Identity Agency",
   description: "Crafting digital landscapes driven by data and design. We forge comprehensive brand identities.",
 };
 

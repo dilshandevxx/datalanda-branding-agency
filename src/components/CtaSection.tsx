@@ -11,7 +11,7 @@ export default function CtaSection() {
         <p className={styles.subtitle}>Have a project in mind?</p>
         
         <Magnetic>
-          <a href="mailto:hello@datalands.com" className={styles.hugeLink}>
+          <a href="mailto:hello@skylabs.com" className={styles.hugeLink}>
             LET'S WORK <br />
             TOGETHER <span className={styles.arrow}>↗</span>
           </a>

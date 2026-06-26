@@ -8,7 +8,7 @@ export default function CookieBanner() {
 
   useEffect(() => {
     // Check if the user has already made a choice
-    const consent = localStorage.getItem('datalands_cookie_consent');
+    const consent = localStorage.getItem('skylabs_cookie_consent');
     if (!consent) {
       // Show the banner with a slight delay for a smoother entrance
       const timer = setTimeout(() => {
@@ -19,12 +19,12 @@ export default function CookieBanner() {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('datalands_cookie_consent', 'accepted');
+    localStorage.setItem('skylabs_cookie_consent', 'accepted');
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('datalands_cookie_consent', 'declined');
+    localStorage.setItem('skylabs_cookie_consent', 'declined');
     setIsVisible(false);
   };
 
