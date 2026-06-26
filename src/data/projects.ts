@@ -12,6 +12,8 @@ export interface Project {
   gallery: string[];
   date: string;
   shortDescription: string;
+  websiteUrl?: string;     // URL to the live project website
+  cardImageUrl?: string;   // Alternative image URL for the project card
 }
 
 export const ALL_PROJECTS: Project[] = [
@@ -28,7 +30,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We developed a stark, high-contrast brutalist interface that relies heavily on macro-typography and microscopic grid lines.",
     gallery: ["/projects/imac_mockup.png", "/service_1.png"],
     date: "02 September 2025",
-    shortDescription: "How strategic brand transformation enabled Instant Aid to secure UN partnerships and deliver life-saving support."
+    shortDescription: "How strategic brand transformation enabled Instant Aid to secure UN partnerships and deliver life-saving support.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 2,
@@ -43,7 +47,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We stripped away all unnecessary color and relied entirely on a monochromatic grayscale palette with stark, dramatic photography.",
     gallery: ["/projects/laptop_mockup.png", "/service_3.png"],
     date: "14 November 2024",
-    shortDescription: "Driftime® CCO, Abb-d Taiyo speaks to Civil Society Magazine for an in-depth feature on how a focused, strategic rebrand can revitalise charity missions."
+    shortDescription: "Driftime® CCO, Abb-d Taiyo speaks to Civil Society Magazine for an in-depth feature on how a focused, strategic rebrand can revitalise charity missions.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 3,
@@ -58,7 +64,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We utilized an abrasive, high-contrast neon-on-black color palette.",
     gallery: ["/projects/tablet_poster_mockup.png", "/service_1.png"],
     date: "17 July 2024",
-    shortDescription: "We got our hands dirty in our latest Driftime® Hackathon, creating GRO-OP, a top-of-the-crops prototype web-app designed to redistribute surplus harvests."
+    shortDescription: "We got our hands dirty in our latest Driftime® Hackathon, creating GRO-OP, a top-of-the-crops prototype web-app designed to redistribute surplus harvests.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 4,
@@ -73,7 +81,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We built the entire system around a strict 8px grid and a heavily constrained color palette.",
     gallery: ["/projects/laptop_report_mockup.png", "/service_2.png"],
     date: "29 May 2024",
-    shortDescription: "Driftime® have launched a brand new report exploring design-led directions, industry observations, and innovation towards impact."
+    shortDescription: "Driftime® have launched a brand new report exploring design-led directions, industry observations, and innovation towards impact.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 5,
@@ -88,7 +98,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We went entirely in the opposite direction: matte black, heavy, brutalist aluminum canisters.",
     gallery: ["/projects/imac_mockup.png", "/service_3.png"],
     date: "04 December 2023",
-    shortDescription: "We took some time to chat with Art Not Evidence ahead of their launch to hear more about the project, the people behind the scenes, and what digital design can do."
+    shortDescription: "We took some time to chat with Art Not Evidence ahead of their launch to hear more about the project, the people behind the scenes, and what digital design can do.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 6,
@@ -103,7 +115,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We created a dark-mode exclusive application that uses spatial color-coding.",
     gallery: ["/projects/laptop_mockup.png", "/service_1.png"],
     date: "17 November 2023",
-    shortDescription: "The first in a series of interviews with our partners and collaborators, Driftime catches up with Roadrunner Venture Studios as they launch their new visual identity."
+    shortDescription: "The first in a series of interviews with our partners and collaborators, Driftime catches up with Roadrunner Venture Studios as they launch their new visual identity.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 7,
@@ -118,7 +132,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We designed a data-dense, military-inspired interface.",
     gallery: ["/projects/tablet_poster_mockup.png", "/service_2.png"],
     date: "24 August 2023",
-    shortDescription: "A four day Hackathon took the Drifteam off the beaten track this April, aligning digital design with on-the-ground action, resulting in a new web-app prototype ROAM."
+    shortDescription: "A four day Hackathon took the Drifteam off the beaten track this April, aligning digital design with on-the-ground action, resulting in a new web-app prototype ROAM.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 8,
@@ -133,7 +149,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We built a fluid, cursor-driven liquid simulation that distorts the portfolio images.",
     gallery: ["/projects/laptop_report_mockup.png", "/service_3.png"],
     date: "22 May 2023",
-    shortDescription: "The White House announce our work with The Quad Investors Network, a non-profit organisation working with investors across Australia, India, Japan, and the US."
+    shortDescription: "The White House announce our work with The Quad Investors Network, a non-profit organisation working with investors across Australia, India, Japan, and the US.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 9,
@@ -148,7 +166,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We utilized massive, full-bleed photography and asynchronous page transitions.",
     gallery: ["/projects/imac_mockup.png", "/service_1.png"],
     date: "11 January 2023",
-    shortDescription: "Driftime champions an integrated practice with their future-focused collaborators Only One."
+    shortDescription: "Driftime champions an integrated practice with their future-focused collaborators Only One.",
+    websiteUrl: "",
+    cardImageUrl: ""
   },
   {
     id: 10,
@@ -163,7 +183,9 @@ export const ALL_PROJECTS: Project[] = [
     solution: "We used brutalist architectural motifs to visually communicate security.",
     gallery: ["/projects/laptop_mockup.png", "/service_2.png"],
     date: "10 October 2022",
-    shortDescription: "Our exploration into Web3 ecosystems resulted in a highly secure, brutally styled digital wallet interface."
+    shortDescription: "Our exploration into Web3 ecosystems resulted in a highly secure, brutally styled digital wallet interface.",
+    websiteUrl: "",
+    cardImageUrl: ""
   }
 ];
 

@@ -71,6 +71,20 @@ export default function ProjectDetail() {
                 <span className={styles.metaLabel}>Year</span>
                 <span className={styles.metaValue}>{project.year}</span>
               </div>
+              {project.websiteUrl && (
+                <div className={styles.metaItem}>
+                  <span className={styles.metaLabel}>Website</span>
+                  <a 
+                    href={project.websiteUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.metaValue}
+                    style={{ textDecoration: 'underline', color: '#00f0ff' }}
+                  >
+                    Visit Live Site ↗
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </m.section>

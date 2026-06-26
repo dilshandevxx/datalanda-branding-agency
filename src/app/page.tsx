@@ -17,7 +17,6 @@ const SpotlightSection = dynamic(() => import('@/components/SpotlightSection'));
 const TestimonialSection = dynamic(() => import('@/components/TestimonialSection'));
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
-const ProjectInMindCTA = dynamic(() => import('@/components/ProjectInMindCTA'));
 const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
@@ -39,7 +38,6 @@ export default function Home() {
       <TestimonialSection />
       <FaqSection />
       <BlogSection />
-      <ProjectInMindCTA />
       <FooterCTASection />
       <FooterSection />
     </main>
