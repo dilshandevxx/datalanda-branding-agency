@@ -65,6 +65,7 @@ export default function IntroSection() {
           </div>
         </div>
         </div>
+        </div>
       </div>
     </section>
   );
