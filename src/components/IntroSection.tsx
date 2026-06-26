@@ -27,11 +27,12 @@ const textWords = [
 ];
 
 const Word = ({ children, progress, range, isSerif }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number], isSerif?: boolean }) => {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+  const opacity = useTransform(progress, range, [0.1, 1]);
+  const y = useTransform(progress, range, [12, 0]); // Adds a beautiful subtle slide-up effect
   return (
     <motion.span 
       className={isSerif ? styles.serifWord : ""}
-      style={{ opacity, display: 'inline-block', marginRight: '0.25em' }}
+      style={{ opacity, y, display: 'inline-block', marginRight: '0.25em' }}
     >
       {children}
     </motion.span>
@@ -43,7 +44,9 @@ export default function IntroSection() {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 75%", "end 50%"]
+    // Start when the top of the section enters the bottom 85% of the screen.
+    // Finish completely when the top reaches 30% of the screen (well before it exits).
+    offset: ["start 85%", "start 30%"]
   });
 
 
