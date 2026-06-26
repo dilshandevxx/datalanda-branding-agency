@@ -1,34 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './WorkSection.module.css';
+import { ALL_PROJECTS } from '@/data/projects';
 
 export default function WorkSection() {
-  const projects = [
-    {
-      id: 1,
-      title: "Audio Space App",
-      img: "/work_1.png",
-      ratioClass: styles.ratioSquare
-    },
-    {
-      id: 2,
-      title: "Onyx Packaging",
-      img: "/work_2.png",
-      ratioClass: styles.ratioSquare
-    },
-    {
-      id: 3,
-      title: "Fintech Dashboard",
-      img: "/work_1.png", 
-      ratioClass: styles.ratioSquare
-    },
-    {
-      id: 4,
-      title: "Aura Skincare",
-      img: "/work_2.png", 
-      ratioClass: styles.ratioSquare
-    }
-  ];
+  const projects = ALL_PROJECTS.slice(0, 4);
 
   return (
     <section className={styles.section}>
@@ -40,11 +16,13 @@ export default function WorkSection() {
 
         <div className={styles.grid}>
           {projects.map((project, i) => (
-            <div 
+            <Link 
+              href={`/projects/${project.id}`}
               key={project.id} 
               className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
+              style={{ display: 'block' }} // Ensure link behaves as a block
             >
-              <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
+              <div className={`${styles.imageWrapper} ${styles.ratioSquare}`}>
                 <div className={styles.imageInner}>
                   <Image 
                     src={project.img} 
@@ -55,7 +33,7 @@ export default function WorkSection() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

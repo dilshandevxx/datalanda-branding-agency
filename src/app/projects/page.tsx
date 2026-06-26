@@ -4,80 +4,9 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import FooterSection from '@/components/FooterSection';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Projects.module.css';
-
-const ALL_PROJECTS = [
-  {
-    id: 1,
-    title: "NeuroGen platform",
-    category: "AI",
-    img: "/work_1.png",
-    ratioClass: styles.ratioStandard
-  },
-  {
-    id: 2,
-    title: "EcoSpace Web",
-    category: "Web",
-    img: "/work_2.png",
-    ratioClass: styles.ratioPortrait
-  },
-  {
-    id: 3,
-    title: "Visionary ML",
-    category: "ML",
-    img: "/work_1.png", 
-    ratioClass: styles.ratioWide
-  },
-  {
-    id: 4,
-    title: "Flow UI Kit",
-    category: "UI/UX",
-    img: "/work_2.png", 
-    ratioClass: styles.ratioSquare
-  },
-  {
-    id: 5,
-    title: "Onyx Packaging",
-    category: "Branding",
-    img: "/work_1.png",
-    ratioClass: styles.ratioPortrait
-  },
-  {
-    id: 6,
-    title: "Predictive Engines",
-    category: "ML",
-    img: "/work_2.png",
-    ratioClass: styles.ratioStandard
-  },
-  {
-    id: 7,
-    title: "Fitness Tracker App",
-    category: "Mobile",
-    img: "/work_1.png",
-    ratioClass: styles.ratioWide
-  },
-  {
-    id: 8,
-    title: "Creative Portfolio Web",
-    category: "Web",
-    img: "/work_2.png",
-    ratioClass: styles.ratioSquare
-  },
-  {
-    id: 9,
-    title: "Aura Skincare",
-    category: "E-Commerce",
-    img: "/work_1.png",
-    ratioClass: styles.ratioStandard
-  },
-  {
-    id: 10,
-    title: "Crypto Wallet App",
-    category: "Web3",
-    img: "/work_2.png",
-    ratioClass: styles.ratioPortrait
-  }
-];
+import { ALL_PROJECTS } from '@/data/projects';
 
 const CATEGORIES = ["All", "Web", "Mobile", "UI/UX", "Branding", "AI", "ML", "E-Commerce", "Web3"];
 
@@ -113,11 +42,13 @@ export default function ProjectsPage() {
 
       <div className={styles.grid}>
         {filteredProjects.map((project, i) => (
-          <div 
+          <Link 
+            href={`/projects/${project.id}`}
             key={`${project.id}-${activeCategory}`} 
             className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
+            style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
           >
-            <div className={`${styles.imageWrapper} ${project.ratioClass}`}>
+            <div className={`${styles.imageWrapper} ${styles[project.ratioClass]}`}>
               <div className={styles.imageInner}>
                 <Image 
                   src={project.img} 
@@ -134,7 +65,7 @@ export default function ProjectsPage() {
                 <span className={styles.projectCategory}>{project.category}</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
