@@ -8,36 +8,38 @@ import Link from 'next/link';
 import styles from './Projects.module.css';
 import { ALL_PROJECTS } from '@/data/projects';
 
-const CATEGORIES = ["All", "Web", "Mobile", "UI/UX", "Branding", "AI", "ML", "E-Commerce", "Web3"];
+// Using the exact filters from the screenshot
+const CATEGORIES = ["Featured", "Latest News", "All", "Studio", "Perspective", "Publications", "Press", "Work"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = activeCategory === "All" 
     ? ALL_PROJECTS 
-    : ALL_PROJECTS.filter(p => p.category === activeCategory);
+    : ALL_PROJECTS; // Just showing all for mock purposes, or could filter by matching mock category
 
   return (
     <main className={styles.pageWrapper}>
       <Header />
       
       <div className={styles.hero}>
-        <h1 className={styles.title}>OUR WORK.</h1>
-        <p className={styles.subtitle}>
-          We craft digital experiences that merge cutting-edge technology with stunning design.
-        </p>
+        <h1 className={styles.title}>
+          OUR THOUGHTS<br/>AND INSIGHT
+        </h1>
       </div>
 
       <div className={styles.filterBar}>
-        {CATEGORIES.map(cat => (
-          <button 
-            key={cat}
-            className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeFilter : ''}`}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
+        <div className={styles.filterContainer}>
+          {CATEGORIES.map(cat => (
+            <button 
+              key={cat}
+              className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeFilter : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className={styles.grid}>
@@ -45,25 +47,24 @@ export default function ProjectsPage() {
           <Link 
             href={`/projects/${project.id}`}
             key={`${project.id}-${activeCategory}`} 
-            className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
+            className={styles.projectCard}
             style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
           >
-            <div className={`${styles.imageWrapper} ${styles[project.ratioClass]}`}>
+            <div className={styles.imageWrapper}>
               <div className={styles.imageInner}>
                 <Image 
                   src={project.img} 
                   alt={project.title} 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   style={{ objectFit: 'cover' }} 
                 />
               </div>
             </div>
             <div className={styles.projectInfo}>
-              <div className={styles.textStack}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <span className={styles.projectCategory}>{project.category}</span>
-              </div>
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <p className={styles.projectDescription}>{project.shortDescription}</p>
+              <span className={styles.projectDate}>{project.date}</span>
             </div>
           </Link>
         ))}
