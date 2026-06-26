@@ -27,7 +27,7 @@ export default function AppShowcaseSection() {
   const videoLeft = useTransform(scrollYProgress, [0.65, 0.85], ["75%", "50%"]);
   const videoWidth = useTransform(scrollYProgress, [0.65, 0.85], ["40vw", "100vw"]);
   const videoHeight = useTransform(scrollYProgress, [0.65, 0.85], ["80vh", "100vh"]);
-  const videoBorderRadius = useTransform(scrollYProgress, [0.65, 0.85], ["16px", "0px"]);
+  const videoBorderRadius = useTransform(scrollYProgress, [0.65, 0.85], ["0px", "0px"]);
 
   // If we want the text to turn back to white when the video covers it (assuming the video is dark), 
   // we could animate textColor again from 0.65 to 0.85. 
