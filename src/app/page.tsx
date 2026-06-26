@@ -7,7 +7,6 @@ import dynamic from 'next/dynamic';
 const CinematicAccordionSection = dynamic(() => import('@/components/CinematicAccordionSection'));
 const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'));
 const IntroSection = dynamic(() => import('@/components/IntroSection'));
-const BehindTheScenesSection = dynamic(() => import('@/components/BehindTheScenesSection'));
 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
 const ThemeInversionController = dynamic(() => import('@/components/ThemeInversionController'));
@@ -30,7 +29,6 @@ export default function Home() {
       <CinematicAccordionSection />
       <WhyUsSection />
       <IntroSection />
-      <BehindTheScenesSection />
 
       <ServicesSection />
       <AppShowcaseSection />
