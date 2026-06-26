@@ -18,9 +18,13 @@ export default function BehindTheScenesSection() {
   const videoScale = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
   const videoBorderRadius = useTransform(scrollYProgress, [0, 0.4], ["40px", "0px"]);
   
+  // Background text fades out as video scales up
+  const bgTextOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const bgTextY = useTransform(scrollYProgress, [0, 0.3], [0, -50]);
+  
   // Animation Phase 2: Text fades in and moves up (40% to 60% scroll)
-  const textOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8, 1], [0, 1, 1, 0]);
-  const textY = useTransform(scrollYProgress, [0.3, 0.5], [50, 0]);
+  const textOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.8, 1], [0, 1, 1, 0]);
+  const textY = useTransform(scrollYProgress, [0.4, 0.5], [50, 0]);
 
   // Subtle background overlay darkening as the video expands
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 0.4]);
@@ -30,6 +34,16 @@ export default function BehindTheScenesSection() {
       {/* Sticky container stays on screen while user scrolls through the 300vh */}
       <div className={styles.stickyContainer}>
         
+        {/* Huge background text that appears initially */}
+        <motion.div 
+          className={styles.bgTextWrapper}
+          style={{ opacity: bgTextOpacity, y: bgTextY }}
+        >
+          <h2 className={styles.bgText}>
+            BEHIND<br/>THE<br/>SCENES
+          </h2>
+        </motion.div>
+
         {/* The Video that scales up */}
         <motion.div 
           className={styles.videoWrapper}
