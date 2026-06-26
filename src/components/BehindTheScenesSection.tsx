@@ -15,41 +15,34 @@ export default function BehindTheScenesSection() {
     offset: ["start start", "end end"], // Start animating when it hits the top, finish when it leaves the bottom
   });
 
-  // Animation Phase 1: Text Mask scales up to reveal video (0% to 40% scroll)
-  const maskScale = useTransform(scrollYProgress, [0, 0.4], [1, 150]);
+  // Animation Phase 1: Video scales down slightly for a cinematic reveal
+  const videoScale = useTransform(scrollYProgress, [0, 0.4], [1.2, 1]);
   
-  // Animation Phase 2: Text fades in and moves up (40% to 60% scroll)
-  const textOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.8, 1], [0, 1, 1, 0]);
-  const textY = useTransform(scrollYProgress, [0.4, 0.5], [50, 0]);
+  // Animation Phase 2: Text fades in and moves up (30% to 60% scroll)
+  const textOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8, 1], [0, 1, 1, 0]);
+  const textY = useTransform(scrollYProgress, [0.3, 0.5], [40, 0]);
 
-  // Subtle background overlay darkening as the video expands
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 0.4]);
+  // Subtle background overlay darkening to make text readable
+  const overlayOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0.2, 0.6]);
 
   return (
     <section ref={containerRef} className={styles.section}>
       {/* Sticky container stays on screen while user scrolls through the 300vh */}
       <div className={styles.stickyContainer}>
         
-        {/* The Video in the background, always full screen */}
-        <div className={styles.videoWrapper}>
+        {/* The Video in the background */}
+        <motion.div 
+          className={styles.videoWrapper}
+          style={{ scale: videoScale }}
+        >
           <SmartVideo src={siteConfig.videos.behindTheScenes} className={styles.video} />
-          <motion.div 
-            className={styles.darkOverlay}
-            style={{ opacity: overlayOpacity }}
-          />
-        </div>
-
-        {/* The Mask Overlay that zooms in */}
-        <div className={styles.maskOverlay}>
-          <motion.div 
-            className={styles.maskTextContainer}
-            style={{ scale: maskScale }}
-          >
-            <h1 className={styles.maskText}>STUDIO</h1>
-          </motion.div>
-        </div>
-
-        {/* The Text that appears after the video is full screen */}
+        </motion.div>
+        
+        {/* Dark overlay for text contrast */}
+        <motion.div 
+          className={styles.darkOverlay}
+          style={{ opacity: overlayOpacity }}
+        />
         <div className={styles.contentWrapper}>
           <motion.h2 
             className={styles.text}

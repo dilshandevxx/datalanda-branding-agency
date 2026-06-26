@@ -31,40 +31,7 @@
   object-fit: cover;
 }
 
-.maskOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: white;
-  mix-blend-mode: multiply;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
 
-.maskTextContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform;
-  transform-origin: 54% 50%; /* Zoom into the thick stem of the 'D' in STUDIO */
-}
-
-.maskText {
-  font-size: clamp(4rem, 18vw, 15rem);
-  font-weight: 900;
-  font-family: sans-serif;
-  line-height: 1;
-  text-align: center;
-  margin: 0;
-  text-transform: uppercase;
-  color: white; /* Must be white for multiply blend mode to reveal video */
-}
 
 .darkOverlay {
   position: absolute;
@@ -116,9 +83,3 @@
   margin-bottom: 2vh;
 }
 
-/* Hide entirely on desktop if you prefer, or let it work on desktop too! */
-@media (min-width: 769px) {
-  .section {
-    display: none !important;
-  }
-}
