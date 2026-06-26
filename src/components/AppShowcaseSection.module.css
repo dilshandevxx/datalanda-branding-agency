@@ -134,6 +134,42 @@
 }
 
 @media (max-width: 768px) {
+  .scrollTrack {
+    height: auto !important;
+    padding: 15vw 4vw;
+  }
+
+  .stickyContainer {
+    position: relative !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .backgroundLayer {
+    background-color: #050505 !important; /* Force dark background */
+  }
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .textContent {
+    position: relative !important;
+    width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    color: #ffffff !important;
+    gap: 1.5rem;
+  }
+
+  .label {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+  }
+
   .title {
     font-size: clamp(2rem, 10vw, 3.5rem);
     word-break: break-word; 
@@ -142,5 +178,22 @@
   .description {
     font-size: 1rem;
     max-width: 100%;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .button {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .videoWrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 70vw !important; /* Good aspect ratio for mobile video */
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
   }
 }
