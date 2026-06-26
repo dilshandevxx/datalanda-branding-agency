@@ -48,7 +48,7 @@ export default function ProjectsPage() {
             href={`/projects/${project.id}`}
             key={`${project.id}-${activeCategory}`} 
             className={styles.projectCard}
-            style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
+            style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <div className={styles.imageWrapper}>
               <div className={styles.imageInner}>
