@@ -73,76 +73,77 @@
 }
 
 .card {
-  background-color: #2a2a2a; /* Match screenshot dark gray */
   display: flex;
   flex-direction: column;
-  border-radius: 0; /* Enforce brutalist sharp corners */
-  overflow: hidden;
+  gap: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .imageWrapper {
   position: relative;
-  aspect-ratio: 4 / 3;
   width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 10;
   background-color: #1a1a1a;
 }
 
 .image {
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+}
+
+.categoryBadge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  letter-spacing: 0.02em;
 }
 
 .card:hover .image {
   transform: scale(1.05);
 }
 
-.categoryPill {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #fff;
-  border-radius: 0; /* Enforce brutalist sharp corners */
-}
-
 .content {
-  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  position: relative;
-}
-
-.date {
-  font-size: 0.875rem;
-  opacity: 0.6;
-  margin-bottom: 1rem;
-  font-weight: 500;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 0.25rem; /* Slight optical alignment */
 }
 
 .cardTitle {
   font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0 0 1rem 0;
-  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .desc {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.6;
-  margin: 0 0 2rem 0;
-}
-
-.bottomDot {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 2rem;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #a3a3a3; /* Exact grey from project card */
+  margin: 0;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 95%; /* Prevents text from hitting the absolute edge */
 }
 
 @media (max-width: 992px) {

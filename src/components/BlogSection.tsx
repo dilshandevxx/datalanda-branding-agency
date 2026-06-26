@@ -50,15 +50,13 @@ export default function BlogSection() {
             <div key={i} className={styles.card}>
               <div className={styles.imageWrapper}>
                 <Image src={post.image} alt={post.title} fill sizes="(max-width: 992px) 100vw, 33vw" className={styles.image} />
-                <div className={styles.categoryPill} style={{ backgroundColor: post.color }}>
+                <div className={styles.categoryBadge}>
                   {post.category}
                 </div>
               </div>
               <div className={styles.content}>
-                <div className={styles.date}>{post.date}</div>
                 <h3 className={styles.cardTitle}>{post.title}</h3>
                 <p className={styles.desc}>{post.desc}</p>
-                <div className={styles.bottomDot} style={{ backgroundColor: post.color }}></div>
               </div>
             </div>
           ))}
