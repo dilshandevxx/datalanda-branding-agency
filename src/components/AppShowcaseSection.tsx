@@ -20,17 +20,20 @@ export default function AppShowcaseSection() {
   const borderColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"]);
   const labelBgColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.03)", "rgba(0, 0, 0, 0.03)"]);
 
-  // Phase 3: 0.3 - 0.5 (Light Theme Pause)
+  // Phase 3: 0.3 - 0.65 (Light Theme Pause)
   
-  // Phase 4: 0.5 - 0.65 (Text fades out and moves up)
-  const textOpacity = useTransform(scrollYProgress, [0.5, 0.65], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0.5, 0.65], ["-50%", "-80%"]);
-
-  // Phase 5: 0.65 - 0.85 (Video expands to full screen)
+  // Phase 4: 0.65 - 0.85 (Video expands to full screen behind the text)
   const videoLeft = useTransform(scrollYProgress, [0.65, 0.85], ["75%", "50%"]);
   const videoWidth = useTransform(scrollYProgress, [0.65, 0.85], ["40vw", "100vw"]);
   const videoHeight = useTransform(scrollYProgress, [0.65, 0.85], ["80vh", "100vh"]);
   const videoBorderRadius = useTransform(scrollYProgress, [0.65, 0.85], ["16px", "0px"]);
+
+  // If we want the text to turn back to white when the video covers it (assuming the video is dark), 
+  // we could animate textColor again from 0.65 to 0.85. 
+  const finalTextColor = useTransform(scrollYProgress, [0.2, 0.3, 0.65, 0.85], ["#ffffff", "#000000", "#000000", "#ffffff"]);
+  const finalDescColor = useTransform(scrollYProgress, [0.2, 0.3, 0.65, 0.85], ["rgba(255, 255, 255, 0.7)", "rgba(0, 0, 0, 0.7)", "rgba(0, 0, 0, 0.7)", "rgba(255, 255, 255, 0.9)"]);
+  const finalBorderColor = useTransform(scrollYProgress, [0.2, 0.3, 0.65, 0.85], ["rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)", "rgba(0, 0, 0, 0.2)", "rgba(255, 255, 255, 0.4)"]);
+  const finalLabelBg = useTransform(scrollYProgress, [0.2, 0.3, 0.65, 0.85], ["rgba(255, 255, 255, 0.03)", "rgba(0, 0, 0, 0.03)", "rgba(0, 0, 0, 0.03)", "rgba(255, 255, 255, 0.1)"]);
 
   // Phase 6: 0.85 - 1.0 (Full screen pause)
 
@@ -47,14 +50,12 @@ export default function AppShowcaseSection() {
           <motion.div 
             className={styles.textContent}
             style={{ 
-              opacity: textOpacity, 
-              y: textY,
-              color: textColor
+              color: finalTextColor
             }}
           >
             <motion.div 
               className={styles.label}
-              style={{ borderColor: borderColor, backgroundColor: labelBgColor }}
+              style={{ borderColor: finalBorderColor, backgroundColor: finalLabelBg }}
             >
               Featured Product
             </motion.div>
@@ -65,14 +66,14 @@ export default function AppShowcaseSection() {
             
             <motion.p 
               className={styles.description}
-              style={{ color: descColor }}
+              style={{ color: finalDescColor }}
             >
               We don't just design screens; we architect seamless digital product ecosystems that drive user engagement and business growth.
             </motion.p>
             
             <motion.button 
               className={styles.button}
-              style={{ color: textColor, borderColor: borderColor }}
+              style={{ color: finalTextColor, borderColor: finalBorderColor }}
             >
               View Case Study
             </motion.button>
