@@ -98,7 +98,7 @@
   color: var(--foreground);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1.25rem 3rem;
-  border-radius: 50px; /* Elegant pill shape */
+  border-radius: 0; /* Brutalist sharp edges */
   font-family: var(--font-family);
   font-size: 0.8rem;
   font-weight: 500;
