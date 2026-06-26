@@ -42,7 +42,7 @@ export default function Preloader() {
             flex: 1,
             height: '100vh',
             backgroundColor: 'var(--foreground)', // Contrast color for the curtain
-            borderRight: i !== columns - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none',
+            borderRight: 'none',
           }}
         />
       ))}

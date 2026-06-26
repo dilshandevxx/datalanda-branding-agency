@@ -1,7 +1,23 @@
-.intro {
-  padding: var(--section-padding) 4vw;
+.scrollTrack {
+  height: 150vh; /* Gives extra scrolling time for the animation */
+  position: relative;
   background-color: var(--background);
   color: var(--foreground);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.intro {
+  width: 100%;
+  padding: 0 4vw;
 }
 
 .container {
@@ -37,13 +53,6 @@
   letter-spacing: -0.02em;
 }
 
-.serifWord {
-  font-family: "Playfair Display", "Georgia", serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--accent); /* Adds a slight highlight if accent is different, otherwise looks elegant */
-}
 
 .stats {
   display: flex;

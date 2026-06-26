@@ -4,35 +4,13 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import styles from './IntroSection.module.css';
 
-const textWords = [
-  { word: "We", serif: false },
-  { word: "are", serif: false },
-  { word: "digital", serif: false },
-  { word: "artisans.", serif: true },
-  { word: "We", serif: false },
-  { word: "blend", serif: false },
-  { word: "visionary", serif: false },
-  { word: "technology", serif: false },
-  { word: "with", serif: false },
-  { word: "timeless", serif: true },
-  { word: "design", serif: true },
-  { word: "to", serif: false },
-  { word: "create", serif: false },
-  { word: "experiences", serif: false },
-  { word: "that", serif: false },
-  { word: "elevate", serif: true },
-  { word: "the", serif: false },
-  { word: "human", serif: false },
-  { word: "condition.", serif: false },
-];
+const text = "We are a digital engineering collective. We blend cutting-edge technology with world-class design to build products that define the future.";
 
-const Word = ({ children, progress, range, isSerif }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number], isSerif?: boolean }) => {
-  const opacity = useTransform(progress, range, [0.1, 1]);
-  const y = useTransform(progress, range, [12, 0]); // Adds a beautiful subtle slide-up effect
+const Word = ({ children, progress, range }: { children: React.ReactNode, progress: MotionValue<number>, range: [number, number] }) => {
+  const color = useTransform(progress, range, ["rgba(255,255,255,0.15)", "rgba(255,255,255,1)"]);
   return (
     <motion.span 
-      className={isSerif ? styles.serifWord : ""}
-      style={{ opacity, y, display: 'inline-block', marginRight: '0.25em' }}
+      style={{ color, display: 'inline-block', marginRight: '0.25em' }}
     >
       {children}
     </motion.span>
@@ -44,27 +22,29 @@ export default function IntroSection() {
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    // Start when the top of the section enters the bottom 85% of the screen.
-    // Finish completely when the top reaches 30% of the screen (well before it exits).
-    offset: ["start 85%", "start 30%"]
+    offset: ["start start", "end end"]
   });
+
+  const words = text.split(" ");
 
 
 
   return (
-    <section className={styles.intro} ref={containerRef}>
-      <div className={styles.container}>
+    <section className={styles.scrollTrack} ref={containerRef}>
+      <div className={styles.stickyContainer}>
+        <div className={styles.intro}>
+          <div className={styles.container}>
         <div className={styles.labelWrapper}>
           <span className={styles.label}>Who We Are</span>
         </div>
         <div className={styles.textWrapper}>
           <h2 className={styles.headline}>
-            {textWords.map((item, i) => {
-              const start = i / textWords.length;
-              const end = start + (1 / textWords.length);
+            {words.map((word, i) => {
+              const start = i / words.length;
+              const end = start + (1 / words.length);
               return (
-                <Word key={i} progress={scrollYProgress} range={[start, end]} isSerif={item.serif}>
-                  {item.word}
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                  {word}
                 </Word>
               );
             })}
@@ -83,6 +63,7 @@ export default function IntroSection() {
               <span className={styles.statLabel}>Lines of Code</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
