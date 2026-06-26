@@ -1,13 +1,16 @@
 "use client";
 
+import { useRef } from 'react';
 import { motion } from "framer-motion";
 import SmartVideo from "./SmartVideo";
 import styles from "./SpotlightSection.module.css";
+import { siteConfig } from "../data/siteConfig";
 
 export default function SpotlightSection() {
+  const containerRef = useRef(null);
   return (
-    <section className={styles.section}>
-      <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389596/walking-people_chkyso.webm" className={styles.backgroundVideo} />
+    <section ref={containerRef} className={styles.section}>
+      <SmartVideo src={siteConfig.videos.spotlight} className={styles.backgroundVideo} />
       <div className={styles.overlay}></div>
       <div className="container">
         <motion.div 

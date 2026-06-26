@@ -1,5 +1,6 @@
 import SmartVideo from './SmartVideo';
 import styles from './Hero.module.css';
+import { siteConfig } from '../data/siteConfig';
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
             className={styles.video} 
             preload="auto"
           >
-            <source src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389244/hero-video_dimbpq.webm" />
+            <source src={siteConfig.videos.hero} />
           </SmartVideo>
         </div>
       </div>

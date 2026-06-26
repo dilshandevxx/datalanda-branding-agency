@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import SmartVideo from "./SmartVideo";
 import styles from "./BehindTheScenesSection.module.css";
+import { siteConfig } from "../data/siteConfig";
 
 export default function BehindTheScenesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,7 @@ export default function BehindTheScenesSection() {
         
         {/* The Video in the background, always full screen */}
         <div className={styles.videoWrapper}>
-          <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm" className={styles.video} />
+          <SmartVideo src={siteConfig.videos.behindTheScenes} className={styles.video} />
           <motion.div 
             className={styles.darkOverlay}
             style={{ opacity: overlayOpacity }}

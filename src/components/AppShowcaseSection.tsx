@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SmartVideo from './SmartVideo';
 import styles from './AppShowcaseSection.module.css';
+import { siteConfig } from '../data/siteConfig';
 
 export default function AppShowcaseSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -91,7 +92,7 @@ export default function AppShowcaseSection() {
               y: "-50%"
             }}
           >
-            <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782405943/scrolling_mshca0.webm" className={styles.video} />
+            <SmartVideo src={siteConfig.videos.appShowcase} className={styles.video} />
             <div className={styles.videoOverlay}></div>
           </motion.div>
         </div>

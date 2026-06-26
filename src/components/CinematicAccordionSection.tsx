@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./CinematicAccordionSection.module.css";
 import SmartVideo from "./SmartVideo";
+import { siteConfig } from "../data/siteConfig";
 
 const pillars = [
   {
@@ -11,21 +12,21 @@ const pillars = [
     num: "01",
     title: "Strategy",
     description: "Human-centric brand positioning.",
-    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389596/walking-people_chkyso.webm",
+    videoSrc: siteConfig.videos.cinematicAccordion.strategy,
   },
   {
     id: "design",
     num: "02",
     title: "Design",
     description: "Pixel-perfect visual identity.",
-    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782389595/typing_ylyekm.webm",
+    videoSrc: siteConfig.videos.cinematicAccordion.design,
   },
   {
     id: "execution",
     num: "03",
     title: "Execution",
     description: "Seamless digital product delivery.",
-    videoSrc: "https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782405943/scrolling_mshca0.webm",
+    videoSrc: siteConfig.videos.cinematicAccordion.execution,
   },
 ];
 
