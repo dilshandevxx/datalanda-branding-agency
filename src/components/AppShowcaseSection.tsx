@@ -12,49 +12,70 @@ export default function AppShowcaseSection() {
     offset: ["start start", "end end"]
   });
 
-  // Text fades out early in the scroll (0 to 0.15)
-  const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.15], [0, -30]);
+  // Phase 1: 0.0 - 0.2 (Dark Theme Pause)
+  // Phase 2: 0.2 - 0.3 (Theme Transition: Dark to Light)
+  const bgColor = useTransform(scrollYProgress, [0.2, 0.3], ["#050505", "#ffffff"]);
+  const textColor = useTransform(scrollYProgress, [0.2, 0.3], ["#ffffff", "#000000"]);
+  const descColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.7)", "rgba(0, 0, 0, 0.7)"]);
+  const borderColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"]);
+  const labelBgColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.03)", "rgba(0, 0, 0, 0.03)"]);
 
-  // Video scaling and positioning (starts after text starts fading, 0.1 to 0.6)
-  const videoLeft = useTransform(scrollYProgress, [0.1, 0.6], ["75%", "50%"]);
-  const videoWidth = useTransform(scrollYProgress, [0.1, 0.6], ["40vw", "100vw"]);
-  const videoHeight = useTransform(scrollYProgress, [0.1, 0.6], ["80vh", "100vh"]);
-  const videoBorderRadius = useTransform(scrollYProgress, [0.1, 0.3], ["16px", "0px"]);
+  // Phase 3: 0.3 - 0.5 (Light Theme Pause)
+  
+  // Phase 4: 0.5 - 0.65 (Text fades out and moves up)
+  const textOpacity = useTransform(scrollYProgress, [0.5, 0.65], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0.5, 0.65], ["-50%", "-80%"]);
 
-  // Mobile transformations (since layout is stacked, animation logic is slightly different)
-  // We'll use CSS media queries to override layout, but framer-motion inline styles take precedence.
-  // We will handle mobile responsiveness by disabling these inline styles on mobile if needed,
-  // or by providing mobile-specific transforms if we can detect it. 
-  // However, for simplicity and cinematic effect, this center-scale approach works nicely on most devices 
-  // if we tweak the start values. Let's keep it robust.
+  // Phase 5: 0.65 - 0.85 (Video expands to full screen)
+  const videoLeft = useTransform(scrollYProgress, [0.65, 0.85], ["75%", "50%"]);
+  const videoWidth = useTransform(scrollYProgress, [0.65, 0.85], ["40vw", "100vw"]);
+  const videoHeight = useTransform(scrollYProgress, [0.65, 0.85], ["80vh", "100vh"]);
+  const videoBorderRadius = useTransform(scrollYProgress, [0.65, 0.85], ["16px", "0px"]);
+
+  // Phase 6: 0.85 - 1.0 (Full screen pause)
 
   return (
     <section ref={containerRef} className={styles.scrollTrack}>
       <div className={styles.stickyContainer}>
-        {/* Dark theme background for this section */}
-        <div className={styles.backgroundLayer}></div>
+        {/* Animated Background */}
+        <motion.div 
+          className={styles.backgroundLayer} 
+          style={{ backgroundColor: bgColor }} 
+        />
         
         <div className={styles.contentWrapper}>
           <motion.div 
             className={styles.textContent}
-            style={{ opacity: textOpacity, y: textY }}
+            style={{ 
+              opacity: textOpacity, 
+              y: textY,
+              color: textColor
+            }}
           >
-            <div className={styles.label}>
+            <motion.div 
+              className={styles.label}
+              style={{ borderColor: borderColor, backgroundColor: labelBgColor }}
+            >
               Featured Product
-            </div>
+            </motion.div>
             
             <h2 className={styles.title}>
               DIGITAL ECOSYSTEMS.
             </h2>
             
-            <p className={styles.description}>
+            <motion.p 
+              className={styles.description}
+              style={{ color: descColor }}
+            >
               We don't just design screens; we architect seamless digital product ecosystems that drive user engagement and business growth.
-            </p>
+            </motion.p>
             
-            <button className={styles.button}>
+            <motion.button 
+              className={styles.button}
+              style={{ color: textColor, borderColor: borderColor }}
+            >
               View Case Study
-            </button>
+            </motion.button>
           </motion.div>
 
           <motion.div 
@@ -69,7 +90,6 @@ export default function AppShowcaseSection() {
               y: "-50%"
             }}
           >
-            {/* The user will provide a horizontal video later. The container will stretch it via object-fit: cover for now */}
             <SmartVideo src="https://res.cloudinary.com/dqfcsavwj/video/upload/f_auto,q_auto/v1782405943/scrolling_mshca0.webm" className={styles.video} />
             <div className={styles.videoOverlay}></div>
           </motion.div>
