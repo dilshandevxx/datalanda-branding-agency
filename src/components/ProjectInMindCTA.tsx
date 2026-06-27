@@ -71,7 +71,7 @@ export default function ProjectInMindCTA() {
             <div className={styles.contactInfo}>
               <span className={styles.contactRole}>Team Lead at studio</span>
               <span className={styles.contactName}>Lauren Thompson</span>
-              <button className={styles.askBtn}>Ask directly -></button>
+              <button className={styles.askBtn}>Ask directly &rarr;</button>
             </div>
           </div>
         </div>
