@@ -13,14 +13,14 @@ export const siteConfig = {
   },
   images: {
     studio: {
-      image1: "/studio_1.png",
-      image2: "/studio_2.png",
-      image3: "/studio_3.png",
+      image1: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp", // Add cloud URL later
+      image2: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp", // Add cloud URL later
+      image3: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529658/pexels-lee-campbell-18167-115655_cvxirt.webp", // Add cloud URL later
     },
-    resources: {
-      image1: "/article_marketing.png",
-      image2: "/article_xcode.png",
-      image3: "/article_strategy.png",
+    blogArticle: {
+      image1: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp",
+      image2: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp",
+      image3: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp",
     }
   }
 };

@@ -11,21 +11,21 @@ export default function TestimonialSection() {
       quote: "The engineering quality and design aesthetic they brought to our product completely revolutionized our market positioning. Absolute masters of their craft.",
       name: "Samuel Jenkins",
       title: "Chief Product Officer",
-      img: "/studio_1.png"
+      img: ""
     },
     {
       id: 2,
       quote: "Working with them felt like an extension of our own team. Their architectural decisions and brutalist design approach saved us months of development time.",
       name: "Marcus Thorne",
       title: "Founder & CEO",
-      img: "/studio_2.png"
+      img: ""
     },
     {
       id: 3,
       quote: "They don't just build software; they build digital legacies. The attention to micro-interactions and performance optimization is simply unmatched in the industry.",
       name: "Elias Rostov",
       title: "Creative Director",
-      img: "/studio_3.png"
+      img: ""
     }
   ];
 
@@ -46,7 +46,7 @@ export default function TestimonialSection() {
               
               <div className={styles.authorRow}>
                 <div className={styles.avatar}>
-                  <Image src={testi.img} alt={testi.name} fill sizes="60px" />
+                  {testi.img && <Image src={testi.img} alt={testi.name} fill sizes="60px" />}
                 </div>
                 <div className={styles.authorInfo}>
                   <p className={styles.authorName}>{testi.name}</p>
@@ -65,7 +65,7 @@ export default function TestimonialSection() {
               
               <div className={styles.authorRow}>
                 <div className={styles.avatar}>
-                  <Image src={testi.img} alt={testi.name} fill sizes="60px" />
+                  {testi.img && <Image src={testi.img} alt={testi.name} fill sizes="60px" />}
                 </div>
                 <div className={styles.authorInfo}>
                   <p className={styles.authorName}>{testi.name}</p>

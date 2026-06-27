@@ -6,7 +6,7 @@ import { siteConfig } from '../data/siteConfig';
 
 const posts = [
   {
-    image: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp",
+    image: siteConfig.images.blogArticle.image1,
     category: "Marketing",
     color: "#ff4d6d",
     date: "January 30, 2023",
@@ -14,7 +14,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp",
+    image: siteConfig.images.blogArticle.image2,
     category: "Guides",
     color: "#10b981",
     date: "January 30, 2023",
@@ -22,7 +22,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp",
+    image: siteConfig.images.blogArticle.image3,
     category: "Strategy",
     color: "#8b5cf6",
     date: "January 30, 2023",

@@ -10,35 +10,35 @@ const projects = [
     id: 1,
     name: "Jupi",
     tag: "SAAS",
-    image: "/hero-hands-premium.png",
+    image: "", // Add cloud URL later
     logo: "JUPI"
   },
   {
     id: 2,
     name: "Everbloom",
     tag: "FASHION",
-    image: "/hero-abstract.png",
+    image: "", // Add cloud URL later
     logo: "EVERBLOOM"
   },
   {
     id: 3,
     name: "Trellis",
     tag: "WEB3",
-    image: "/work_1.png",
+    image: "", // Add cloud URL later
     logo: "TRELLIS"
   },
   {
     id: 4,
     name: "Big Cartel",
     tag: "ECOMMERCE",
-    image: "/work_2.png",
+    image: "", // Add cloud URL later
     logo: "BIG CARTEL"
   },
   {
     id: 5,
     name: "Chester Zoo",
     tag: "ENTERTAINMENT",
-    image: "/studio_1.png",
+    image: "", // Add cloud URL later
     logo: "CHESTER ZOO"
   }
 ];
@@ -55,14 +55,16 @@ export default function InteractivePortfolio() {
             key={project.id} 
             className={`${styles.bgImage} ${index === activeIndex ? styles.activeBg : ''}`}
           >
-            <Image
-              src={project.image}
-              alt={project.name}
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              style={{ objectFit: 'cover' }}
-            />
+            {project.image && (
+              <Image
+                src={project.image}
+                alt={project.name}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                style={{ objectFit: 'cover' }}
+              />
+            )}
             {/* Dark overlay for text readability */}
             <div className={styles.overlay}></div>
           </div>
