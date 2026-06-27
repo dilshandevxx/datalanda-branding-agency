@@ -18,6 +18,7 @@ const TestimonialSection = dynamic(() => import('@/components/TestimonialSection
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
 const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
+const ProjectInMindCTA = dynamic(() => import('@/components/ProjectInMindCTA'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
       <FaqSection />
       <BlogSection />
       <FooterCTASection />
+      <ProjectInMindCTA />
       <FooterSection />
     </main>
   );
