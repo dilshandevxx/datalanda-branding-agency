@@ -1,50 +1,23 @@
 .section {
   position: relative;
-  padding: 6vw 0;
+  background-color: #f4f4f0; /* Single elegant warm off-white background */
   color: #111111;
-}
-
-.section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #1a1a1a; /* Softer dark charcoal instead of pure black */
-  z-index: 0;
-}
-
-.section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #f4f4f0; /* Light theme for right side */
-  z-index: 0;
+  overflow: hidden;
 }
 
 .container {
-  position: relative;
-  z-index: 1;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 4vw;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8vw;
+  grid-template-columns: 1.2fr 1fr; /* Left image takes up slightly more space */
   align-items: stretch;
 }
 
 .imageSlideshow {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 500px;
+  height: clamp(600px, 90vh, 1000px); /* Massive, immersive height */
   overflow: hidden;
-  background-color: #2a2a2a;
+  background-color: #111;
 }
 
 .imageWrapper {
@@ -72,15 +45,15 @@
 }
 
 .imageWrapper.active img {
-  transform: scale(1.08);
+  transform: scale(1.08); /* Slow, cinematic zoom */
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
-  padding: 2vw 0;
+  padding: 6vw 8vw 6vw 6vw; /* Generous breathing room */
+  max-width: 800px;
 }
 
 .subtitle {
@@ -88,37 +61,38 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a; /* Matched to left bg */
+  margin-bottom: 2rem;
+  color: #555555; /* Subtle subtitle */
 }
 
 .headline {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.1;
-  font-weight: 500;
-  margin: 0 0 2rem 0;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 0 0 2.5rem 0;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: #1a1a1a; /* Matched to left bg */
+  letter-spacing: -0.03em;
+  color: #111111;
 }
 
 .paragraph {
-  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-size: clamp(1.125rem, 1.2vw, 1.25rem);
   line-height: 1.6;
   font-weight: 400;
-  color: #444444; /* Slightly softer for reading */
-  margin: 0 0 3rem 0;
+  color: #444444; 
+  margin: 0 0 4rem 0;
+  max-width: 90%; /* Keep line length readable */
 }
 
 .linkWrapper {
-  margin-top: 1rem;
+  margin-top: auto;
 }
 
 .readMoreBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.5rem;
   background-color: #111111;
   color: #ffffff;
   font-size: 0.875rem;
@@ -127,46 +101,30 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
 }
 
 .readMoreBtn:hover {
   background-color: #333333;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 @media (max-width: 992px) {
-  .section::before {
-    width: 100%;
-    height: 50%;
-    top: 50%; /* Images are at the bottom on mobile */
-  }
-  
-  .section::after {
-    width: 100%;
-    height: 50%;
-    top: 0;
-    right: auto;
-  }
-
   .container {
     grid-template-columns: 1fr;
-    gap: 12vw;
+  }
+  
+  .imageSlideshow {
+    height: 60vh;
   }
   
   .content {
-    order: -1; /* Move text above images on mobile */
+    padding: 10vw 6vw;
     max-width: 100%;
   }
   
   .headline {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-  }
-}
-
-@media (max-width: 768px) {
-  .imageSlideshow {
-    aspect-ratio: 4 / 3;
-    min-height: auto;
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 }
