@@ -15,7 +15,7 @@ export default function AppShowcaseSection() {
 
   // Phase 1: 0.0 - 0.2 (Dark Theme Pause)
   // Phase 2: 0.2 - 0.3 (Theme Transition: Dark to Light)
-  const bgColor = useTransform(scrollYProgress, [0.2, 0.3], ["#050505", "#ffffff"]);
+  const bgColor = useTransform(scrollYProgress, [0.2, 0.3], ["#111111", "#ffffff"]);
   const textColor = useTransform(scrollYProgress, [0.2, 0.3], ["#ffffff", "#000000"]);
   const descColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.7)", "rgba(0, 0, 0, 0.7)"]);
   const borderColor = useTransform(scrollYProgress, [0.2, 0.3], ["rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"]);
