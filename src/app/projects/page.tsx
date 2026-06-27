@@ -24,7 +24,7 @@ export default function ProjectsPage() {
       
       <div className={styles.hero}>
         <h1 className={styles.title}>
-          Insights
+          SELECTED WORKS.
         </h1>
       </div>
 
