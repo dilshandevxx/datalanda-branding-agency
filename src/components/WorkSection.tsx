@@ -17,7 +17,7 @@ export default function WorkSection() {
         <div className={styles.grid}>
           {projects.map((project, i) => (
             <Link 
-              href={project.websiteUrl || `/projects/${project.id}`}
+              href={project.websiteUrl || '#'}
               target={project.websiteUrl ? "_blank" : undefined}
               rel={project.websiteUrl ? "noopener noreferrer" : undefined}
               key={project.id} 

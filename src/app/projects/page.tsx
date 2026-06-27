@@ -24,7 +24,7 @@ export default function ProjectsPage() {
       
       <div className={styles.hero}>
         <h1 className={styles.title}>
-          OUR THOUGHTS<br/>AND INSIGHT
+          Insights
         </h1>
       </div>
 
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
       <div className={styles.grid}>
         {filteredProjects.map((project, i) => (
           <Link 
-            href={project.websiteUrl || `/projects/${project.id}`}
+            href={project.websiteUrl || '#'}
             target={project.websiteUrl ? "_blank" : undefined}
             rel={project.websiteUrl ? "noopener noreferrer" : undefined}
             key={`${project.id}-${activeCategory}`} 
