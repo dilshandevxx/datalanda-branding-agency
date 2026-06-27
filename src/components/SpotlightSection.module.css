@@ -1,5 +1,5 @@
 .section {
-  height: 300vh; /* creates scrollable area */
+  height: 500vh; /* creates much more scrollable area */
   background-color: #000;
   position: relative;
 }
@@ -126,7 +126,7 @@
 
 @media (max-width: 768px) {
   .section {
-    height: 250vh;
+    height: 400vh;
   }
   
   .maskText {

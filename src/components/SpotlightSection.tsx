@@ -14,15 +14,15 @@ export default function SpotlightSection() {
     offset: ["start start", "end end"]
   });
 
-  // Keep scale at 1 for the first 25% of the scroll, then scale up massively
-  const textScale = useTransform(scrollYProgress, [0, 0.25, 0.75], [1, 1, 60]);
+  // Keep scale at 1 for the first 30% of the scroll, then scale up massively
+  const textScale = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 1, 60]);
   
   // Fade out the mask container to reveal the video smoothly before it gets pixelated
-  const maskOpacity = useTransform(scrollYProgress, [0.55, 0.75], [1, 0]);
+  const maskOpacity = useTransform(scrollYProgress, [0.45, 0.6], [1, 0]);
   
   // Fade in the final content once the video is fully revealed
-  const finalOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 1]);
-  const finalY = useTransform(scrollYProgress, [0.7, 0.9], [40, 0]);
+  const finalOpacity = useTransform(scrollYProgress, [0.6, 0.75], [0, 1]);
+  const finalY = useTransform(scrollYProgress, [0.6, 0.75], [40, 0]);
 
   return (
     <section ref={containerRef} className={styles.section}>
