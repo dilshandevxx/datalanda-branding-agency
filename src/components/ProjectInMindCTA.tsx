@@ -10,11 +10,12 @@ export default function ProjectInMindCTA() {
         <div className={styles.header}>
           <h2 className={styles.headline}>Have a project in mind?</h2>
           <p className={styles.paragraph}>
-            Tell us about your project—whether it's a website, SEO, or marketing.
+            Tell us about your project—whether it's a website, SEO, or marketing. We are ready to create and collaborate.
           </p>
         </div>
 
         <div className={styles.card}>
+          
           <div className={styles.infoCol}>
             <div className={styles.infoBlock}>
               <h4 className={styles.infoLabel}>Direct Contact</h4>
@@ -29,14 +30,16 @@ export default function ProjectInMindCTA() {
           </div>
 
           <form className={styles.formCol} onSubmit={(e) => e.preventDefault()}>
-            <div className={styles.inputGroup}>
-              <label htmlFor="name" className={styles.label}>01. What's your name?</label>
-              <input type="text" id="name" placeholder="John Doe *" className={styles.input} required />
-            </div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <label htmlFor="name" className={styles.label}>01. What's your name?</label>
+                <input type="text" id="name" placeholder="John Doe *" className={styles.input} required />
+              </div>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="email" className={styles.label}>02. What's your email?</label>
-              <input type="email" id="email" placeholder="john@example.com *" className={styles.input} required />
+              <div className={styles.inputGroup}>
+                <label htmlFor="email" className={styles.label}>02. What's your email?</label>
+                <input type="email" id="email" placeholder="john@example.com *" className={styles.input} required />
+              </div>
             </div>
 
             <div className={styles.inputGroup}>
@@ -46,11 +49,12 @@ export default function ProjectInMindCTA() {
 
             <div className={styles.inputGroup}>
               <label htmlFor="message" className={styles.label}>04. Tell us about your project</label>
-              <textarea id="message" placeholder="Hello, I would like to talk about... *" className={styles.textarea} required></textarea>
+              <input type="text" id="message" placeholder="Hello, I would like to talk about... *" className={styles.input} required />
             </div>
 
             <button type="submit" className={styles.submitBtn}>SEND MESSAGE</button>
           </form>
+
         </div>
 
       </div>
