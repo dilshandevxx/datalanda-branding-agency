@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding: 10vw 0;
+  padding: 6vw 0;
   color: #111111;
 }
 
@@ -41,7 +41,7 @@
 .imageSlideshow {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background-color: #2a2a2a;
 }
@@ -163,6 +163,6 @@
 
 @media (max-width: 768px) {
   .imageSlideshow {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
   }
 }
