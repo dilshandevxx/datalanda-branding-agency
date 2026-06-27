@@ -55,7 +55,7 @@ export const ALL_PROJECTS: Project[] = [
     id: 3,
     title: "Visionary ML",
     category: "ML",
-    img: "/projects/laptop_report_mockup.png", 
+    img: "/projects/laptop_report_mockup.png",
     ratioClass: "ratioWide",
     client: "Visionary Labs",
     year: "2023",
@@ -72,7 +72,7 @@ export const ALL_PROJECTS: Project[] = [
     id: 4,
     title: "Flow UI Kit",
     category: "UI/UX",
-    img: "/projects/imac_mockup.png", 
+    img: "/projects/imac_mockup.png",
     ratioClass: "ratioSquare",
     client: "Flow Systems",
     year: "2022",
@@ -186,6 +186,23 @@ export const ALL_PROJECTS: Project[] = [
     shortDescription: "Our exploration into Web3 ecosystems resulted in a highly secure, brutally styled digital wallet interface.",
     websiteUrl: "",
     cardImageUrl: ""
+  },
+  {
+    id: 11,
+    title: "ACME CAfe",
+    category: "Branding",
+    img: "/projects/tablet_poster_mockup.png",
+    ratioClass: "ratioPortrait",
+    client: "ACME CAfe",
+    year: "2024",
+    role: "Branding",
+    challenge: "Redesigning the logo and brand identity for ACME CAfe.",
+    solution: "The brand identity is built around the concept of 'refined simplicity'. We stripped away the unnecessary clutter and focused on the core elements that make ACME CAfe unique.",
+    gallery: ["/projects/laptop_mockup.png", "/service_2.png"],
+    date: "10 October 2024",
+    shortDescription: "Revitalising the face of ACME CAfe with a bold, refined rebrand and a timeless new logo.",
+    websiteUrl: "https://acme-cafe-one.vercel.app/",
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782496952/cafe_-web_pxsots.webp"
   }
 ];
 
