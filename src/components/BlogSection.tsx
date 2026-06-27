@@ -41,7 +41,7 @@ export default function BlogSection() {
               <div className={styles.dot}></div>
               <span>BLOG</span>
             </div>
-            <h2 className={styles.title}>Browse our articles &<br/>resources</h2>
+            <h2 className={styles.title}>Latest Insights</h2>
           </div>
           <button className={styles.allPostsBtn}>All posts</button>
         </div>
