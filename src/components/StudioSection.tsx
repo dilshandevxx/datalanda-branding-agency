@@ -1,39 +1,51 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './StudioSection.module.css';
 import { siteConfig } from '../data/siteConfig';
 
 export default function StudioSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Extract all available images into an array
+  const images = [
+    siteConfig.images.studio.image1,
+    siteConfig.images.studio.image2,
+    siteConfig.images.studio.image3,
+    siteConfig.images.studio.image4
+  ].filter(Boolean); // Filter out empty strings/falsy values
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % images.length);
+    }, 4500); // Change image every 4.5 seconds
+    
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section id="studio" className={styles.section}>
       <div className={styles.container}>
         
-        <div className={styles.imageGrid}>
-          <div className={styles.colLeft}>
-            {siteConfig.images.studio.image1 && (
-              <div className={`${styles.imageWrapper} ${styles.imgTall}`}>
-                <Image src={siteConfig.images.studio.image1} alt="Studio 1" fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
-              </div>
-            )}
-            {siteConfig.images.studio.image3 && (
-              <div className={`${styles.imageWrapper} ${styles.imgSquare}`}>
-                <Image src={siteConfig.images.studio.image3} alt="Studio 3" fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
-              </div>
-            )}
-          </div>
-          <div className={styles.colRight}>
-            {siteConfig.images.studio.image2 && (
-              <div className={`${styles.imageWrapper} ${styles.imgSquare}`}>
-                <Image src={siteConfig.images.studio.image2} alt="Studio 2" fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
-              </div>
-            )}
-            {siteConfig.images.studio.image4 && (
-              <div className={`${styles.imageWrapper} ${styles.imgTall}`}>
-                <Image src={siteConfig.images.studio.image4} alt="Studio 4" fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
-              </div>
-            )}
-          </div>
+        <div className={styles.imageSlideshow}>
+          {images.map((src, index) => (
+            <div 
+              key={index} 
+              className={`${styles.imageWrapper} ${index === activeIndex ? styles.active : ''}`}
+            >
+              <Image 
+                src={src as string} 
+                alt={`Studio ${index + 1}`} 
+                fill 
+                sizes="(max-width: 992px) 100vw, 50vw" 
+                style={{ objectFit: 'cover' }}
+                priority={index === 0}
+              />
+            </div>
+          ))}
         </div>
 
         <div className={styles.content}>
