@@ -5,33 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #111111; /* Matched to dark theme */
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
   padding: 6vw 4vw;
-}
-
-.bgVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 1;
 }
 
 .container {
@@ -53,9 +31,8 @@
 }
 
 .formCard {
-  background: #111111; /* Dark mode card */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 3rem;
+  background: #1a1a1a; /* Matched to Studio dark section */
+  padding: 3.5rem;
   width: 100%;
   max-width: 500px;
 }
@@ -63,7 +40,7 @@
 .formTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #ffffff;
 }
 
@@ -75,7 +52,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .inputGroup {
@@ -89,30 +66,35 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #aaaaaa;
+  color: #888888;
 }
 
 .inputGroup input,
 .inputGroup textarea {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0;
   color: #ffffff;
   font-family: inherit;
-  font-size: 1rem;
-  border-radius: 0; /* Sharp corners */
+  font-size: 1.125rem;
   transition: border-color 0.3s ease;
 }
 
 .inputGroup textarea {
-  min-height: 120px;
+  min-height: 80px;
   resize: vertical;
 }
 
 .inputGroup input:focus,
 .inputGroup textarea:focus {
   outline: none;
-  border-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #555555;
 }
 
 .submitBtn {
@@ -125,7 +107,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-radius: 0; /* Sharp corners */
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -136,14 +117,15 @@
 }
 
 .terms {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 0.75rem;
   color: #666666;
 }
 
 .copyright {
   font-size: 0.75rem;
-  color: #666666;
+  color: #555555;
+  margin-top: auto;
 }
 
 /* Right Column */
@@ -166,24 +148,22 @@
 .subtitle {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   line-height: 1.4;
-  color: #cccccc;
-  margin-bottom: 4rem;
+  color: #aaaaaa;
+  margin-bottom: 5rem;
   max-width: 500px;
 }
 
 .features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 3rem;
+  margin-bottom: 5rem;
 }
 
 .featureTitle {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
@@ -197,25 +177,23 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  width: fit-content;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background-color: #333333;
   position: relative;
-  border-radius: 0; /* Square avatar */
   overflow: hidden;
 }
 
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .contactRole {
@@ -229,26 +207,27 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .askBtn {
-  background: #222222;
+  background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 0; /* Sharp corners */
   cursor: pointer;
   transition: all 0.3s ease;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .askBtn:hover {
-  background: #ffffff;
-  color: #000000;
+  color: #aaaaaa;
 }
 
 @media (max-width: 992px) {
