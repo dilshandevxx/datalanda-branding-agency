@@ -1,9 +1,9 @@
 .section {
-  background-color: #050505;
-  color: #fff;
-  padding: 10vw 4vw;
+  padding: clamp(6rem, 10vw, 10rem) 4vw;
+  background-color: #111111;
+  color: #ffffff;
   position: relative;
-  overflow: hidden;
+  font-family: var(--font-family);
 }
 
 .container {
@@ -11,230 +11,274 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 6vw;
+  gap: 6rem;
 }
 
-/* Header */
+/* Centered Header (Screenshot 1) */
 .header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 4vw;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.title {
-  font-size: clamp(3rem, 8vw, 8rem);
+.headline {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+}
+
+.paragraph {
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 1.5;
+  color: #a0a0a0;
   margin: 0;
 }
 
-.italic {
-  font-family: 'Playfair Display', serif; /* Or any serif font used in the project */
-  font-style: italic;
-  font-weight: 300;
-  text-transform: lowercase;
-  color: #888;
-}
-
-/* Content Grid */
-.content {
+/* Bento Grid (Screenshot 2) */
+.bentoGrid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 8vw;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
-@media (max-width: 992px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-}
-
-/* Left side */
-.contactDetails {
+.infoCol {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
-.description {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: #a0a0a0;
-  max-width: 400px;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.infoBlock {
+.formCol {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
-.label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #666;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.link, .text {
-  font-size: 1.125rem;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  line-height: 1.5;
-}
-
-.link:hover {
-  color: #a0a0a0;
-}
-
-.avatarBlock {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 1rem;
-  padding: 1.5rem;
-  background-color: #111;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.avatarInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.avatarName {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.avatarRole {
-  font-size: 0.875rem;
-  color: #888;
-}
-
-/* Right Side - Form */
-.formWrapper {
-  width: 100%;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.inputRow {
+.formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
 }
 
-@media (max-width: 768px) {
-  .inputRow {
-    grid-template-columns: 1fr;
-  }
-}
-
-.inputGroup {
+/* Base Card Style */
+.card {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  transition: border-color 0.3s ease;
 }
 
-.inputGroup label {
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Icons (Mimicking screenshot) */
+.iconGroup {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.iconShape {
+  width: 20px;
+  height: 20px;
+}
+
+.shapeBlue {
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 6px -6px 0 -4px #60a5fa;
+}
+
+.shapeGreenHalf {
+  background-color: #10b981;
+  border-radius: 50% 50% 0 0;
+  height: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.shapeGreenHalf::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+}
+
+.shapePink {
+  background-color: #ec4899;
+  border-radius: 50%;
+  position: relative;
+}
+.shapePink::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 8px;
+  height: 8px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+}
+
+.shapePurpleRing {
+  border: 4px solid #8b5cf6;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.shapeYellowTriangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 18px solid #8b5cf6;
+  position: relative;
+}
+.shapeYellowTriangle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+}
+
+.shapeBlueSteps {
+  background-color: #6366f1;
+  width: 20px;
+  height: 8px;
+  position: relative;
+  margin-top: 12px;
+}
+.shapeBlueSteps::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 4px;
+  width: 12px;
+  height: 8px;
+  background-color: #6366f1;
+}
+
+/* Card Content */
+.cardTitle {
   font-size: 1.125rem;
-  color: #fff;
-  font-weight: 500;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
 }
 
-.inputGroup input,
-.inputGroup textarea {
+.cardText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+  text-decoration: none;
+  display: block;
+}
+
+a.cardText:hover {
+  color: #ffffff;
+}
+
+/* Form Inputs inside Cards */
+.cardInput, .cardTextarea {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 0 1rem 0;
-  font-size: 1.25rem;
-  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+  color: #ffffff;
   font-family: inherit;
   transition: border-color 0.3s ease;
 }
 
-.inputGroup textarea {
-  min-height: 120px;
+.cardTextarea {
   resize: vertical;
+  min-height: 60px;
 }
 
-.inputGroup input:focus,
-.inputGroup textarea:focus {
+.cardInput::placeholder, .cardTextarea::placeholder {
+  color: #555555;
+}
+
+.cardInput:focus, .cardTextarea:focus {
   outline: none;
-  border-bottom-color: #fff;
+  border-bottom-color: #ffffff;
 }
 
-.inputGroup input::placeholder,
-.inputGroup textarea::placeholder {
-  color: #444;
+/* Profile Card Specifics */
+.profileCard {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.profileCard .cardTitle {
+  margin: 0 0 0.25rem 0;
+}
+
+.profileAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-color: #222;
+  flex-shrink: 0;
 }
 
 /* Submit Button */
 .submitBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  color: #000;
+  align-self: flex-end;
+  margin-top: 1rem;
+  background: #ffffff;
+  color: #0c0c0c;
   border: none;
+  padding: 1.25rem 4rem;
   border-radius: 100px;
-  padding: 1rem 1rem 1rem 2rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 1rem;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
-  width: max-content;
-  gap: 2rem;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .submitBtn:hover {
-  transform: translateY(-4px) scale(1.02);
-  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  background: #e0e0e0;
 }
 
-.btnIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* Responsive */
+@media (max-width: 992px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
 }
-
-.submitBtn:hover .btnIcon {
-  transform: rotate(-45deg);
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 4vw;
+  }
+  .card {
+    padding: 2rem;
+  }
 }

@@ -6,87 +6,98 @@ import { siteConfig } from '../data/siteConfig';
 
 export default function ProjectInMindCTA() {
   return (
-    <section className={styles.section}>
+    <section id="contact" className={styles.section}>
       <div className={styles.container}>
         
-        {/* Massive Headline */}
+        {/* Centered Header (Like Screenshot 1) */}
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            Have a project <span className={styles.italic}>in mind?</span>
-          </h2>
+          <h2 className={styles.headline}>Have a project in mind?</h2>
+          <p className={styles.paragraph}>
+            Tell us about your project—whether it's a website, SEO, or marketing.<br/>We are ready to create and collaborate.
+          </p>
         </div>
 
-        <div className={styles.content}>
-          {/* Left: Contact details */}
-          <div className={styles.contactDetails}>
-            <p className={styles.description}>
-              Tell us about your project—whether it's a website, SEO, or marketing. We are ready to create and collaborate.
-            </p>
-
-            <div className={styles.divider}></div>
+        {/* Card Grid (Like Screenshot 2) */}
+        <div className={styles.bentoGrid}>
+          
+          {/* Static Info Cards */}
+          <div className={styles.infoCol}>
             
-            <div className={styles.infoBlock}>
-              <span className={styles.label}>Direct Contact</span>
-              <a href="mailto:hello@studio.com" className={styles.link}>hello@studio.com</a>
-              <a href="tel:+1234567890" className={styles.link}>+1 (234) 567-890</a>
-            </div>
-
-            <div className={styles.infoBlock}>
-              <span className={styles.label}>Location</span>
-              <p className={styles.text}>123 Creative Street<br/>New York, NY 10001</p>
+            <div className={styles.card}>
+              <div className={styles.iconGroup}>
+                <div className={`${styles.iconShape} ${styles.shapeBlue}`}></div>
+              </div>
+              <h3 className={styles.cardTitle}>Direct Contact</h3>
+              <a href="mailto:hello@studio.com" className={styles.cardText}>hello@studio.com</a>
+              <a href="tel:+1234567890" className={styles.cardText}>+1 (234) 567-890</a>
             </div>
             
-            <div className={styles.avatarBlock}>
-              <div className={styles.avatar}>
-                {siteConfig.images.studio.image1 && (
-                  <Image 
-                    src={siteConfig.images.studio.image1} 
-                    alt="Lauren Thompson" 
-                    fill 
-                    sizes="60px"
-                    style={{ objectFit: 'cover' }} 
-                  />
-                )}
+            <div className={styles.card}>
+              <div className={styles.iconGroup}>
+                <div className={`${styles.iconShape} ${styles.shapeGreenHalf}`}></div>
               </div>
-              <div className={styles.avatarInfo}>
-                 <span className={styles.avatarName}>Lauren Thompson</span>
-                 <span className={styles.avatarRole}>Team Lead</span>
+              <h3 className={styles.cardTitle}>Location</h3>
+              <p className={styles.cardText}>123 Creative Street<br/>New York, NY 10001</p>
+            </div>
+
+            <div className={`${styles.card} ${styles.profileCard}`}>
+              <div className={styles.profileAvatar}>
+                <Image 
+                  src="https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp" 
+                  alt="Lauren Thompson" 
+                  fill 
+                  style={{objectFit: 'cover'}} 
+                />
+              </div>
+              <div>
+                <h3 className={styles.cardTitle}>Lauren Thompson</h3>
+                <p className={styles.cardText}>Team Lead</p>
               </div>
             </div>
+
           </div>
 
-          {/* Right: The Form */}
-          <div className={styles.formWrapper}>
-            <form className={styles.form}>
-              <div className={styles.inputRow}>
-                <div className={styles.inputGroup}>
-                  <label htmlFor="name">01. What's your name?</label>
-                  <input type="text" id="name" placeholder="John Doe *" required />
+          {/* Form Cards */}
+          <form className={styles.formCol} onSubmit={(e) => e.preventDefault()}>
+            
+            <div className={styles.formRow}>
+              <div className={styles.card}>
+                <div className={styles.iconGroup}>
+                  <div className={`${styles.iconShape} ${styles.shapePink}`}></div>
                 </div>
-                <div className={styles.inputGroup}>
-                  <label htmlFor="email">02. What's your email?</label>
-                  <input type="email" id="email" placeholder="john@example.com *" required />
-                </div>
-              </div>
-              
-              <div className={styles.inputGroup}>
-                <label htmlFor="service">03. What are you looking for?</label>
-                <input type="text" id="service" placeholder="Web Design, Branding, SEO..." />
+                <label htmlFor="name" className={styles.cardTitle}>01. What's your name?</label>
+                <input type="text" id="name" placeholder="John Doe *" className={styles.cardInput} required />
               </div>
 
-              <div className={styles.inputGroup}>
-                <label htmlFor="message">04. Tell us about your project</label>
-                <textarea id="message" placeholder="Hello, I would like to talk about... *" required></textarea>
+              <div className={styles.card}>
+                <div className={styles.iconGroup}>
+                  <div className={`${styles.iconShape} ${styles.shapePurpleRing}`}></div>
+                </div>
+                <label htmlFor="email" className={styles.cardTitle}>02. What's your email?</label>
+                <input type="email" id="email" placeholder="john@example.com *" className={styles.cardInput} required />
               </div>
+            </div>
 
-              <button type="button" className={styles.submitBtn}>
-                <span className={styles.btnText}>Send Message</span>
-                <span className={styles.btnIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </span>
-              </button>
-            </form>
-          </div>
+            <div className={styles.card}>
+              <div className={styles.iconGroup}>
+                <div className={`${styles.iconShape} ${styles.shapeYellowTriangle}`}></div>
+              </div>
+              <label htmlFor="service" className={styles.cardTitle}>03. What are you looking for?</label>
+              <input type="text" id="service" placeholder="Web Design, Branding, SEO..." className={styles.cardInput} />
+            </div>
+
+            <div className={styles.card}>
+              <div className={styles.iconGroup}>
+                <div className={`${styles.iconShape} ${styles.shapeBlueSteps}`}></div>
+              </div>
+              <label htmlFor="message" className={styles.cardTitle}>04. Tell us about your project</label>
+              <textarea id="message" placeholder="Hello, I would like to talk about... *" className={styles.cardTextarea} required></textarea>
+            </div>
+
+            <button type="submit" className={styles.submitBtn}>Send Message</button>
+
+          </form>
+
         </div>
 
       </div>
