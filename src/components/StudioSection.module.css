@@ -11,7 +11,7 @@
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: #000000; /* Dark theme for left side */
+  background-color: #1a1a1a; /* Softer dark charcoal instead of pure black */
   z-index: 0;
 }
 
@@ -54,7 +54,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #e0e0e0;
+  background-color: #2a2a2a; /* Softer placeholder color to match new dark bg */
 }
 
 .imageWrapper img {
@@ -87,7 +87,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: #111111;
+  color: #1a1a1a; /* Matched to left bg */
 }
 
 .headline {
@@ -97,14 +97,14 @@
   margin: 0 0 2rem 0;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #111111;
+  color: #1a1a1a; /* Matched to left bg */
 }
 
 .paragraph {
   font-size: clamp(1rem, 1.15vw, 1.125rem);
   line-height: 1.6;
   font-weight: 400;
-  color: #333333;
+  color: #444444; /* Slightly softer for reading */
   margin: 0 0 3rem 0;
 }
 
