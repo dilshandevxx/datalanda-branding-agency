@@ -9,7 +9,7 @@ export default function TestimonialSection() {
     {
       id: 1,
       quote: "The engineering quality and design aesthetic they brought to our product completely revolutionized our market positioning. Absolute masters of their craft.",
-      name: "Sarah Jenkins",
+      name: "Samuel Jenkins",
       title: "Chief Product Officer",
       img: "/studio_1.png"
     },
@@ -23,7 +23,7 @@ export default function TestimonialSection() {
     {
       id: 3,
       quote: "They don't just build software; they build digital legacies. The attention to micro-interactions and performance optimization is simply unmatched in the industry.",
-      name: "Elena Rostova",
+      name: "Elias Rostov",
       title: "Creative Director",
       img: "/studio_3.png"
     }
