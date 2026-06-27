@@ -32,7 +32,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "02 September 2025",
     shortDescription: "How strategic brand transformation enabled Instant Aid to secure UN partnerships and deliver life-saving support.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp"
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "14 November 2024",
     shortDescription: "Driftime® CCO, Abb-d Taiyo speaks to Civil Society Magazine for an in-depth feature on how a focused, strategic rebrand can revitalise charity missions.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp"
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "17 July 2024",
     shortDescription: "We got our hands dirty in our latest Driftime® Hackathon, creating GRO-OP, a top-of-the-crops prototype web-app designed to redistribute surplus harvests.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526288/laptop_report_mockup_jypxur.webp"
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "29 May 2024",
     shortDescription: "Driftime® have launched a brand new report exploring design-led directions, industry observations, and innovation towards impact.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp"
   },
   {
     id: 5,
@@ -100,7 +100,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "04 December 2023",
     shortDescription: "We took some time to chat with Art Not Evidence ahead of their launch to hear more about the project, the people behind the scenes, and what digital design can do.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp"
   },
   {
     id: 6,
@@ -117,7 +117,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "17 November 2023",
     shortDescription: "The first in a series of interviews with our partners and collaborators, Driftime catches up with Roadrunner Venture Studios as they launch their new visual identity.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp"
   },
   {
     id: 7,
@@ -134,7 +134,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "24 August 2023",
     shortDescription: "A four day Hackathon took the Drifteam off the beaten track this April, aligning digital design with on-the-ground action, resulting in a new web-app prototype ROAM.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526288/laptop_report_mockup_jypxur.webp"
   },
   {
     id: 8,
@@ -151,7 +151,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "22 May 2023",
     shortDescription: "The White House announce our work with The Quad Investors Network, a non-profit organisation working with investors across Australia, India, Japan, and the US.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp"
   },
   {
     id: 9,
@@ -168,7 +168,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "11 January 2023",
     shortDescription: "Driftime champions an integrated practice with their future-focused collaborators Only One.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp"
   },
   {
     id: 10,
@@ -185,7 +185,7 @@ export const ALL_PROJECTS: Project[] = [
     date: "10 October 2022",
     shortDescription: "Our exploration into Web3 ecosystems resulted in a highly secure, brutally styled digital wallet interface.",
     websiteUrl: "",
-    cardImageUrl: ""
+    cardImageUrl: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp"
   },
   {
     id: 11,

@@ -48,7 +48,7 @@ export default function ProjectDetail() {
         >
           <div className={styles.heroImageWrapper}>
             <Image 
-              src={project.img} 
+              src={project.cardImageUrl || project.img} 
               alt={project.title} 
               fill 
               sizes="100vw"

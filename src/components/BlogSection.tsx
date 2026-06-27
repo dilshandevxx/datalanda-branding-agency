@@ -6,7 +6,7 @@ import { siteConfig } from '../data/siteConfig';
 
 const posts = [
   {
-    image: siteConfig.images.resources.image1,
+    image: "/projects/laptop_mockup.png",
     category: "Marketing",
     color: "#ff4d6d",
     date: "January 30, 2023",
@@ -14,7 +14,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: siteConfig.images.resources.image2,
+    image: "/projects/imac_mockup.png",
     category: "Guides",
     color: "#10b981",
     date: "January 30, 2023",
@@ -22,7 +22,7 @@ const posts = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem."
   },
   {
-    image: siteConfig.images.resources.image3,
+    image: "/projects/tablet_poster_mockup.png",
     category: "Strategy",
     color: "#8b5cf6",
     date: "January 30, 2023",
