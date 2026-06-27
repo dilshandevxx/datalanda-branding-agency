@@ -10,12 +10,11 @@ export default function ProjectInMindCTA() {
         <div className={styles.header}>
           <h2 className={styles.headline}>Have a project in mind?</h2>
           <p className={styles.paragraph}>
-            Tell us about your project—whether it's a website, SEO, or marketing.<br />
-            We are ready to create and collaborate.
+            Tell us about your project—whether it's a website, SEO, or marketing.
           </p>
         </div>
 
-        <div className={styles.content}>
+        <div className={styles.card}>
           <div className={styles.infoCol}>
             <div className={styles.infoBlock}>
               <h4 className={styles.infoLabel}>Direct Contact</h4>
