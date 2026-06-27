@@ -45,7 +45,8 @@ export default function StudioSection() {
 
         <div className={styles.colMiddle}>
           <p className={styles.paragraph}>
-            Great design has no expiration date. It lasts for years and inspires instantly. Our creative freedom enables us to spend more time on fewer projects, ensuring unparalleled attention to detail.
+            <span className={styles.subHeadline}>We merge cinematic storytelling, deep strategic research, and cutting-edge engineering to build brands that leave a legacy.</span><br/><br/>
+            Our multidisciplinary approach means we don't just design—we invent.
           </p>
           
           <div className={styles.linkWrapper}>
@@ -58,7 +59,7 @@ export default function StudioSection() {
 
         <div className={styles.colRight}>
           <p className={styles.paragraph}>
-            We focus on the intellectual, functional, and artistic aspects of business. Looking to create profound ideas, timeless design, and beauty in everyday life.
+            From the first frame to the final line of code, our studio is built on an obsession with craft. We are thinkers, creators, and technologists redefining digital experiences.
           </p>
         </div>
       </div>
