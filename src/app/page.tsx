@@ -39,8 +39,8 @@ export default function Home() {
       <TestimonialSection />
       <FaqSection />
       <BlogSection />
-      <FooterCTASection />
       <ProjectInMindCTA />
+      <FooterCTASection />
       <FooterSection />
     </main>
   );
