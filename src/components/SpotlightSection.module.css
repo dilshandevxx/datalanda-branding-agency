@@ -1,33 +1,38 @@
 .section {
-  padding: var(--section-padding) 0;
-  background-color: var(--background);
-  color: var(--foreground);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height: 300vh; /* creates scrollable area */
+  background-color: #000;
   position: relative;
-  overflow: hidden;
-  min-height: 80vh; /* Make it feel substantial */
 }
 
-/* Background video */
-.backgroundVideo {
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoWrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8; /* Let more natural color shine through */
-  object-fit: cover;
   z-index: 0;
-  /* Removed grayscale, added a slight saturation boost and warmth */
-  filter: sepia(0.2) saturate(1.2) contrast(1.1); 
 }
 
-/* Warm, cinematic overlay instead of harsh black gradient */
-.overlay {
+.backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.2) saturate(1.2) contrast(1.1);
+}
+
+.videoOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,70 +40,74 @@
   height: 100%;
   background: linear-gradient(
     to bottom, 
-    var(--background) 0%, 
-    rgba(20, 15, 10, 0.4) 30%, 
-    rgba(20, 15, 10, 0.4) 70%, 
-    var(--background) 100%
+    rgba(10, 10, 10, 0.8) 0%, 
+    rgba(10, 10, 10, 0.3) 50%, 
+    rgba(10, 10, 10, 0.8) 100%
   );
-  z-index: 1;
 }
 
-.content {
+.maskContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  mix-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.maskText {
+  font-family: var(--font-family);
+  font-size: clamp(4rem, 15vw, 20rem);
+  font-weight: 800;
+  line-height: 0.85;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin: 0;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.finalContent {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
-  padding: 4rem 2rem;
+  color: #fff;
+  text-align: center;
 }
 
 .lineDecoration {
   width: 1px;
-  height: 60px;
-  background-color: var(--accent);
-  margin-bottom: 1rem;
-  opacity: 0.6;
+  height: 80px;
+  background-color: #fff;
+  opacity: 0.5;
 }
 
-.quote {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
-}
-
-.quoteSmall {
-  font-family: var(--font-family);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.quoteLarge {
+.finalQuote {
   font-family: var(--font-serif), "Georgia", serif;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 400;
   font-style: italic;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--foreground);
+  margin: 0;
 }
 
 .button {
   margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: transparent;
-  color: var(--foreground);
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1.25rem 3rem;
-  border-radius: 0; /* Brutalist sharp edges */
   font-family: var(--font-family);
   font-size: 0.8rem;
   font-weight: 500;
@@ -106,34 +115,21 @@
   text-transform: uppercase;
   cursor: pointer;
   backdrop-filter: blur(8px);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s ease;
 }
 
 .button:hover {
-  transform: translateY(-4px);
-  background: var(--foreground);
-  color: var(--background);
-  border-color: var(--foreground);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  color: #000;
+  border-color: #fff;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--section-padding) 4vw;
+    height: 250vh;
   }
   
-  .content {
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
-    width: 100%;
-  }
-  
-  .quote {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-  
-  .button {
-    width: 100%;
-    padding: 1rem;
+  .maskText {
+    font-size: clamp(3rem, 18vw, 6rem);
   }
 }
