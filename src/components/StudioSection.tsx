@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './StudioSection.module.css';
 import { siteConfig } from '../data/siteConfig';
@@ -20,15 +20,38 @@ export default function StudioSection() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -500, behavior: 'smooth' });
+      const cardWidth = scrollRef.current.children[0]?.clientWidth || 300;
+      scrollRef.current.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 500, behavior: 'smooth' });
+      const cardWidth = scrollRef.current.children[0]?.clientWidth || 300;
+      scrollRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
     }
   };
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        
+        // If we've reached the end of the scroll container
+        if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 10) {
+          // Scroll back to the beginning
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Otherwise, scroll to the next card
+          const cardWidth = scrollRef.current.children[0]?.clientWidth || 300;
+          scrollRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+        }
+      }
+    }, 3500); // Change image every 3.5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="studio" className={styles.section}>

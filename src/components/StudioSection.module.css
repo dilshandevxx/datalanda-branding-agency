@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  background-color: #0c0c0c;
+  background-color: #111111;
   color: #ffffff;
   padding: clamp(6rem, 10vw, 10rem) 4vw;
   font-family: var(--font-family);
