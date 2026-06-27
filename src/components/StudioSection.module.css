@@ -1,21 +1,22 @@
 .section {
   position: relative;
-  background-color: #f4f4f0; /* Single elegant warm off-white background */
-  color: #111111;
+  background-color: #0c0c0c; /* Changed to dark theme to match the site */
+  color: #ffffff;
   overflow: hidden;
 }
 
 .container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Left image takes up slightly more space */
+  grid-template-columns: 1.2fr 1fr;
   align-items: stretch;
 }
 
 .imageSlideshow {
   position: relative;
   width: 100%;
-  height: clamp(600px, 90vh, 1000px); /* Massive, immersive height */
+  height: 100%; /* Ensures it stretches if text is taller */
+  min-height: clamp(600px, 90vh, 1000px);
   overflow: hidden;
   background-color: #111;
 }
@@ -45,14 +46,14 @@
 }
 
 .imageWrapper.active img {
-  transform: scale(1.08); /* Slow, cinematic zoom */
+  transform: scale(1.08);
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6vw 8vw 6vw 6vw; /* Generous breathing room */
+  padding: 6vw 8vw 6vw 6vw;
   max-width: 800px;
 }
 
@@ -62,7 +63,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  color: #555555; /* Subtle subtitle */
+  color: #888888;
 }
 
 .headline {
@@ -72,20 +73,20 @@
   margin: 0 0 2.5rem 0;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  color: #111111;
+  color: #ffffff;
 }
 
 .paragraph {
   font-size: clamp(1.125rem, 1.2vw, 1.25rem);
   line-height: 1.6;
   font-weight: 400;
-  color: #444444; 
-  margin: 0 0 4rem 0;
-  max-width: 90%; /* Keep line length readable */
+  color: #a0a0a0; 
+  margin: 0 0 3rem 0;
+  max-width: 90%;
 }
 
 .linkWrapper {
-  margin-top: auto;
+  margin-top: 1rem; /* Fixed: Removed margin-top: auto which pushed button too far down */
 }
 
 .readMoreBtn {
@@ -93,8 +94,8 @@
   align-items: center;
   justify-content: center;
   padding: 1.25rem 2.5rem;
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #ffffff; /* Inverted for dark theme */
+  color: #0c0c0c;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -106,7 +107,7 @@
 }
 
 .readMoreBtn:hover {
-  background-color: #333333;
+  background-color: #e0e0e0;
   transform: translateY(-4px);
 }
 
@@ -116,7 +117,7 @@
   }
   
   .imageSlideshow {
-    height: 60vh;
+    min-height: 60vh;
   }
   
   .content {
