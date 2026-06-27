@@ -13,9 +13,10 @@ export const siteConfig = {
   },
   images: {
     studio: {
-      image1: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp", // Add cloud URL later
-      image2: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782531016/pexels-cottonbroswebp_izesja.webp", // Add cloud URL later
-      image3: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529658/pexels-lee-campbell-18167-115655_cvxirt.webp", // Add cloud URL later
+      image1: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp",
+      image2: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782531016/pexels-cottonbroswebp_izesja.webp",
+      image3: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529658/pexels-lee-campbell-18167-115655_cvxirt.webp",
+      image4: "", // Add cloud URL later
     },
     blogArticle: {
       image1: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp",
