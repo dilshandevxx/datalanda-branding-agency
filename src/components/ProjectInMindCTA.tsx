@@ -7,12 +7,6 @@ import { siteConfig } from '../data/siteConfig';
 export default function ProjectInMindCTA() {
   return (
     <section className={styles.section}>
-      {/* Background Video */}
-      <video className={styles.bgVideo} autoPlay muted loop playsInline>
-        <source src={siteConfig.videos.cinematicAccordion.projectinmind} type="video/webm" />
-      </video>
-      <div className={styles.overlay}></div>
-      
       <div className={styles.container}>
         {/* Left Column: Form Card */}
         <div className={styles.leftCol}>
