@@ -35,13 +35,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
-  align-items: center;
+  align-items: stretch;
 }
 
 .imageSlideshow {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  min-height: 500px;
   overflow: hidden;
   background-color: #2a2a2a;
 }
@@ -77,7 +78,9 @@
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   max-width: 600px;
+  padding: 2vw 0;
 }
 
 .subtitle {
@@ -164,5 +167,6 @@
 @media (max-width: 768px) {
   .imageSlideshow {
     aspect-ratio: 4 / 3;
+    min-height: auto;
   }
 }
