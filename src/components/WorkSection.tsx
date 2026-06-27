@@ -17,7 +17,9 @@ export default function WorkSection() {
         <div className={styles.grid}>
           {projects.map((project, i) => (
             <Link 
-              href={`/projects/${project.id}`}
+              href={project.websiteUrl || `/projects/${project.id}`}
+              target={project.websiteUrl ? "_blank" : undefined}
+              rel={project.websiteUrl ? "noopener noreferrer" : undefined}
               key={project.id} 
               className={`${styles.projectCard} ${i % 2 !== 0 ? styles.staggered : ''}`}
               style={{ display: 'block' }} // Ensure link behaves as a block
@@ -25,7 +27,7 @@ export default function WorkSection() {
               <div className={`${styles.imageWrapper} ${styles.ratioSquare}`}>
                 <div className={styles.imageInner}>
                   <Image 
-                    src={project.img} 
+                    src={project.cardImageUrl || project.img} 
                     alt={project.title} 
                     fill 
                     sizes="(max-width: 768px) 85vw, 50vw"

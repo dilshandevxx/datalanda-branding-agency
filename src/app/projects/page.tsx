@@ -45,7 +45,9 @@ export default function ProjectsPage() {
       <div className={styles.grid}>
         {filteredProjects.map((project, i) => (
           <Link 
-            href={`/projects/${project.id}`}
+            href={project.websiteUrl || `/projects/${project.id}`}
+            target={project.websiteUrl ? "_blank" : undefined}
+            rel={project.websiteUrl ? "noopener noreferrer" : undefined}
             key={`${project.id}-${activeCategory}`} 
             className={styles.projectCard}
             style={{ textDecoration: 'none', color: 'inherit' }}
@@ -53,7 +55,7 @@ export default function ProjectsPage() {
             <div className={styles.imageWrapper}>
               <div className={styles.imageInner}>
                 <Image 
-                  src={project.img} 
+                  src={project.cardImageUrl || project.img} 
                   alt={project.title} 
                   fill 
                   sizes="(max-width: 768px) 100vw, 33vw"
