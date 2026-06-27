@@ -100,7 +100,6 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border: none;
-  border-radius: 100px; /* Pill shape */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
