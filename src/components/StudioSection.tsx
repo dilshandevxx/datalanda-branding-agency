@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './StudioSection.module.css';
 import { siteConfig } from '../data/siteConfig';
@@ -17,6 +17,22 @@ export default function StudioSection() {
       });
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (galleryRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current;
+        // Check if scrolled to the very end (with a 5px buffer)
+        if (scrollLeft + clientWidth >= scrollWidth - 5) {
+          galleryRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          galleryRef.current.scrollBy({ left: clientWidth * 0.5, behavior: 'smooth' });
+        }
+      }
+    }, 3500); // Automatically scroll every 3.5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="studio" className={styles.section}>
