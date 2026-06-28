@@ -96,8 +96,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #d85c45; /* Cinematic Terracotta */
-  color: #ffffff;
+  background-color: #d6ff00; /* Vibrant Chartreuse / Lime */
+  color: #0c0c0c;
   border: none;
   padding: 0.875rem 2rem;
   font-size: 0.75rem;
@@ -109,10 +109,10 @@
 }
 
 .ctaButton:hover {
-  background-color: #e66850; /* Lighter terracotta on hover */
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0c0c0c;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(216, 92, 69, 0.3);
+  box-shadow: 0 10px 20px rgba(214, 255, 0, 0.2);
 }
 
 /* Hamburger (Mobile) */
