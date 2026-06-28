@@ -10,7 +10,7 @@ export default function ProjectInMindCTA() {
         <div className={styles.header}>
           <h2 className={styles.headline}>
             Let's start a <br/>
-            conversation<span className={styles.yellowDot}>.</span>
+            <span className={styles.italicSerif}>conversation</span><span className={styles.yellowDot}>.</span>
           </h2>
           <a href="mailto:hello@skylabs.com" className={styles.emailLink}>hello@skylabs.com</a>
         </div>

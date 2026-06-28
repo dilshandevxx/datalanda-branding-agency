@@ -25,12 +25,22 @@
 }
 
 .headline {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
   margin: 0;
   color: #ffffff;
+}
+
+.italicSerif {
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #f6b519; /* Optional: Make the italic word stand out, or keep it white. Let's keep it white for elegance */
+  color: #ffffff; 
+  padding-right: 0.1em;
 }
 
 .yellowDot {
