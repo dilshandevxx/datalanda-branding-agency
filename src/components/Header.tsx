@@ -7,50 +7,67 @@ import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    
     const handleScroll = () => {
-      // Expand the island when scrolled past 50px
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+      
+      // Hide when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100 && !menuOpen) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY = currentScrollY;
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   return (
     <>
-      <header className={`${styles.dynamicIsland} ${scrolled ? styles.expanded : styles.collapsed}`}>
-        <div className={styles.islandInner}>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
+        <div className={styles.leftSection}>
           <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
             <Logo />
             <span className={styles.logoText}>SKYLABS</span>
           </Link>
-          
-          <nav className={styles.islandNav}>
+        </div>
+        
+        <div className={styles.centerSection}>
+          <nav className={styles.nav}>
             <Link href="/#services" className={styles.navLink}>Services</Link>
             <Link href="/projects" className={styles.navLink}>Projects</Link>
             <Link href="/#studio" className={styles.navLink}>Studio</Link>
-            <Link href="/#contact" className={styles.navLink}>Contact</Link>
           </nav>
+        </div>
 
-          <div className={styles.rightActions}>
-            <button 
-              className={styles.menuToggle} 
-              aria-label="Toggle menu"
-              onClick={toggleMenu}
-            >
-              {menuOpen ? 'CLOSE' : 'MENU'}
-            </button>
-          </div>
+        <div className={styles.rightSection}>
+          <Link href="/#contact" className={styles.ctaButton}>
+            Let's Talk
+          </Link>
+          <button 
+            className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`} 
+            aria-label="Toggle menu"
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </header>
 
-      {/* Full Screen Menu Overlay (Fallback for mobile or explicit click) */}
+      {/* Full Screen Menu Overlay for Mobile */}
       <div className={`${styles.fullScreenMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <div className={styles.menuInner}>
           <nav className={styles.overlayNav}>
