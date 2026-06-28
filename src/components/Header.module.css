@@ -1,25 +1,39 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  padding: 0 4vw;
+.dynamicIsland {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100; /* Must be higher than fullScreenMenu */
-  background: transparent;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none; /* Let clicks pass through empty space */
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 64px;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 100;
+  width: calc(100% - 2rem);
+  max-width: 280px; /* Starts small */
+  transition: max-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+  overflow: hidden; /* Hides nav when collapsed */
 }
 
-.hidden {
-  transform: translateY(-100%);
+.expanded {
+  max-width: 700px;
+  background: rgba(20, 20, 20, 0.6); /* Slightly more transparent when expanded */
+}
+
+.islandInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 900;
   letter-spacing: -0.05em;
   font-family: var(--font-family);
@@ -30,28 +44,63 @@
   gap: 0.5rem;
   pointer-events: auto;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover {
   transform: scale(1.05);
 }
 
-.rightSection {
-  pointer-events: auto;
+.islandNav {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Minimalist MENU Button */
+.expanded .islandNav {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s ease 0.3s; /* Fade in after expanding */
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--foreground);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.rightActions {
+  pointer-events: auto;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Minimalist MENU Button inside Island */
 .menuToggle {
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 1rem;
-  margin-right: -1rem; /* optical alignment */
   transition: opacity 0.3s ease;
   font-family: var(--font-family);
 }
@@ -74,7 +123,7 @@
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  clip-path: inset(0 0 100% 0); /* Cool reveal animation */
+  clip-path: inset(0 0 100% 0);
   transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s ease;
 }
 
@@ -117,7 +166,6 @@
   opacity: 1;
 }
 
-/* Staggered animation delays for nav links */
 .menuOpen .overlayNavLink:nth-child(1) { transition-delay: 0.2s; }
 .menuOpen .overlayNavLink:nth-child(2) { transition-delay: 0.3s; }
 .menuOpen .overlayNavLink:nth-child(3) { transition-delay: 0.4s; }
@@ -204,14 +252,19 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    height: 80px;
+  .dynamicIsland {
+    max-width: calc(100% - 2rem);
+    height: 60px;
   }
-  
+  .expanded {
+    max-width: calc(100% - 2rem);
+  }
+  .islandNav {
+    display: none;
+  }
   .overlayNavLink {
     font-size: clamp(3.5rem, 12vw, 5rem);
   }
-  
   .menuFooter {
     flex-direction: column;
     gap: 3rem;
