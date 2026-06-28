@@ -96,8 +96,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #e3cca1; /* Luxury Beige */
-  color: #0c0c0c;
+  background-color: #d85c45; /* Cinematic Terracotta */
+  color: #ffffff;
   border: none;
   padding: 0.875rem 2rem;
   font-size: 0.75rem;
@@ -109,10 +109,10 @@
 }
 
 .ctaButton:hover {
-  background-color: #f5eedf; /* Creamy white on hover */
-  color: #0c0c0c;
+  background-color: #e66850; /* Lighter terracotta on hover */
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(227, 204, 161, 0.2);
+  box-shadow: 0 10px 20px rgba(216, 92, 69, 0.3);
 }
 
 /* Hamburger (Mobile) */
