@@ -16,15 +16,24 @@
 }
 
 .estBadge {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em; /* Very wide, elegant tracking */
   text-transform: uppercase;
-  color: #a0a0a0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1.25rem;
-  border-radius: 100px;
-  display: inline-block;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between text and small lines */
+}
+
+/* Add small horizontal lines on the sides for a classic editorial look */
+.estBadge::before,
+.estBadge::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .title {

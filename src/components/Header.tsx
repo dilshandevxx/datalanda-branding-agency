@@ -36,22 +36,18 @@ export default function Header() {
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
-        <div className={styles.leftSection}>
-          <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
-            <Logo />
-            <span className={styles.logoText}>SKYLABS</span>
-          </Link>
-        </div>
+        <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
+          <Logo />
+          <span className={styles.logoText}>SKYLABS</span>
+        </Link>
         
-        <div className={styles.centerSection}>
+        <div className={styles.rightSection}>
           <nav className={styles.nav}>
             <Link href="/#services" className={styles.navLink}>Services</Link>
             <Link href="/projects" className={styles.navLink}>Projects</Link>
             <Link href="/#studio" className={styles.navLink}>Studio</Link>
           </nav>
-        </div>
 
-        <div className={styles.rightSection}>
           <Link href="/#contact" className={styles.ctaButton}>
             Let's Talk
           </Link>
