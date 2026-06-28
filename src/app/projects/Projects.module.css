@@ -1,7 +1,7 @@
 .pageWrapper {
   padding-top: var(--header-height);
   min-height: 100vh;
-  background-color: #000000; /* Dark background to match screenshot */
+  background-color: #121214; /* Sophisticated off-black/charcoal instead of pure black */
   color: var(--foreground);
 }
 
@@ -31,7 +31,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #1c1c1e; /* Dark grey container */
+  background-color: rgba(255, 255, 255, 0.05); /* Softer translucent container */
   padding: 0.5rem;
   border-radius: 8px; /* Slightly rounded */
   flex-wrap: wrap;
