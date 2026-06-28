@@ -6,7 +6,6 @@ import { Logo } from './Logo';
 import styles from './Header.module.css';
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,10 +16,10 @@ export default function Header() {
     
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 20);
       
       // Hide when scrolling down (past 100px), show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Don't hide if menu is open
+      if (currentScrollY > lastScrollY && currentScrollY > 100 && !menuOpen) {
         setHidden(true);
       } else {
         setHidden(false);
@@ -31,47 +30,52 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
-      <Link href="/#hero" className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
-        <Logo />
-        SKYLABS
-      </Link>
-      <div className={styles.rightSection}>
-        <nav className={styles.nav}>
-          <Link href="/#services" className={styles.navLink}>Services</Link>
-          <Link href="/projects" className={styles.navLink}>Projects</Link>
-          <Link href="/#studio" className={styles.navLink}>Studio</Link>
-          <Link href="/#contact" className={styles.navLink}>Contact</Link>
-        </nav>
-        <Link href="/#contact" className={styles.ctaButton}>
-          Let&apos;s talk <span className={styles.arrow}>→</span>
+    <>
+      <header className={`${styles.header} ${hidden ? styles.hidden : ''}`}>
+        <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
+          <Logo />
+          SKYLABS
         </Link>
-        <button 
-          className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`} 
-          aria-label="Toggle menu"
-          onClick={toggleMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+        <div className={styles.rightSection}>
+          <button 
+            className={styles.menuToggle} 
+            aria-label="Toggle menu"
+            onClick={toggleMenu}
+          >
+            {menuOpen ? 'CLOSE' : 'MENU'}
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
-        <nav className={styles.mobileNav}>
-          <Link href="/#services" className={styles.mobileNavLink} onClick={toggleMenu}>Services</Link>
-          <Link href="/projects" className={styles.mobileNavLink} onClick={toggleMenu}>Projects</Link>
-          <Link href="/#studio" className={styles.mobileNavLink} onClick={toggleMenu}>Studio</Link>
-          <Link href="/#contact" className={styles.mobileNavLink} onClick={toggleMenu}>Contact</Link>
-        </nav>
-        <div className={styles.mobileFooter}>
-          <a href="mailto:hello@skylabs.com" className={styles.mobileEmail}>hello@skylabs.com</a>
+      {/* Full Screen Menu Overlay */}
+      <div className={`${styles.fullScreenMenu} ${menuOpen ? styles.menuOpen : ''}`}>
+        <div className={styles.menuInner}>
+          <nav className={styles.overlayNav}>
+            <Link href="/#services" className={styles.overlayNavLink} onClick={toggleMenu}>Services</Link>
+            <Link href="/projects" className={styles.overlayNavLink} onClick={toggleMenu}>Projects</Link>
+            <Link href="/#studio" className={styles.overlayNavLink} onClick={toggleMenu}>Studio</Link>
+            <Link href="/#contact" className={styles.overlayNavLink} onClick={toggleMenu}>Contact</Link>
+          </nav>
+          
+          <div className={styles.menuFooter}>
+            <div className={styles.menuContact}>
+              <span className={styles.menuLabel}>SAY HELLO</span>
+              <a href="mailto:hello@skylabs.com" className={styles.menuEmail}>hello@skylabs.com</a>
+            </div>
+            <div className={styles.menuSocial}>
+              <span className={styles.menuLabel}>SOCIALS</span>
+              <div className={styles.socialLinks}>
+                <a href="#" className={styles.socialLink}>Instagram</a>
+                <a href="#" className={styles.socialLink}>Twitter</a>
+                <a href="#" className={styles.socialLink}>LinkedIn</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
