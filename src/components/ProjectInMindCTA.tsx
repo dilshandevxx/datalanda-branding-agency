@@ -8,54 +8,88 @@ export default function ProjectInMindCTA() {
       <div className={styles.container}>
         
         <div className={styles.header}>
-          <h2 className={styles.headline}>Have a project in mind?</h2>
-          <p className={styles.paragraph}>
-            Tell us about your project—whether it's a website, SEO, or marketing. We are ready to create and collaborate.
-          </p>
+          <h2 className={styles.headline}>
+            Let's start a <br/>
+            conversation<span className={styles.yellowDot}>.</span>
+          </h2>
+          <a href="mailto:hello@skylabs.com" className={styles.emailLink}>hello@skylabs.com</a>
         </div>
 
-        <div className={styles.card}>
-          
-          <div className={styles.infoCol}>
-            <div className={styles.infoBlock}>
-              <h4 className={styles.infoLabel}>Direct Contact</h4>
-              <a href="mailto:hello@studio.com" className={styles.infoText}>hello@studio.com</a>
-              <a href="tel:+1234567890" className={styles.infoText}>+1 (234) 567-890</a>
+        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+          <div className={styles.row}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="name" className={styles.label}>Name*</label>
+              <input type="text" id="name" placeholder="..." className={styles.input} required />
             </div>
-
-            <div className={styles.infoBlock}>
-              <h4 className={styles.infoLabel}>Location</h4>
-              <p className={styles.infoText}>123 Creative Street<br/>New York, NY 10001</p>
+            <div className={styles.inputGroup}>
+              <label htmlFor="company" className={styles.label}>Company Name*</label>
+              <input type="text" id="company" placeholder="..." className={styles.input} required />
             </div>
           </div>
 
-          <form className={styles.formCol} onSubmit={(e) => e.preventDefault()}>
-            <div className={styles.inputRow}>
-              <div className={styles.inputGroup}>
-                <label htmlFor="name" className={styles.label}>01. What's your name?</label>
-                <input type="text" id="name" placeholder="John Doe *" className={styles.input} required />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label htmlFor="email" className={styles.label}>02. What's your email?</label>
-                <input type="email" id="email" placeholder="john@example.com *" className={styles.input} required />
-              </div>
-            </div>
-
+          <div className={styles.row}>
             <div className={styles.inputGroup}>
-              <label htmlFor="service" className={styles.label}>03. What are you looking for?</label>
-              <input type="text" id="service" placeholder="Web Design, Branding, SEO..." className={styles.input} />
+              <label htmlFor="email" className={styles.label}>Company Email*</label>
+              <input type="email" id="email" placeholder="..." className={styles.input} required />
             </div>
-
             <div className={styles.inputGroup}>
-              <label htmlFor="message" className={styles.label}>04. Tell us about your project</label>
-              <input type="text" id="message" placeholder="Hello, I would like to talk about... *" className={styles.input} required />
+              <label htmlFor="phone" className={styles.label}>Phone*</label>
+              <input type="tel" id="phone" placeholder="..." className={styles.input} required />
             </div>
+          </div>
 
-            <button type="submit" className={styles.submitBtn}>SEND MESSAGE</button>
-          </form>
+          <div className={styles.row}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="lookingFor" className={styles.label}>I'm looking for*</label>
+              <div className={styles.selectWrapper}>
+                <select id="lookingFor" className={styles.select} required defaultValue="">
+                  <option value="" disabled>Select</option>
+                  <option value="web">Web Design</option>
+                  <option value="branding">Branding</option>
+                  <option value="seo">SEO</option>
+                </select>
+              </div>
+            </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="source" className={styles.label}>I heard about Skylabs from*</label>
+              <div className={styles.selectWrapper}>
+                <select id="source" className={styles.select} required defaultValue="google">
+                  <option value="google">Google</option>
+                  <option value="social">Social Media</option>
+                  <option value="referral">Referral</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-        </div>
+          <div className={styles.row}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="budget" className={styles.label}>My budget range is*</label>
+              <div className={styles.selectWrapper}>
+                <select id="budget" className={styles.select} required defaultValue="25k">
+                  <option value="25k">Less Than $25K</option>
+                  <option value="50k">$25K - $50K</option>
+                  <option value="100k">$50K - $100K</option>
+                  <option value="100k+">$100K+</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.row}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="details" className={styles.label}>Project Details*</label>
+              <textarea 
+                id="details" 
+                placeholder="Let us know more about what you're looking for" 
+                className={styles.textarea} 
+                required 
+              />
+            </div>
+          </div>
+
+          <button type="submit" className={styles.submitBtn}>Send</button>
+        </form>
 
       </div>
     </section>
