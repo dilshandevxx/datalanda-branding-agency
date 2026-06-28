@@ -96,7 +96,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #d6ff00; /* Vibrant Chartreuse / Lime */
   color: #0c0c0c;
   border: none;
   padding: 0.875rem 2rem;
@@ -105,12 +105,14 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border-radius: 0; /* Sharp, editorial corners */
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ctaButton:hover {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
+  color: #0c0c0c;
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(214, 255, 0, 0.2);
 }
 
 /* Hamburger (Mobile) */
