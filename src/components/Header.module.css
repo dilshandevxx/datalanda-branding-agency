@@ -293,11 +293,10 @@
 
 @media (max-width: 768px) {
   .header {
-    display: flex;
-    justify-content: space-between;
     height: 80px;
+    padding: 0 5vw;
   }
-  .centerSection {
+  .nav {
     display: none;
   }
   .ctaButton {
