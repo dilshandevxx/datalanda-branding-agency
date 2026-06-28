@@ -96,7 +96,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #d6ff00; /* Vibrant Chartreuse / Lime */
+  background-color: #e3cca1; /* Luxury Beige */
   color: #0c0c0c;
   border: none;
   padding: 0.875rem 2rem;
@@ -109,10 +109,10 @@
 }
 
 .ctaButton:hover {
-  background-color: #ffffff;
+  background-color: #f5eedf; /* Creamy white on hover */
   color: #0c0c0c;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(214, 255, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(227, 204, 161, 0.2);
 }
 
 /* Hamburger (Mobile) */
