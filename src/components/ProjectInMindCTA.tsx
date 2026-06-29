@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import styles from './ProjectInMindCTA.module.css';
 
 export default function ProjectInMindCTA() {
@@ -47,21 +46,6 @@ export default function ProjectInMindCTA() {
               If you are going to use a passage
             </li>
           </ul>
-          
-          <div className={styles.profile}>
-            <div className={styles.avatarWrapper}>
-              <Image 
-                src="https://res.cloudinary.com/dqfcsavwj/image/upload/v1731654497/woman-1_ly6x4a.jpg" 
-                alt="Aleesha Brown" 
-                fill 
-                className={styles.avatar}
-              />
-            </div>
-            <div className={styles.profileInfo}>
-              <h4>Aleesha Brown</h4>
-              <p>CEO & CO Founder</p>
-            </div>
-          </div>
         </div>
 
         {/* Right Side Form */}

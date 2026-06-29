@@ -1,7 +1,7 @@
 .section {
   padding: 8rem 4vw;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #0e0e0e;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   font-family: var(--font-family);
@@ -45,7 +45,7 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin: 0;
-  color: #111111;
+  color: #ffffff;
 }
 
 .highlight {
@@ -55,7 +55,7 @@
 .desc {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #666666;
+  color: #999999;
   max-width: 90%;
   margin: 0;
 }
@@ -75,55 +75,13 @@
   gap: 1rem;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #111111;
+  color: #ffffff;
 }
 
 .checkIcon {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.avatarWrapper {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, #ff6a00 0%, #ffffff 100%);
-}
-
-.avatar {
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ffffff;
-}
-
-.profileInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.profileInfo h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #111111;
-}
-
-.profileInfo p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #888888;
-  font-weight: 500;
 }
 
 /* Right Side Form */
@@ -144,8 +102,8 @@
     45deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.05) 2px,
-    rgba(0, 0, 0, 0.05) 4px
+    rgba(255, 255, 255, 0.05) 2px,
+    rgba(255, 255, 255, 0.05) 4px
   );
   z-index: 0;
 }
