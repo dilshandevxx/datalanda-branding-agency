@@ -14,10 +14,13 @@ const CATEGORIES = ["All", "Landing Page", "E-Commerce", "Web App", "Corporate",
 export default function ProjectsClient({ initialProjects }: { initialProjects: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const filteredProjects = activeCategory === "All" 
     ? initialProjects 
     : initialProjects.filter(p => p.category?.toLowerCase() === activeCategory.toLowerCase());
+
+  const visibleProjects = filteredProjects.slice(0, visibleCount);
 
   return (
     <main className={styles.pageWrapper}>
@@ -35,7 +38,10 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
             <button 
               key={cat}
               className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeFilter : ''}`}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => {
+                setActiveCategory(cat);
+                setVisibleCount(6);
+              }}
             >
               {cat}
             </button>
@@ -44,7 +50,7 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
       </div>
 
       <div className={styles.grid}>
-        {filteredProjects.map((project, i) => (
+        {visibleProjects.map((project, i) => (
           <div 
             key={`${project._id || i}-${activeCategory}`} 
             className={styles.projectCard}
@@ -73,6 +79,35 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
           </div>
         ))}
       </div>
+
+      {visibleCount < filteredProjects.length && (
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem 0' }}>
+          <button 
+            onClick={() => setVisibleCount(prev => prev + 6)}
+            style={{
+              background: 'transparent',
+              color: '#ffffff',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              padding: '1rem 2.5rem',
+              borderRadius: '100px',
+              fontSize: '1rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }}
+          >
+            Show More
+          </button>
+        </div>
+      )}
 
       <FooterSection />
       
