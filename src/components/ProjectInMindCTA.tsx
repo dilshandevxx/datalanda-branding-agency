@@ -9,56 +9,36 @@ export default function ProjectInMindCTA() {
         
         {/* Left Side Content */}
         <div className={styles.contentSide}>
-          <div className={styles.label}>
-            <span className={styles.dots}>:::</span> CONTACT WITH US
-          </div>
-          
           <h2 className={styles.title}>
-            Book your <br />
-            <span className={styles.highlight}>consultation</span>
+            GOT A PROJECT IN MIND<span className={styles.accent}>?</span>
           </h2>
-          
           <p className={styles.desc}>
-            There cursus massa at urnaaculis estie. Sed aliquamellus vitae
-            ultrs condmentum leo massa mollis.
+            We're always looking for new challenges and interesting partners. 
+            Let's create something extraordinary together.
           </p>
-          
-          <ul className={styles.list}>
-            <li>
-              <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="12" fill="#ff6a00"/>
-                <path d="M7 12L10.5 15.5L17 8.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              Making this the first true generator on the Internet
-            </li>
-            <li>
-              <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="12" fill="#ff6a00"/>
-                <path d="M7 12L10.5 15.5L17 8.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              Lorem Ipsum is not simply random text
-            </li>
-            <li>
-              <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="12" fill="#ff6a00"/>
-                <path d="M7 12L10.5 15.5L17 8.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              If you are going to use a passage
-            </li>
-          </ul>
+          <div className={styles.contactDetails}>
+            <a href="mailto:hello@skylabs.com" className={styles.link}>hello@skylabs.com</a>
+            <a href="tel:+1234567890" className={styles.link}>+1 (234) 567 890</a>
+          </div>
         </div>
 
         {/* Right Side Form */}
         <div className={styles.formSide}>
-          <div className={styles.formWrapper}>
-            <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-              <input type="text" placeholder="Name" className={styles.input} required />
-              <input type="email" placeholder="Email" className={styles.input} required />
-              <input type="text" placeholder="Subject" className={styles.input} required />
-              <textarea placeholder="Message" className={styles.textarea} required></textarea>
-              <button type="submit" className={styles.submitBtn}>Send a Message</button>
-            </form>
-          </div>
+          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+            <div className={styles.inputWrapper}>
+              <input type="text" placeholder="Your Name" className={styles.input} required />
+            </div>
+            <div className={styles.inputWrapper}>
+              <input type="email" placeholder="Email Address" className={styles.input} required />
+            </div>
+            <div className={styles.inputWrapper}>
+              <textarea placeholder="Tell us about your project..." className={styles.textarea} required></textarea>
+            </div>
+            <button type="submit" className={styles.submitBtn}>
+              SEND INQUIRY
+              <span className={styles.btnArrow}>→</span>
+            </button>
+          </form>
         </div>
 
       </div>
