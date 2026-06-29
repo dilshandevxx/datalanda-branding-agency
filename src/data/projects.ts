@@ -23,7 +23,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 1,
     title: "NeuroGen platform",
-    category: "AI",
+    category: "Web App",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526290/laptop_mockup_dhfqvy.webp",
     ratioClass: "ratioStandard",
     client: "NeuroGen Tech",
@@ -40,7 +40,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 2,
     title: "EcoSpace Web",
-    category: "Web",
+    category: "Corporate",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp",
     ratioClass: "ratioPortrait",
     client: "EcoSpace Architecture",
@@ -57,7 +57,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 3,
     title: "Visionary ML",
-    category: "ML",
+    category: "Web App",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526288/laptop_report_mockup_jypxur.webp",
     ratioClass: "ratioWide",
     client: "Visionary Labs",
@@ -74,7 +74,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 4,
     title: "Flow UI Kit",
-    category: "UI/UX",
+    category: "Corporate",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp",
     ratioClass: "ratioSquare",
     client: "Flow Systems",
@@ -108,7 +108,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 6,
     title: "Predictive Engines",
-    category: "ML",
+    category: "Web App",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp",
     ratioClass: "ratioStandard",
     client: "Predictive.ai",
@@ -125,7 +125,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 7,
     title: "Fitness Tracker App",
-    category: "Mobile",
+    category: "Web App",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526288/laptop_report_mockup_jypxur.webp",
     ratioClass: "ratioWide",
     client: "Pulse",
@@ -142,7 +142,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 8,
     title: "Creative Portfolio Web",
-    category: "Web",
+    category: "Landing Page",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526286/imac_mockup_jojwy8.webp",
     ratioClass: "ratioSquare",
     client: "Studio K",
@@ -176,7 +176,7 @@ export const ALL_PROJECTS: Project[] = [
   {
     id: 10,
     title: "Crypto Wallet App",
-    category: "Web3",
+    category: "Web App",
     img: "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782526285/tablet_poster_mockup_y53ghh.webp",
     ratioClass: "ratioPortrait",
     client: "Vault",

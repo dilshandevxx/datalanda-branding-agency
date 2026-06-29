@@ -9,7 +9,7 @@ import styles from './Projects.module.css';
 import ProjectDrawer from '@/components/ProjectDrawer';
 
 // Using the exact filters from the screenshot
-const CATEGORIES = ["Featured", "Latest News", "All", "Studio", "Perspective", "Publications", "Press", "Work"];
+const CATEGORIES = ["All", "Landing Page", "E-Commerce", "Web App", "Corporate", "Branding"];
 
 export default function ProjectsClient({ initialProjects }: { initialProjects: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
