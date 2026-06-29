@@ -6,7 +6,7 @@ import SmartVideo from './SmartVideo';
 import styles from './AppShowcaseSection.module.css';
 import { siteConfig } from '../data/siteConfig';
 
-export default function AppShowcaseSection() {
+export default function AppShowcaseSection({ video }: { video?: string }) {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -92,7 +92,7 @@ export default function AppShowcaseSection() {
               y: "-50%"
             }}
           >
-            <SmartVideo src={siteConfig.videos.appShowcase} className={styles.video} />
+            <SmartVideo src={video || siteConfig.videos.appShowcase} className={styles.video} />
             <div className={styles.videoOverlay}></div>
           </m.div>
         </div>
