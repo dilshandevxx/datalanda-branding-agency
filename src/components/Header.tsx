@@ -19,7 +19,7 @@ export default function Header() {
     // Fetch dynamic logo from Sanity Site Settings
     const fetchLogo = async () => {
       try {
-        const data = await client.fetch(`*[_type == "siteSettings"][0]{"logoUrl": logo.asset->url}`);
+        const data = await client.fetch(`*[_type == "siteSettings"][0]{"logoUrl": logos[isActive == true][0].image.asset->url}`);
         if (data?.logoUrl) {
           setLogoUrl(data.logoUrl);
         }
