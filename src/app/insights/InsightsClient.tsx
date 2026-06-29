@@ -44,11 +44,11 @@ export default function InsightsClient({ initialPosts }: { initialPosts: Post[] 
       </div>
 
       <div className={styles.grid}>
-        {filteredPosts.map((post) => (
-          <Link href="#" key={post.id} className={styles.card}>
+        {filteredPosts.map((post, index) => (
+          <Link href="#" key={post._id || post.id || index} className={styles.card}>
             <div className={styles.imageWrapper}>
               <Image 
-                src={post.image} 
+                src={post.mainImageUrl || post.image || ''} 
                 alt={post.title} 
                 fill 
                 sizes="(max-width: 768px) 100vw, 33vw"

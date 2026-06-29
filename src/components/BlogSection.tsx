@@ -1,14 +1,20 @@
-"use client";
-
-import Image from 'next/image';
-import styles from './BlogSection.module.css';
-import { siteConfig } from '../data/siteConfig';
-
 import Link from 'next/link';
+import Image from 'next/image';
 import { ALL_POSTS } from '@/data/posts';
+import { client } from '@/sanity/lib/client';
+import { postsQuery } from '@/sanity/lib/queries';
+import styles from './BlogSection.module.css';
 
-export default function BlogSection() {
-  const posts = ALL_POSTS.slice(0, 3);
+export default async function BlogSection() {
+  let livePosts = [];
+  try {
+    livePosts = await client.fetch(postsQuery);
+  } catch (error) {
+    console.error("Failed to fetch Sanity posts", error);
+  }
+
+  const combinedPosts = [...livePosts, ...ALL_POSTS];
+  const posts = combinedPosts.slice(0, 3);
 
   return (
     <section className={styles.section}>
@@ -30,8 +36,8 @@ export default function BlogSection() {
           {posts.map((post, i) => (
             <div key={i} className={styles.card}>
               <div className={styles.imageWrapper}>
-                <Image src={post.image} alt={post.title} fill sizes="(max-width: 992px) 100vw, 33vw" className={styles.image} />
-                <div className={styles.categoryBadge}>
+                <Image src={post.mainImageUrl || post.image || ''} alt={post.title} fill sizes="(max-width: 992px) 100vw, 33vw" className={styles.image} />
+                <div className={styles.categoryBadge} style={{ backgroundColor: post.color || 'rgba(0,0,0,0.5)' }}>
                   {post.category}
                 </div>
               </div>

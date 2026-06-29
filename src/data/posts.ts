@@ -1,8 +1,10 @@
 import { siteConfig } from './siteConfig';
 
 export interface Post {
-  id: string;
-  image: string;
+  id?: string;
+  _id?: string;
+  image?: string;
+  mainImageUrl?: string;
   category: string;
   color: string;
   date: string;
