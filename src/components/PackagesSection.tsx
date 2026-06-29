@@ -75,18 +75,6 @@ export default function PackagesSection() {
     <section id="packages" className={styles.section}>
       <div className={styles.container}>
         
-        {/* Header */}
-        <div className={styles.heroHeader}>
-          <div className={styles.label}>
-            <div className={styles.dot}></div>
-            <span>WEB DEVELOPMENT</span>
-          </div>
-          <h2 className={styles.heroTitle}>
-            World-class web experiences.<br/>
-            Starting from <span className={styles.highlight}>LKR 17,000</span>.
-          </h2>
-        </div>
-
         {/* Content Layout */}
         <div className={styles.contentGrid}>
           
