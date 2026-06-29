@@ -2,7 +2,7 @@
 
 import styles from './ProjectInMindCTA.module.css';
 
-export default function ProjectInMindCTA() {
+export default function ProjectInMindCTA({ caption }: { caption?: string }) {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
@@ -13,8 +13,7 @@ export default function ProjectInMindCTA() {
             GOT A PROJECT IN MIND<span className={styles.accent}>?</span>
           </h2>
           <p className={styles.desc}>
-            We're always looking for new challenges and interesting partners. 
-            Let's create something extraordinary together.
+            {caption || "We're always looking for new challenges and interesting partners. Let's create something extraordinary together."}
           </p>
           <div className={styles.contactDetails}>
             <a href="mailto:hello@skylabs.com" className={styles.link}>hello@skylabs.com</a>

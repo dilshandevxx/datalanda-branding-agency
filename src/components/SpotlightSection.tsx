@@ -6,7 +6,7 @@ import SmartVideo from "./SmartVideo";
 import styles from "./SpotlightSection.module.css";
 import { siteConfig } from "../data/siteConfig";
 
-export default function SpotlightSection() {
+export default function SpotlightSection({ video }: { video?: string }) {
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -30,7 +30,7 @@ export default function SpotlightSection() {
         
         {/* Background Video */}
         <div className={styles.videoWrapper}>
-          <SmartVideo src={siteConfig.videos.spotlight} className={styles.backgroundVideo} />
+          <SmartVideo src={video || siteConfig.videos.spotlight} className={styles.backgroundVideo} />
           <div className={styles.videoOverlay}></div>
         </div>
 

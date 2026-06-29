@@ -2,7 +2,8 @@ import { type SchemaTypeDefinition } from 'sanity'
 import { projectType } from './projectType'
 import { postType } from './postType'
 import { siteSettingsType } from './siteSettingsType'
+import { homePageType } from './homePageType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [projectType, postType, siteSettingsType],
+  types: [projectType, postType, siteSettingsType, homePageType],
 }

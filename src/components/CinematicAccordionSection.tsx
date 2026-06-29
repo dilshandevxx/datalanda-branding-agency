@@ -6,32 +6,42 @@ import styles from "./CinematicAccordionSection.module.css";
 import SmartVideo from "./SmartVideo";
 import { siteConfig } from "../data/siteConfig";
 
-const pillars = [
-  {
-    id: "strategy",
-    num: "01",
-    title: "Strategy",
-    description: "Human-centric brand positioning.",
-    videoSrc: siteConfig.videos.cinematicAccordion.strategy,
-  },
-  {
-    id: "design",
-    num: "02",
-    title: "Design",
-    description: "Pixel-perfect visual identity.",
-    videoSrc: siteConfig.videos.cinematicAccordion.design,
-  },
-  {
-    id: "execution",
-    num: "03",
-    title: "Execution",
-    description: "Seamless digital product delivery.",
-    videoSrc: siteConfig.videos.cinematicAccordion.execution,
-  },
-];
+interface CinematicAccordionProps {
+  strategyVideo?: string;
+  designVideo?: string;
+  executionVideo?: string;
+}
 
-export default function CinematicAccordionSection() {
+export default function CinematicAccordionSection({ 
+  strategyVideo, 
+  designVideo, 
+  executionVideo 
+}: CinematicAccordionProps = {}) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
+  const pillars = [
+    {
+      id: "strategy",
+      num: "01",
+      title: "Strategy",
+      description: "Human-centric brand positioning.",
+      videoSrc: strategyVideo || siteConfig.videos.cinematicAccordion.strategy,
+    },
+    {
+      id: "design",
+      num: "02",
+      title: "Design",
+      description: "Pixel-perfect visual identity.",
+      videoSrc: designVideo || siteConfig.videos.cinematicAccordion.design,
+    },
+    {
+      id: "execution",
+      num: "03",
+      title: "Execution",
+      description: "Seamless digital product delivery.",
+      videoSrc: executionVideo || siteConfig.videos.cinematicAccordion.execution,
+    },
+  ];
 
   return (
     <>

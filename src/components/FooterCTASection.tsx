@@ -2,7 +2,7 @@
 
 import styles from './FooterCTASection.module.css';
 
-export default function FooterCTASection() {
+export default function FooterCTASection({ caption }: { caption?: string }) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -17,7 +17,7 @@ export default function FooterCTASection() {
           </h2>
           
           <p className={styles.desc}>
-            Fusce nec erat sed nisl lobortis eleifend. In eu fringilla leo. Curabitur dignissim efficitur lorem nec fermentum.
+            {caption || "Fusce nec erat sed nisl lobortis eleifend. In eu fringilla leo. Curabitur dignissim efficitur lorem nec fermentum."}
           </p>
         </div>
       </div>

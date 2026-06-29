@@ -5,15 +5,22 @@ import Image from 'next/image';
 import styles from './StudioSection.module.css';
 import { siteConfig } from '../data/siteConfig';
 
-export default function StudioSection() {
+interface StudioSectionProps {
+  image1?: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
+}
+
+export default function StudioSection({ image1, image2, image3, image4 }: StudioSectionProps = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   
   // Extract all available images into an array
   const images = [
-    siteConfig.images.studio.image1,
-    siteConfig.images.studio.image2,
-    siteConfig.images.studio.image3,
-    siteConfig.images.studio.image4,
+    image1 || siteConfig.images.studio.image1,
+    image2 || siteConfig.images.studio.image2,
+    image3 || siteConfig.images.studio.image3,
+    image4 || siteConfig.images.studio.image4,
     // Add one more fallback to ensure we have enough images for a carousel
     "https://res.cloudinary.com/dqfcsavwj/image/upload/v1782529011/pexels-irene-constantino-2152173979-37682380_wjpwwb.webp"
   ].filter(Boolean);
