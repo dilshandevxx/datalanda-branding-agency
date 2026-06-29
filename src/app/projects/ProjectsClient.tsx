@@ -81,30 +81,46 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
       </div>
 
       {visibleCount < filteredProjects.length && (
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '5rem 0' }}>
           <button 
-            onClick={() => setVisibleCount(prev => prev + 6)}
+            onClick={(e) => {
+              const btn = e.currentTarget;
+              btn.innerHTML = 'LOADING...';
+              btn.style.opacity = '0.5';
+              btn.style.pointerEvents = 'none';
+              
+              setTimeout(() => {
+                setVisibleCount(prev => prev + 6);
+                btn.innerHTML = 'SHOW MORE';
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'auto';
+              }, 600);
+            }}
             style={{
               background: 'transparent',
               color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              padding: '1rem 2.5rem',
-              borderRadius: '100px',
-              fontSize: '1rem',
-              fontWeight: 500,
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              padding: '1.25rem 3rem',
+              borderRadius: '0',
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
               cursor: 'pointer',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              position: 'relative',
+              overflow: 'hidden'
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.color = '#000000';
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.color = '#ffffff';
             }}
           >
-            Show More
+            SHOW MORE
           </button>
         </div>
       )}
