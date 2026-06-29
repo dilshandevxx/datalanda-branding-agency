@@ -90,7 +90,7 @@ export default function AppShowcaseSection({ video }: { video?: string }) {
               top: "50%",
               x: "-50%",
               y: "-50%"
-            }}
+            }} 
           >
             <SmartVideo src={video || siteConfig.videos.appShowcase} className={styles.video} />
             <div className={styles.videoOverlay}></div>
@@ -100,3 +100,10 @@ export default function AppShowcaseSection({ video }: { video?: string }) {
     </section>
   );
 }
+
+
+
+
+
+<div>and ther hvato show </div>
+
