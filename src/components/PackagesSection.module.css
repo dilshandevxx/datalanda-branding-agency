@@ -48,9 +48,9 @@
 .dot {
   width: 6px;
   height: 6px;
-  background-color: #38bdf8;
+  background-color: #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .heroTitle {
@@ -63,7 +63,7 @@
 }
 
 .highlight {
-  background: linear-gradient(180deg, #38bdf8 0%, #2563eb 100%);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.4) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -81,11 +81,11 @@
 
 /* Base Offering Card (Left) */
 .baseOffering {
-  background: linear-gradient(145deg, #191919, #0f0f0f);
+  background: linear-gradient(145deg, #151515, #0a0a0a);
   padding: 3rem;
   border-radius: 24px;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 20px 40px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
   position: sticky;
@@ -99,7 +99,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), transparent 70%);
   pointer-events: none;
 }
 
@@ -107,12 +107,12 @@
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #ffffff;
   margin-bottom: 2rem;
 }
 
@@ -126,7 +126,7 @@
 .basePrice {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #38bdf8;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
 }
@@ -157,13 +157,13 @@
 }
 
 .checkIcon {
-  color: #38bdf8;
+  color: #ffffff;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
 .baseBtn {
-  background: #38bdf8;
+  background: #ffffff;
   color: #000000;
   border: none;
   padding: 1.15rem;
@@ -176,7 +176,7 @@
 }
 
 .baseBtn:hover {
-  background: #7dd3fc;
+  background: #e5e5e5;
   transform: translateY(-2px);
 }
 
