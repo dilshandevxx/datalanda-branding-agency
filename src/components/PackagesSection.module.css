@@ -68,15 +68,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .card {
   background: linear-gradient(145deg, #191919, #0f0f0f);
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
-  border-radius: 0;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.01), 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -115,6 +115,52 @@
   background: linear-gradient(145deg, #232323, #141414);
 }
 
+.popularCard {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(255, 255, 255, 0.05);
+  transform: scale(1.02);
+}
+
+.popularCard:hover {
+  transform: scale(1.02) translateY(-8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 50px rgba(255, 255, 255, 0.08);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.85rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  background-color: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
 .cardHeader {
   display: flex;
   align-items: center;
@@ -128,9 +174,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;
@@ -143,7 +189,7 @@
 }
 
 .cardTitle {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 500;
   color: #ffffff;
   margin: 0;
@@ -151,19 +197,23 @@
 }
 
 .price {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 600;
   color: #ffffff;
   margin: 0 0 0.5rem 0;
   position: relative;
   z-index: 2;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cardDesc {
   font-size: 0.95rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.55);
-  margin: 0 0 2rem 0;
+  margin: 0 0 2.5rem 0;
   transition: color 0.3s ease;
   position: relative;
   z-index: 2;
@@ -176,7 +226,7 @@
 .featureSection {
   position: relative;
   z-index: 2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .sectionTitle {
@@ -185,7 +235,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -204,7 +254,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .featureItem {
@@ -224,40 +274,42 @@
 
 .maintenanceBox {
   margin-top: auto;
-  margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.25rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: 2;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .maintenanceText {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
 }
 
 .maintenancePill {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 100px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  backdrop-filter: blur(10px);
 }
 
 .detailsList {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
   position: relative;
   z-index: 2;
 }
@@ -273,7 +325,7 @@
 .buttonGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
   position: relative;
   z-index: 2;
 }
@@ -282,24 +334,28 @@
   background: #ffffff;
   color: #000000;
   border: none;
-  padding: 1rem;
-  font-size: 0.95rem;
+  padding: 1.15rem;
+  border-radius: 12px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .primaryBtn:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
 }
 
 .secondaryBtn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.15rem;
+  border-radius: 12px;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
@@ -309,11 +365,12 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 1024px) {
@@ -340,10 +397,18 @@
   .grid {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 2rem;
   }
   
   .card {
     padding: 2.5rem 1.75rem;
+  }
+  
+  .popularCard {
+    transform: none;
+  }
+  
+  .popularCard:hover {
+    transform: translateY(-8px);
   }
 }

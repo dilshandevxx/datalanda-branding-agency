@@ -33,9 +33,9 @@ export default function Home() {
       <IntroSection />
 
       <ServicesSection />
-      <PackagesSection />
       <AppShowcaseSection />
       <WorkSection />
+      <PackagesSection />
       <StudioSection />
       <SpotlightSection />
       <TestimonialSection />

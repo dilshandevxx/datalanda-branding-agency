@@ -70,7 +70,8 @@ export default function PackagesSection() {
       ],
       maintenance: "6 Months",
       duration: "Project Duration: 2-3 weeks",
-      extras: "Extra pages: LKR 7,000 each"
+      extras: "Extra pages: LKR 7,000 each",
+      isPopular: true
     },
     {
       title: "The Authority",
@@ -104,7 +105,13 @@ export default function PackagesSection() {
 
         <div className={styles.grid}>
           {packages.map((pkg, i) => (
-            <div key={i} className={styles.card}>
+            <div key={i} className={`${styles.card} ${pkg.isPopular ? styles.popularCard : ''}`}>
+              {pkg.isPopular && (
+                <div className={styles.popularBadge}>
+                  <div className={styles.pulseDot}></div>
+                  MOST POPULAR
+                </div>
+              )}
               
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrapper}>{pkg.icon}</div>
