@@ -72,7 +72,7 @@ export default function StudioSection({ image1, image2, image3, image4 }: Studio
                 src={src as string} 
                 alt={`Studio ${index + 1}`} 
                 fill 
-                sizes="(max-width: 768px) 100vw, 33vw" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 style={{ objectFit: 'cover' }}
                 priority={index < 3}
               />
