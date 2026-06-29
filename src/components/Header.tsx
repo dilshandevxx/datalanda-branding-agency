@@ -2,17 +2,33 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Logo } from './Logo';
 import styles from './Header.module.css';
+import { client } from '@/sanity/lib/client';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoUrl, setLogoUrl] = useState<string | null>(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
+    // Fetch dynamic logo from Sanity Site Settings
+    const fetchLogo = async () => {
+      try {
+        const data = await client.fetch(`*[_type == "siteSettings"][0]{"logoUrl": logo.asset->url}`);
+        if (data?.logoUrl) {
+          setLogoUrl(data.logoUrl);
+        }
+      } catch (err) {
+        console.error("Failed to fetch logo:", err);
+      }
+    };
+    fetchLogo();
+
     let lastScrollY = window.scrollY;
     
     const handleScroll = () => {
@@ -37,7 +53,11 @@ export default function Header() {
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
         <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <Logo />
+          {logoUrl ? (
+            <Image src={logoUrl} alt="Logo" width={28} height={28} style={{ marginRight: '10px', objectFit: 'contain' }} />
+          ) : (
+            <Logo />
+          )}
           <span className={styles.logoText}>SKYLABS</span>
         </Link>
         
