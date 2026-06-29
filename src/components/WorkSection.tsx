@@ -11,7 +11,7 @@ export default function WorkSection() {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.dot}></div>
-          <h2 className={styles.title}>OUR WORK</h2>
+          <h2 className={styles.title}>SELECTED WORKS</h2>
         </div>
 
         <div className={styles.grid}>
@@ -41,7 +41,7 @@ export default function WorkSection() {
 
         <div className={styles.footerActions}>
           <Link href="/projects" className={styles.viewAllBtn}>
-            View All Projects <span className={styles.btnArrow}>→</span>
+            See more <span className={styles.btnArrow}>→</span>
           </Link>
         </div>
       </div>
