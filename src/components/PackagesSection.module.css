@@ -82,11 +82,11 @@
 
 /* Base Offering Card (Left) */
 .baseOffering {
-  background: #001133;
+  background: #0a0a0a;
   padding: 3rem;
   border-radius: 0;
-  border: 1px solid #0044ff;
-  box-shadow: 8px 8px 0px rgba(0, 68, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   position: sticky;
@@ -97,12 +97,12 @@
   width: 64px;
   height: 64px;
   border-radius: 0;
-  background: #0044ff;
+  background: #ffffff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 2rem;
 }
 
@@ -147,14 +147,14 @@
 }
 
 .checkIcon {
-  color: #0044ff;
+  color: #ffffff;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
 .baseBtn {
-  background: #0044ff;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   border: none;
   padding: 1.15rem;
   border-radius: 0;
@@ -167,7 +167,6 @@
 
 .baseBtn:hover {
   background: #e5e5e5;
-  transform: translateY(-2px);
 }
 
 
