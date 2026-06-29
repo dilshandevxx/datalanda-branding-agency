@@ -7,6 +7,8 @@ import Link from "next/link";
 import { m } from "framer-motion";
 import Header from "@/components/Header";
 import { getProjectById, ALL_PROJECTS, Project } from "@/data/projects";
+import { client } from '@/sanity/lib/client';
+import { projectsQuery } from '@/sanity/lib/queries';
 import styles from "./ProjectDetail.module.css";
 
 export default function ProjectDetail() {
@@ -16,19 +18,32 @@ export default function ProjectDetail() {
   const [nextProject, setNextProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    if (params.id) {
-      const p = getProjectById(params.id as string);
-      if (p) {
-        setProject(p);
+    async function loadProject() {
+      if (params.id) {
+        let liveProjects: Project[] = [];
+        try {
+          liveProjects = await client.fetch(projectsQuery);
+        } catch (error) {
+          console.error(error);
+        }
+
+        const combinedProjects = [...liveProjects, ...ALL_PROJECTS];
+        const p = combinedProjects.find(item => item.id?.toString() === params.id?.toString());
         
-        // Find next project
-        const currentIndex = ALL_PROJECTS.findIndex(item => item.id === p.id);
-        const nextIndex = (currentIndex + 1) % ALL_PROJECTS.length;
-        setNextProject(ALL_PROJECTS[nextIndex]);
-      } else {
-        router.push("/projects");
+        if (p) {
+          setProject(p);
+          
+          // Find next project
+          const currentIndex = combinedProjects.findIndex(item => item.id?.toString() === p.id?.toString());
+          const nextIndex = (currentIndex + 1) % combinedProjects.length;
+          setNextProject(combinedProjects[nextIndex]);
+        } else {
+          router.push("/projects");
+        }
       }
     }
+    
+    loadProject();
   }, [params.id, router]);
 
   if (!project) return null;

@@ -2,9 +2,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './WorkSection.module.css';
 import { ALL_PROJECTS } from '@/data/projects';
+import { client } from '@/sanity/lib/client';
+import { projectsQuery } from '@/sanity/lib/queries';
 
-export default function WorkSection() {
-  const projects = ALL_PROJECTS.slice(0, 4);
+export default async function WorkSection() {
+  let liveProjects = [];
+  try {
+    liveProjects = await client.fetch(projectsQuery);
+  } catch (error) {
+    console.error("Failed to fetch Sanity projects", error);
+  }
+
+  const combinedProjects = [...liveProjects, ...ALL_PROJECTS];
+  const projects = combinedProjects.slice(0, 4);
 
   return (
     <section className={styles.section}>

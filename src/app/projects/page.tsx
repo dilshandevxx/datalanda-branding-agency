@@ -14,8 +14,8 @@ export default async function ProjectsPage() {
     console.error("Failed to fetch Sanity projects", error);
   }
 
-  // If there are no projects in Sanity yet, fallback to the hardcoded ones so the site doesn't break
-  const initialProjects = liveProjects.length > 0 ? liveProjects : ALL_PROJECTS;
+  // Combine new Sanity projects (top) with the original hardcoded projects (bottom)
+  const combinedProjects = [...liveProjects, ...ALL_PROJECTS];
 
-  return <ProjectsClient initialProjects={initialProjects} />;
+  return <ProjectsClient initialProjects={combinedProjects} />;
 }
