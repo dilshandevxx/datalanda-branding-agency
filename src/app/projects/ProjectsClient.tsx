@@ -6,12 +6,14 @@ import FooterSection from '@/components/FooterSection';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Projects.module.css';
+import ProjectDrawer from '@/components/ProjectDrawer';
 
 // Using the exact filters from the screenshot
 const CATEGORIES = ["Featured", "Latest News", "All", "Studio", "Perspective", "Publications", "Press", "Work"];
 
 export default function ProjectsClient({ initialProjects }: { initialProjects: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
   const filteredProjects = activeCategory === "All" 
     ? initialProjects 
@@ -43,13 +45,11 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
 
       <div className={styles.grid}>
         {filteredProjects.map((project, i) => (
-          <Link 
-            href={project.websiteUrl || '#'}
-            target={project.websiteUrl ? "_blank" : undefined}
-            rel={project.websiteUrl ? "noopener noreferrer" : undefined}
+          <div 
             key={`${project._id || i}-${activeCategory}`} 
             className={styles.projectCard}
-            style={{ textDecoration: 'none', color: 'inherit' }}
+            onClick={() => setSelectedProject(project)}
+            style={{ cursor: 'pointer' }}
           >
             <div className={styles.imageWrapper}>
               <div className={styles.imageInner}>
@@ -70,11 +70,17 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
               <h3 className={styles.projectTitle}>{project.title}</h3>
               <p className={styles.projectDescription}>{project.shortDescription}</p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
       <FooterSection />
+      
+      <ProjectDrawer 
+        project={selectedProject} 
+        isOpen={!!selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </main>
   );
 }
