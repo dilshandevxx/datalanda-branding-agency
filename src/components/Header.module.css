@@ -35,16 +35,26 @@
 
 /* Logo */
 .logo {
-  font-size: 1.25rem;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  font-family: var(--font-family);
   cursor: pointer;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   transition: transform 0.3s ease;
+}
+
+.logoTextStacked {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+  text-align: left;
+}
+
+.logoTextLine {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  font-family: var(--font-family);
 }
 
 .logo:hover {
