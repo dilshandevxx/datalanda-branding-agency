@@ -4,12 +4,13 @@ export const homePageType = defineType({
   name: 'homePage',
   title: 'Home Page Settings',
   type: 'document',
-  fieldsets: [
+  groups: [
     { name: 'hero', title: 'Hero Section' },
-    { name: 'cinematic', title: 'Cinematic Accordion Videos' },
-    { name: 'media', title: 'Other Video Sections' },
-    { name: 'studio', title: 'Studio Section Images' },
-    { name: 'cta', title: 'Footer CTAs' },
+    { name: 'cinematic', title: 'Cinematic Videos' },
+    { name: 'showcase', title: 'App Showcase' },
+    { name: 'studio', title: 'Studio Section' },
+    { name: 'spotlight', title: 'Spotlight' },
+    { name: 'cta', title: 'CTAs & Footer' },
   ],
   fields: [
     // Hero Section
@@ -18,14 +19,14 @@ export const homePageType = defineType({
       title: 'Hero Caption Text',
       type: 'text',
       description: 'Example: "CRAFTING DIGITAL... DRIVEN BY DATA & DESIGN."',
-      fieldset: 'hero',
+      group: 'hero',
     }),
     defineField({
       name: 'heroVideo',
-      title: 'Hero Video URL',
+      title: 'Hero Background Video URL',
       type: 'url',
       description: 'URL to the Hero background video (e.g. Cloudinary/Vimeo)',
-      fieldset: 'hero',
+      group: 'hero',
     }),
 
     // Cinematic Accordion
@@ -33,19 +34,22 @@ export const homePageType = defineType({
       name: 'cinematicStrategyVideo',
       title: 'Strategy Video URL',
       type: 'url',
-      fieldset: 'cinematic',
+      description: 'Video that plays when hovering "Strategy"',
+      group: 'cinematic',
     }),
     defineField({
       name: 'cinematicDesignVideo',
       title: 'Design Video URL',
       type: 'url',
-      fieldset: 'cinematic',
+      description: 'Video that plays when hovering "Design"',
+      group: 'cinematic',
     }),
     defineField({
       name: 'cinematicExecutionVideo',
       title: 'Execution Video URL',
       type: 'url',
-      fieldset: 'cinematic',
+      description: 'Video that plays when hovering "Execution"',
+      group: 'cinematic',
     }),
 
     // Media Sections
@@ -53,13 +57,15 @@ export const homePageType = defineType({
       name: 'appShowcaseVideo',
       title: 'App Showcase Video URL',
       type: 'url',
-      fieldset: 'media',
+      description: 'Video for the "Data-driven interfaces" section',
+      group: 'showcase',
     }),
     defineField({
       name: 'spotlightVideo',
       title: 'Spotlight Video URL',
       type: 'url',
-      fieldset: 'media',
+      description: 'Video for the "Pioneering digital excellence" Spotlight section',
+      group: 'spotlight',
     }),
 
     // Studio Section Images
@@ -68,28 +74,28 @@ export const homePageType = defineType({
       title: 'Studio Image 1',
       type: 'image',
       options: { hotspot: true },
-      fieldset: 'studio',
+      group: 'studio',
     }),
     defineField({
       name: 'studioImage2',
       title: 'Studio Image 2',
       type: 'image',
       options: { hotspot: true },
-      fieldset: 'studio',
+      group: 'studio',
     }),
     defineField({
       name: 'studioImage3',
       title: 'Studio Image 3',
       type: 'image',
       options: { hotspot: true },
-      fieldset: 'studio',
+      group: 'studio',
     }),
     defineField({
       name: 'studioImage4',
       title: 'Studio Image 4',
       type: 'image',
       options: { hotspot: true },
-      fieldset: 'studio',
+      group: 'studio',
     }),
 
     // CTAs
@@ -98,14 +104,14 @@ export const homePageType = defineType({
       title: 'Got a Project in Mind Caption',
       type: 'text',
       description: 'Text under GOT A PROJECT IN MIND?',
-      fieldset: 'cta',
+      group: 'cta',
     }),
     defineField({
       name: 'footerCtaCaption',
       title: 'Footer CTA Caption',
       type: 'text',
-      description: 'Text in the blue/inspiration section above the footer',
-      fieldset: 'cta',
+      description: 'Text in the blue/inspiration section right above the footer',
+      group: 'cta',
     }),
   ],
 })
