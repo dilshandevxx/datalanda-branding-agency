@@ -1,8 +1,9 @@
 export interface Project {
-  id: number;
+  id?: number | string;
+  _id?: string;
   title: string;
   category: string;
-  img: string;
+  img?: string;
   ratioClass: string;
   client: string;
   year: string;
@@ -14,6 +15,8 @@ export interface Project {
   shortDescription: string;
   websiteUrl?: string;     // URL to the live project website
   cardImageUrl?: string;   // Alternative image URL for the project card
+  mainImageUrl?: string;   // Image URL from Sanity
+  galleryUrls?: string[];  // Gallery URLs from Sanity
 }
 
 export const ALL_PROJECTS: Project[] = [
