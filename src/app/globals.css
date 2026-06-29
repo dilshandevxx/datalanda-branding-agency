@@ -2,8 +2,8 @@
   --background: #111111;
   --foreground: #ffffff;
   --accent: #ffffff;
-  --font-family: var(--font-geist-sans), "Inter", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-family: 'Geist', 'Inter', "Helvetica Neue", Arial, sans-serif;
+  --font-mono: monospace;
   
   --spacing-unit: 8px;
   --header-height: 80px;
