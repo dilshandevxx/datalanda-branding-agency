@@ -37,8 +37,8 @@ export default async function WorkSection() {
               <div className={`${styles.imageWrapper} ${styles.ratioSquare}`}>
                 <div className={styles.imageInner}>
                   <Image 
-                    src={project.cardImageUrl || project.img} 
-                    alt={project.title} 
+                    src={project.cardImageUrl || project.mainImageUrl || project.img || ''} 
+                    alt={project.title || "Project Image"} 
                     fill 
                     sizes="(max-width: 768px) 85vw, 50vw"
                     style={{ objectFit: 'cover' }} 

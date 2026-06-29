@@ -63,8 +63,8 @@ export default function ProjectDetail() {
         >
           <div className={styles.heroImageWrapper}>
             <Image 
-              src={project.cardImageUrl || project.img} 
-              alt={project.title} 
+              src={project.cardImageUrl || project.mainImageUrl || project.img || ''} 
+              alt={project.title || "Project Image"} 
               fill 
               sizes="100vw"
               style={{ objectFit: 'cover' }} 
