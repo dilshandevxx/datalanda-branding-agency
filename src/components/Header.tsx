@@ -53,14 +53,16 @@ export default function Header() {
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden ? styles.hidden : ''}`}>
         <Link href="/#hero" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <div className={styles.logoTextStacked}>
-            <span className={styles.logoTextLine}>Sky</span>
-            <span className={styles.logoTextLine}>Labs</span>
-          </div>
           {logoUrl ? (
-            <Image src={logoUrl} alt="Logo" width={40} height={40} style={{ objectFit: 'contain' }} />
+            <Image src={logoUrl} alt="Logo" width={140} height={45} style={{ objectFit: 'contain' }} />
           ) : (
-            <Logo />
+            <>
+              <div className={styles.logoTextStacked}>
+                <span className={styles.logoTextLine}>Sky</span>
+                <span className={styles.logoTextLine}>Labs</span>
+              </div>
+              <Logo />
+            </>
           )}
         </Link>
         
