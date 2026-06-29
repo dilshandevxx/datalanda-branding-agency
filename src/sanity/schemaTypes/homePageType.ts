@@ -55,16 +55,16 @@ export const homePageType = defineType({
     // Media Sections
     defineField({
       name: 'appShowcaseVideo',
-      title: 'App Showcase Video URL',
+      title: 'Digital Ecosystems Video URL (App Showcase)',
       type: 'url',
-      description: 'Video for the "Data-driven interfaces" section',
+      description: 'Video for the "DIGITAL ECOSYSTEMS" section',
       group: 'showcase',
     }),
     defineField({
       name: 'spotlightVideo',
-      title: 'Spotlight Video URL',
+      title: 'Art of Living Video URL (Spotlight)',
       type: 'url',
-      description: 'Video for the "Pioneering digital excellence" Spotlight section',
+      description: 'Video for the "ART OF LIVING" text mask section',
       group: 'spotlight',
     }),
 
