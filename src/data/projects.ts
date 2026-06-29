@@ -210,5 +210,5 @@ export const ALL_PROJECTS: Project[] = [
 ];
 
 export function getProjectById(id: number | string): Project | undefined {
-  return ALL_PROJECTS.find(p => p.id.toString() === id.toString());
+  return ALL_PROJECTS.find(p => p.id?.toString() === id.toString());
 }
