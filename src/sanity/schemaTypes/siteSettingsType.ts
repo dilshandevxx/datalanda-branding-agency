@@ -29,11 +29,12 @@ export const siteSettingsType = defineType({
           preview: {
             select: {
               title: 'title',
+              originalFilename: 'asset.originalFilename',
               media: 'asset'
             },
-            prepare({ title, media }) {
+            prepare({ title, originalFilename, media }) {
               return {
-                title: title || 'Untitled Logo',
+                title: title || originalFilename || 'Untitled Logo',
                 media: media
               }
             }
