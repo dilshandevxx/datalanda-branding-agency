@@ -15,7 +15,6 @@ export const siteSettingsType = defineType({
       title: 'Logo Bank (Drag to switch!)',
       description: 'Upload all your logos here. The logo at the VERY TOP of the list is your active logo. Simply drag and drop to reorder and switch logos instantly.',
       type: 'array',
-      options: { layout: 'grid' },
       of: [{ type: 'image', options: { hotspot: true } }]
     }),
   ],
