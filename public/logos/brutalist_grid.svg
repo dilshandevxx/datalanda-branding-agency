@@ -1,0 +1,27 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#000000" />
+  <!-- Minimalist Grid lines -->
+  <line x1="100" y1="0" x2="100" y2="300" stroke="#222222" stroke-width="2" />
+  <line x1="200" y1="0" x2="200" y2="300" stroke="#222222" stroke-width="2" />
+  <line x1="0" y1="100" x2="300" y2="100" stroke="#222222" stroke-width="2" />
+  <line x1="0" y1="200" x2="300" y2="200" stroke="#222222" stroke-width="2" />
+  
+  <g font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="70" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">
+    <text x="50" y="55">S</text>
+    <text x="150" y="55">K</text>
+    <text x="250" y="55">Y</text>
+    
+    <text x="50" y="155">L</text>
+    
+    <!-- Center block is solid neon accent -->
+    <rect x="100" y="100" width="100" height="100" fill="#F05A28" />
+    <text x="150" y="155" fill="#000000">A</text>
+    
+    <text x="250" y="155">B</text>
+    
+    <text x="50" y="255">S</text>
+    <!-- Geometric accents for empty cells -->
+    <circle cx="150" cy="250" r="15" fill="#FFFFFF" />
+    <path d="M 235 235 L 265 265 M 265 235 L 235 265" stroke="#FFFFFF" stroke-width="8" />
+  </g>
+</svg>

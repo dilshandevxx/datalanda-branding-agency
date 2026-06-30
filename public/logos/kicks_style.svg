@@ -1,0 +1,34 @@
+<svg viewBox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="310" fill="#181818" />
+  
+  <g transform="skewX(-6) translate(40, 10)">
+    <!-- S -->
+    <path d="M 10 0 H 110 V 120 H 50 V 160 H 110 V 280 H 10 V 160 H 70 V 120 H 10 Z" fill="#FFFFFF"/>
+    
+    <!-- K -->
+    <path d="M 115 0 H 155 V 280 H 115 Z" fill="#FFFFFF"/>
+    <path d="M 160 130 L 215 0 H 175 L 155 110 V 150 L 175 280 H 215 Z" fill="#FFFFFF"/>
+    
+    <!-- Y -->
+    <path d="M 220 0 H 255 L 270 120 L 285 0 H 320 L 290 130 V 280 H 250 V 130 Z" fill="#FFFFFF"/>
+    
+    <!-- L -->
+    <path d="M 325 0 H 365 V 240 H 425 V 280 H 325 Z" fill="#FFFFFF"/>
+    
+    <!-- A -->
+    <path d="M 430 280 V 0 H 530 V 280 H 490 V 180 H 470 V 280 Z" fill="#FFFFFF"/>
+    <!-- Yellow Accent in A -->
+    <polygon points="465,40 495,35 490,130 470,140" fill="#FFC107" />
+    
+    <!-- B -->
+    <path d="M 535 0 H 635 V 280 H 535 Z" fill="#FFFFFF"/>
+    <polygon points="575,40 605,40 605,120 575,120" fill="#181818" />
+    <polygon points="575,160 605,160 605,240 575,240" fill="#181818" />
+    
+    <!-- S -->
+    <path d="M 640 0 H 740 V 120 H 680 V 160 H 740 V 280 H 640 V 160 H 700 V 120 H 640 Z" fill="#FFFFFF"/>
+    
+    <!-- TM Symbol -->
+    <text x="745" y="20" font-family="sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF">TM</text>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg viewBox="0 0 650 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm off-white background similar to the reference -->
+  <rect width="650" height="500" fill="#F8F7F2" />
+  
+  <!-- "the" -->
+  <g fill="none" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- t -->
+    <path d="M 220 120 Q 215 140 220 160 M 205 135 Q 220 130 230 140" />
+    <!-- h -->
+    <path d="M 245 110 Q 240 140 245 165 M 245 140 Q 265 125 275 145 Q 275 155 270 170" />
+    <!-- e -->
+    <path d="M 285 150 Q 310 140 305 125 Q 285 115 280 140 Q 275 165 310 160" />
+  </g>
+
+  <!-- "SKYLABS" - Hand-drawn thick marker path with a slight ARCH -->
+  <g fill="none" stroke="#111111" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <!-- S (Low left) -->
+    <path d="M 120 230 C 80 215, 70 260, 100 275 C 130 290, 120 330, 80 320" />
+    
+    <!-- K (Medium left) -->
+    <path d="M 150 210 Q 145 270 155 330" />
+    <path d="M 190 220 Q 165 260 150 275" />
+    <path d="M 160 270 Q 185 300 195 335" />
+    
+    <!-- Y (High center-left) -->
+    <path d="M 225 190 Q 240 220 255 240" />
+    <path d="M 285 180 Q 265 220 250 290" />
+    
+    <!-- L (High center-right) -->
+    <path d="M 310 180 Q 305 240 315 300" />
+    <path d="M 310 290 Q 335 300 355 285" />
+    
+    <!-- A (Medium right) -->
+    <path d="M 390 200 Q 375 250 365 315" />
+    <path d="M 390 200 Q 405 250 420 320" />
+    <path d="M 375 270 Q 395 280 415 265" />
+    
+    <!-- B (Low right) -->
+    <path d="M 445 230 Q 440 290 445 355" />
+    <path d="M 445 235 Q 485 230 480 275 Q 470 295 440 290" />
+    <path d="M 440 290 Q 495 295 485 345 Q 465 360 445 345" />
+    
+    <!-- S (Lowest right) -->
+    <path d="M 555 250 C 515 240, 505 280, 535 295 C 565 310, 555 350, 515 340" />
+  </g>
+
+  <!-- "clUb" -->
+  <g fill="none" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- c -->
+    <path d="M 340 395 C 310 385, 310 425, 340 420" />
+    <!-- l -->
+    <path d="M 355 375 Q 350 405 355 430" />
+    <!-- U -->
+    <path d="M 375 390 Q 370 430 390 430 Q 410 430 405 395" />
+    <!-- b -->
+    <path d="M 425 370 Q 420 410 425 435 M 425 405 Q 455 395 450 425 Q 440 440 425 425" />
+  </g>
+</svg>

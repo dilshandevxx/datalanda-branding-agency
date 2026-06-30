@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Deep Premium Black Background -->
+  <rect width="900" height="500" fill="#080808" />
+
+  <!-- 
+    Text Knockout Mask
+    This creates the "negative space" gap between the text and the orbital rings.
+    A thick black stroke is added to the text to eat away the white rings underneath.
+  -->
+  <mask id="text-knockout">
+    <rect width="1000" height="1000" fill="white" />
+    <text x="375" y="275" fill="black" stroke="black" stroke-width="26" stroke-linejoin="round" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="110" transform="scale(1.2, 1)">SKYLABS</text>
+  </mask>
+
+  <!-- Orbital Rings -->
+  <!-- Rotated -25 degrees to create a dynamic, sweeping kinetic energy -->
+  <g mask="url(#text-knockout)">
+    <g transform="rotate(-25 600 250)" fill="#FFFFFF">
+      
+      <!-- Outer Right Crescent (Thick) -->
+      <mask id="outer-cut">
+        <rect x="0" y="0" width="1000" height="1000" fill="white" />
+        <circle cx="560" cy="250" r="180" fill="black" />
+      </mask>
+      <circle cx="620" cy="250" r="190" mask="url(#outer-cut)" />
+
+      <!-- Inner Left Crescent (Thin) -->
+      <mask id="inner-cut">
+        <rect x="0" y="0" width="1000" height="1000" fill="white" />
+        <circle cx="590" cy="250" r="150" fill="black" />
+      </mask>
+      <circle cx="560" cy="250" r="140" mask="url(#inner-cut)" />
+
+    </g>
+  </g>
+
+  <!-- Main Extruded Text -->
+  <!-- Stretched horizontally by 20% to mimic the cinematic extended font in the reference -->
+  <text x="375" y="275" fill="#FFFFFF" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="110" transform="scale(1.2, 1)">SKYLABS</text>
+  
+  <!-- Spaced Out Minimalist Subtitle -->
+  <text x="450" y="380" fill="#999999" text-anchor="middle" font-family="'Century Gothic', 'Montserrat', 'Helvetica Neue', sans-serif" font-size="16" font-weight="400" letter-spacing="16">CREATIVE STUDIO</text>
+</svg>

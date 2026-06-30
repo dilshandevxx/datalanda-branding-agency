@@ -1,0 +1,63 @@
+<svg viewBox="0 0 710 330" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Charcoal Background -->
+  <rect width="710" height="330" fill="#161519" />
+  
+  <!-- 
+    Flat Baseline Mask 
+    This perfectly cuts off the rounded bottoms of the vertical stems,
+    creating that razor-sharp geometric Bauhaus aesthetic from the reference.
+  -->
+  <clipPath id="flat-bottom">
+    <rect x="0" y="0" width="710" height="220" />
+  </clipPath>
+
+  <g fill="none" stroke="#F6F4F0" stroke-width="44" stroke-linecap="round">
+    
+    <!-- s -->
+    <path d="M 110 110 C 110 50, 40 50, 40 110 C 40 165, 110 165, 110 220 C 110 275, 40 275, 40 220" />
+
+    <!-- k -->
+    <g clip-path="url(#flat-bottom)">
+      <line x1="160" y1="50" x2="160" y2="240" />
+      <line x1="175" y1="160" x2="235" y2="240" />
+    </g>
+    <line x1="165" y1="160" x2="225" y2="105" />
+
+    <!-- y (Tail extends below the baseline naturally) -->
+    <path d="M 255 110 V 160 A 35 35 0 0 0 325 160 V 110" />
+    <line x1="325" y1="140" x2="325" y2="290" />
+
+    <!-- l -->
+    <g clip-path="url(#flat-bottom)">
+      <line x1="375" y1="50" x2="375" y2="240" />
+    </g>
+
+    <!-- 
+      a & b 
+      The overlapping circles with tiny black "eyes" inside, 
+      perfectly mimicking the 'moon' logo structure.
+    -->
+    <circle cx="420" cy="165" r="48" fill="#F6F4F0" stroke="none" />
+    <circle cx="420" cy="165" r="13" fill="#161519" stroke="none" />
+    <g clip-path="url(#flat-bottom)">
+      <line x1="465" y1="110" x2="465" y2="240" stroke-width="40" />
+    </g>
+
+    <g clip-path="url(#flat-bottom)">
+      <line x1="505" y1="50" x2="505" y2="240" stroke-width="40" />
+    </g>
+    <circle cx="550" cy="165" r="48" fill="#F6F4F0" stroke="none" />
+    <circle cx="550" cy="165" r="13" fill="#161519" stroke="none" />
+
+    <!-- s -->
+    <path d="M 660 110 C 660 50, 590 50, 590 110 C 590 165, 660 165, 660 220 C 660 275, 590 275, 590 220" />
+  </g>
+
+  <!-- STUDIO Arch Text -->
+  <path id="arch" d="M 525 65 Q 595 10 665 65" fill="none" />
+  <text font-family="'Century Gothic', 'Montserrat', 'Helvetica Neue', sans-serif" font-weight="bold" font-size="20" fill="#F6F4F0" letter-spacing="5">
+    <textPath href="#arch" startOffset="50%" text-anchor="middle">
+      STUDIO
+    </textPath>
+  </text>
+</svg>
