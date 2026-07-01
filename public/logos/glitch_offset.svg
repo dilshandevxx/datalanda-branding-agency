@@ -1,9 +1,0 @@
-<svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
-  <rect width="500" height="150" fill="#0A0A0A" />
-  <g font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="95" text-anchor="middle" dominant-baseline="central" letter-spacing="-3">
-    <!-- RGB Glitch layered effect -->
-    <text x="245" y="80" fill="#00FFFF" style="mix-blend-mode: screen; opacity: 0.8;">SKYLABS</text>
-    <text x="255" y="80" fill="#FF00FF" style="mix-blend-mode: screen; opacity: 0.8;">SKYLABS</text>
-    <text x="250" y="80" fill="#FFFFFF">SKYLABS</text>
-  </g>
-</svg>

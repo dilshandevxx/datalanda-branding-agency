@@ -1,13 +1,13 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
+  --background: #fbf9f6;
+  --foreground: #f4f1eb;
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  --text-primary: #2b2b2b;
+  --text-secondary: #6e6b66;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-primary-hover: #403e3d;
+  --button-secondary-hover: #e8e3dc;
+  --button-secondary-border: #dcd7cf;
 
   display: flex;
   flex: 1;
@@ -129,14 +129,14 @@ a.secondary {
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: #2a2726;
+    --foreground: #211e1d;
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+    --text-primary: #fbf9f6;
+    --text-secondary: #a8a39e;
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+    --button-primary-hover: #4a4746;
+    --button-secondary-hover: #363230;
+    --button-secondary-border: #363230;
   }
 }
