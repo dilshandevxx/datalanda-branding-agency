@@ -69,13 +69,14 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
 }
 
 .listItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 1.5rem 4vw;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -98,12 +99,12 @@
 }
 
 .listItem:hover {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .itemTitle {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 500;
   margin: 0;
   color: rgba(255, 255, 255, 0.85);
@@ -164,12 +165,16 @@
   }
   
   .listItem {
-    padding: 2rem 0;
+    padding: 1.25rem 4vw;
   }
   
   .listItem:hover {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  
+  .itemTitle {
+    font-size: 1.25rem;
   }
 }
 
