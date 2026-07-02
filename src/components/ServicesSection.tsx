@@ -9,13 +9,13 @@ export default function ServicesSection() {
       title: "UI/UX Design",
     },
     {
+      title: "Web Development",
+    },
+    {
       title: "App Development",
     },
     {
-      title: "Market Strategy",
-    },
-    {
-      title: "QA and Testing",
+      title: "Digital Marketing",
     },
     {
       title: "AI Consulting",
