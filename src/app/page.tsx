@@ -9,7 +9,6 @@ const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'));
 const IntroSection = dynamic(() => import('@/components/IntroSection'));
 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'));
-const ArtOfLivingSection = dynamic(() => import('@/components/ArtOfLivingSection'));
 const ThemeInversionController = dynamic(() => import('@/components/ThemeInversionController'));
 const AppShowcaseSection = dynamic(() => import('@/components/AppShowcaseSection'));
 const WorkSection = dynamic(() => import('@/components/WorkSection'));
@@ -48,7 +47,6 @@ export default async function Home() {
       <IntroSection />
 
       <ServicesSection />
-      <ArtOfLivingSection />
       <AppShowcaseSection video={homeData.appShowcaseVideo} />
       <WorkSection />
       <StudioSection 
