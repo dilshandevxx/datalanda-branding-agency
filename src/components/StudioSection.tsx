@@ -93,12 +93,11 @@ export default function StudioSection({ image1, image2, image3, image4 }: Studio
             </button>
           </div>
 
-          {/* Column 2: Headline & Link */}
-          <div className={styles.headlineCol}>
-            <h2 className={styles.headline}>
-              BUILT BY CREATIVES<br/>WHO GET IT
-            </h2>
-            
+          {/* Column 2: First Paragraph & Link */}
+          <div className={styles.textCol}>
+            <p className={styles.paragraph}>
+              Great design has no expiration date. It lasts for years and inspires instantly. Our creative freedom enables us to spend more time on fewer projects and
+            </p>
             <a href="#about" className={styles.aboutLink}>
               About Studio 
               <span className={styles.linkIcon}>
@@ -107,10 +106,10 @@ export default function StudioSection({ image1, image2, image3, image4 }: Studio
             </a>
           </div>
 
-          {/* Column 3: Paragraph */}
+          {/* Column 3: Second Paragraph */}
           <div className={styles.textCol}>
             <p className={styles.paragraph}>
-              We merge cinematic storytelling, deep strategic research, and cutting-edge engineering to build brands that leave a legacy. Our multidisciplinary approach means we don't just design—we invent.
+              focus on the intellectual, functional, and artistic aspects of business. Looking to create profound ideas, timeless design, and beauty in everyday life.
             </p>
           </div>
 
