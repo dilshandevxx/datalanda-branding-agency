@@ -65,149 +65,191 @@
   background-clip: text;
 }
 
-.list {
+.accordionContainer {
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.listItem {
+.accordionItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.accordionItem:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.accordionHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2.5rem 0;
+  transition: padding 0.4s ease;
 }
 
-.listItem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.03), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 0;
+.accordionItem.expanded .accordionHeader {
+  padding-bottom: 1.5rem;
 }
 
-.listItem:hover::before {
-  transform: scaleX(1);
-}
-
-.itemLeft {
+.titleWrapper {
   display: flex;
   align-items: baseline;
-  gap: 3rem;
-  z-index: 1;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 2rem;
 }
 
-.listItem:hover .itemLeft {
-  transform: translateX(1.5rem);
-}
-
-.itemNumber {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.3);
+.number {
+  font-size: 1.1rem;
   font-family: monospace;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.4s ease;
 }
 
-.itemTitle {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+.accordionItem:hover .number,
+.accordionItem.expanded .number {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.accordionTitle {
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
   margin: 0;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-  transition: color 0.3s;
-}
-
-.listItem:hover .itemTitle {
-  color: #ffffff;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-}
-
-.itemRight {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  z-index: 1;
-  opacity: 0;
-  transform: translateX(-2rem);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  max-width: 500px;
-}
-
-.listItem:hover .itemRight {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.itemDesc {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
-  text-align: right;
-}
-
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
   transition: all 0.4s ease;
 }
 
-.listItem:hover .iconWrapper {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
+.accordionItem:hover .accordionTitle {
+  color: #ffffff;
+  transform: translateX(10px);
 }
 
-.iconOverlay {
-  position: absolute;
-  inset: 0;
+.accordionItem.expanded .accordionTitle {
+  color: #ffffff;
+  transform: translateX(10px);
+}
+
+.toggleIcon {
+  width: 24px;
+  height: 24px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  color: #000000;
-  opacity: 0;
-  transform: translateY(100%);
+}
+
+.horizontalLine,
+.verticalLine {
+  position: absolute;
+  background-color: #ffffff;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.listItem:hover .iconOverlay {
-  opacity: 1;
-  transform: translateY(0);
+.horizontalLine {
+  width: 100%;
+  height: 2px;
+}
+
+.verticalLine {
+  width: 2px;
+  height: 100%;
+}
+
+.verticalLine.hidden {
+  transform: rotate(90deg) scaleY(0);
+}
+
+.accordionContentWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordionItem.expanded .accordionContentWrapper {
+  grid-template-rows: 1fr;
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.contentInner {
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: clamp(3rem, 6vw, 6rem);
+  gap: 4rem;
+}
+
+.textContent {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.exploreBtn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.visualContent {
+  flex-shrink: 0;
+}
+
+.iconCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCircle svg {
+  width: 64px;
+  height: 64px;
 }
 
 @media (max-width: 1024px) {
-  .itemTitle {
-    font-size: 3rem;
+  .contentInner {
+    padding-left: clamp(2rem, 4vw, 4rem);
+    gap: 2rem;
   }
-  .itemLeft {
-    gap: 1.5rem;
+  .iconCircle {
+    width: 90px;
+    height: 90px;
   }
-  .itemRight {
-    gap: 1.5rem;
-    max-width: 350px;
+  .iconCircle svg {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -226,39 +268,33 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
   
-  .listItem {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2.5rem 0;
-    gap: 1.5rem;
+  .accordionHeader {
+    padding: 2rem 0;
   }
   
-  .itemLeft {
+  .titleWrapper {
     gap: 1rem;
-    transform: none !important;
   }
   
-  .itemRight {
-    opacity: 1;
-    transform: none !important;
-    text-align: left;
-    width: 100%;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+  .contentInner {
+    flex-direction: column-reverse;
+    padding-left: 0;
+    gap: 2rem;
+    padding-bottom: 2rem;
   }
   
-  .itemDesc {
-    text-align: left;
-    font-size: 0.95rem;
+  .iconCircle {
+    width: 72px;
+    height: 72px;
   }
   
-  .iconWrapper {
-    width: 48px;
-    height: 48px;
+  .iconCircle svg {
+    width: 32px;
+    height: 32px;
   }
   
-  .iconOverlay {
-    display: none;
+  .desc {
+    font-size: 1rem;
   }
 }
 
