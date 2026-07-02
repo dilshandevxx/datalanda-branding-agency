@@ -16,13 +16,13 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 4vw;
 }
 
 .header {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,192 +65,87 @@
   background-clip: text;
 }
 
-.accordionContainer {
+.list {
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.accordionItem {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  transition: background-color 0.4s ease;
-}
-
-.accordionItem:hover {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.accordionHeader {
+.listItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.5rem 0;
-  transition: padding 0.4s ease;
-}
-
-.accordionItem.expanded .accordionHeader {
-  padding-bottom: 1.5rem;
-}
-
-.titleWrapper {
-  display: flex;
-  align-items: baseline;
-  gap: 2rem;
-}
-
-.number {
-  font-size: 1.1rem;
-  font-family: monospace;
-  color: rgba(255, 255, 255, 0.3);
-  transition: color 0.4s ease;
-}
-
-.accordionItem:hover .number,
-.accordionItem.expanded .number {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.accordionTitle {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 400;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.4s ease;
-}
-
-.accordionItem:hover .accordionTitle {
-  color: #ffffff;
-  transform: translateX(10px);
-}
-
-.accordionItem.expanded .accordionTitle {
-  color: #ffffff;
-  transform: translateX(10px);
-}
-
-.toggleIcon {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.horizontalLine,
-.verticalLine {
-  position: absolute;
-  background-color: #ffffff;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.horizontalLine {
-  width: 100%;
-  height: 2px;
-}
-
-.verticalLine {
-  width: 2px;
-  height: 100%;
-}
-
-.verticalLine.hidden {
-  transform: rotate(90deg) scaleY(0);
-}
-
-.accordionContentWrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.accordionItem.expanded .accordionContentWrapper {
-  grid-template-rows: 1fr;
-}
-
-.accordionContent {
+  position: relative;
   overflow: hidden;
 }
 
-.contentInner {
-  padding-bottom: 3rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-left: clamp(3rem, 6vw, 6rem);
-  gap: 4rem;
+.listItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
 }
 
-.textContent {
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.listItem:hover::before {
+  transform: translateX(0);
 }
 
-.desc {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0;
+.listItem:hover {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.exploreBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.75rem 1.5rem;
-  border-radius: 100px;
-  font-size: 0.9rem;
+.itemTitle {
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 500;
-  cursor: pointer;
-  width: fit-content;
-  transition: all 0.3s ease;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.02em;
+  transition: color 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.exploreBtn:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+.listItem:hover .itemTitle {
+  color: #ffffff;
 }
 
-.visualContent {
-  flex-shrink: 0;
-}
-
-.iconCircle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.itemRight {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  position: relative;
+  z-index: 1;
 }
 
-.iconCircle svg {
-  width: 64px;
-  height: 64px;
+.itemNumber {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.15em;
+  transition: color 0.4s ease;
 }
 
-@media (max-width: 1024px) {
-  .contentInner {
-    padding-left: clamp(2rem, 4vw, 4rem);
-    gap: 2rem;
-  }
-  .iconCircle {
-    width: 90px;
-    height: 90px;
-  }
-  .iconCircle svg {
-    width: 48px;
-    height: 48px;
-  }
+.listItem:hover .itemNumber {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.arrow {
+  color: #ffffff;
+  opacity: 0.6;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.listItem:hover .arrow {
+  transform: translateX(8px);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -268,33 +163,13 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
   
-  .accordionHeader {
+  .listItem {
     padding: 2rem 0;
   }
   
-  .titleWrapper {
-    gap: 1rem;
-  }
-  
-  .contentInner {
-    flex-direction: column-reverse;
-    padding-left: 0;
-    gap: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  .iconCircle {
-    width: 72px;
-    height: 72px;
-  }
-  
-  .iconCircle svg {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .desc {
-    font-size: 1rem;
+  .listItem:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
