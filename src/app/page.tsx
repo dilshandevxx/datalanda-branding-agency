@@ -14,11 +14,9 @@ const AppShowcaseSection = dynamic(() => import('@/components/AppShowcaseSection
 const WorkSection = dynamic(() => import('@/components/WorkSection'));
 const StudioSection = dynamic(() => import('@/components/StudioSection'));
 const SpotlightSection = dynamic(() => import('@/components/SpotlightSection'));
-const TestimonialSection = dynamic(() => import('@/components/TestimonialSection'));
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
 const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
-const ProjectInMindCTA = dynamic(() => import('@/components/ProjectInMindCTA'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
 import { client } from '@/sanity/lib/client';
@@ -56,10 +54,8 @@ export default async function Home() {
         image4={homeData.studioImage4}
       />
       <SpotlightSection video={homeData.spotlightVideo} />
-      <TestimonialSection />
       <FaqSection />
       <BlogSection />
-      <ProjectInMindCTA caption={homeData.projectInMindCaption} />
       <FooterCTASection caption={homeData.footerCtaCaption} />
       <FooterSection />
     </main>
