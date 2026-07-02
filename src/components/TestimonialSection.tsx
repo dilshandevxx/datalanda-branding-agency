@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from './TestimonialSection.module.css';
+import SectionHeader from './SectionHeader';
 
 export default function TestimonialSection() {
 
@@ -32,9 +33,7 @@ export default function TestimonialSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>CLIENT STORIES.</h2>
-        </div>
+        <SectionHeader label="TESTIMONIALS" title={<>Client<br/>Stories</>} />
       </div>
       
       <div className={styles.marqueeTrack}>

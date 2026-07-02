@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './WorkSection.module.css';
 import { ALL_PROJECTS } from '@/data/projects';
+import SectionHeader from './SectionHeader';
 
 export default function WorkSection() {
   const projects = ALL_PROJECTS.slice(0, 4);
@@ -9,10 +10,7 @@ export default function WorkSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.dot}></div>
-          <h2 className={styles.title}>SELECTED WORKS</h2>
-        </div>
+        <SectionHeader label="PORTFOLIO" title={<>Selected<br/>Works</>} />
 
         <div className={styles.grid}>
           {projects.map((project, i) => (

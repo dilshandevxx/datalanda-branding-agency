@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import styles from './ServicesSection.module.css';
+import SectionHeader from './SectionHeader';
 
 export default function ServicesSection() {
   const services = [
@@ -33,13 +34,10 @@ export default function ServicesSection() {
   return (
     <section id="services" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.label}>
-            <div className={styles.dot}></div>
-            <span>OUR SERVICES</span>
-          </div>
-          <h2 className={styles.title}>Elevating brands through<br/>design and engineering</h2>
-        </div>
+        <SectionHeader 
+          label="OUR SERVICES" 
+          title={<>Elevating brands through<br/>design and engineering</>} 
+        />
       </div>
 
       <div className={styles.list}>

@@ -4,6 +4,7 @@ import { ALL_POSTS } from '@/data/posts';
 import { client } from '@/sanity/lib/client';
 import { postsQuery } from '@/sanity/lib/queries';
 import styles from './BlogSection.module.css';
+import SectionHeader from './SectionHeader';
 
 export default async function BlogSection() {
   let livePosts = [];
@@ -19,18 +20,7 @@ export default async function BlogSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.titleBlock}>
-            <div className={styles.label}>
-              <div className={styles.dot}></div>
-              <span>BLOG</span>
-            </div>
-            <h2 className={styles.title}>Latest Insights</h2>
-          </div>
-          <Link href="/insights" className={styles.allPostsBtn}>
-            All posts
-          </Link>
-        </div>
+        <SectionHeader label="BLOG" title={<>Latest<br/>Insights</>} />
 
         <div className={styles.grid}>
           {posts.map((post, i) => (
@@ -47,6 +37,12 @@ export default async function BlogSection() {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
+          <Link href="/insights" className={styles.allPostsBtn}>
+            All posts
+          </Link>
         </div>
       </div>
     </section>

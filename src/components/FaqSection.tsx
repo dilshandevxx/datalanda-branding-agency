@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './FaqSection.module.css';
+import SectionHeader from './SectionHeader';
 
 export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -37,9 +38,7 @@ export default function FaqSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        <div className={styles.header}>
-          <h2 className={styles.title}>FAQ.</h2>
-        </div>
+        <SectionHeader label="QUESTIONS" title="FAQ." />
 
         <div className={styles.accordion}>
           {faqs.map((faq, index) => {
