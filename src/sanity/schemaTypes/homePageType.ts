@@ -23,9 +23,9 @@ export const homePageType = defineType({
     }),
     defineField({
       name: 'heroVideo',
-      title: 'Hero Background Video URL',
+      title: 'Hero Background Media URL',
       type: 'url',
-      description: 'URL to the Hero background video (e.g. Cloudinary/Vimeo)',
+      description: 'Paste an Image URL (.jpg, .png, .webp) OR a Video URL (.mp4, .webm). The component will automatically adapt!',
       group: 'hero',
     }),
 

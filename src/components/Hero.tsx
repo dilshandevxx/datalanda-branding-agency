@@ -11,6 +11,9 @@ interface HeroProps {
 export default function Hero({ caption, video }: HeroProps) {
   const displayCaption = caption || "CRAFTING DIGITAL\nLANDSCAPES. DRIVEN\nBY DATA & DESIGN.";
   
+  const mediaUrl = video || siteConfig.videos.hero;
+  const isImage = /\.(jpeg|jpg|gif|png|webp|svg)(\?.*)?$/i.test(mediaUrl);
+  
   return (
     <section id="hero" className={styles.hero}>
       <div className={`${styles.titleContainer} animate-fade-in`}>
@@ -26,12 +29,20 @@ export default function Hero({ caption, video }: HeroProps) {
       </div>
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
-          <SmartVideo 
-            className={styles.video} 
-            preload="auto"
-          >
-            <source src={video || siteConfig.videos.hero} />
-          </SmartVideo>
+          {isImage ? (
+            <img 
+              src={mediaUrl} 
+              alt="Hero background" 
+              className={styles.video}
+            />
+          ) : (
+            <SmartVideo 
+              className={styles.video} 
+              preload="auto"
+            >
+              <source src={mediaUrl} />
+            </SmartVideo>
+          )}
         </div>
       </div>
     </section>
