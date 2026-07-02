@@ -1,3 +1,5 @@
+export const revalidate = 0; // Disable caching so Sanity changes reflect immediately
+
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
