@@ -9,14 +9,14 @@
 }
 
 .textCol {
-  background-color: #5b8cf0; /* The specific blue from the screenshot */
+  background-color: #ffffff; /* Premium high-contrast white */
   padding: 8rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 .meta {
@@ -31,7 +31,7 @@
 }
 
 .category {
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .title {
@@ -47,7 +47,7 @@
 .desc {
   font-size: clamp(1.125rem, 1.5vw, 1.5rem);
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.75;
   max-width: 700px;
 }
 
