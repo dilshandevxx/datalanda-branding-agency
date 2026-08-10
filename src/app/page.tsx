@@ -31,8 +31,8 @@ export default async function Home() {
     cinematicExecutionVideo, "studioImage1": studioImage1.asset->url,
     "studioImage2": studioImage2.asset->url, "studioImage3": studioImage3.asset->url,
     "studioImage4": studioImage4.asset->url, 
-    "magazineImageLeft": magazineImageLeft.asset->url, 
-    "magazineImageRight": magazineImageRight.asset->url, 
+    magazineImageLeft, 
+    magazineImageRight, 
     projectInMindCaption, footerCtaCaption
   }`) || {};
 

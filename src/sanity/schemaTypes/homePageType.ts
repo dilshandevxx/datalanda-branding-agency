@@ -102,16 +102,14 @@ export const homePageType = defineType({
     // Magazine Section Images
     defineField({
       name: 'magazineImageLeft',
-      title: 'Magazine Left Image (Portrait)',
-      type: 'image',
-      options: { hotspot: true },
+      title: 'Magazine Left Image URL (Cloudinary)',
+      type: 'url',
       group: 'magazine',
     }),
     defineField({
       name: 'magazineImageRight',
-      title: 'Magazine Right Image (Landscape/Square)',
-      type: 'image',
-      options: { hotspot: true },
+      title: 'Magazine Right Image URL (Cloudinary)',
+      type: 'url',
       group: 'magazine',
     }),
 
