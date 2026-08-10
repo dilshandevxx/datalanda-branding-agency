@@ -66,7 +66,6 @@ export default function ServicesSection() {
               >
                 <div className={styles.faqHeader}>
                   <h3 className={styles.question}>
-                    <span className={styles.num}>0{index + 1}</span>
                     <span className={styles.text}>{svc.title}</span>
                   </h3>
                   <div className={styles.icon}>+</div>
