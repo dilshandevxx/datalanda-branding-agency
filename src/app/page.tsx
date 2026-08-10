@@ -15,6 +15,7 @@ const ThemeInversionController = dynamic(() => import('@/components/ThemeInversi
 const WorkSection = dynamic(() => import('@/components/WorkSection'));
 const MagazineSection = dynamic(() => import('@/components/MagazineSection'));
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
+const FeatureShowcaseSection = dynamic(() => import('@/components/FeatureShowcaseSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
 const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
@@ -55,6 +56,7 @@ export default async function Home() {
       />
       <FaqSection />
       <BlogSection />
+      <FeatureShowcaseSection />
       <FooterCTASection caption={homeData.footerCtaCaption} />
       <FooterSection />
     </main>

@@ -1,0 +1,148 @@
+.section {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  background-color: var(--background);
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+/* Left Column */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-family: var(--font-playfair), serif; /* Using the elegant serif font */
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.desc {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ffffff;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+/* Flavor Grid (Bottom of left col) */
+.flavorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.flavorItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.thumbWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.2 / 1; /* Match the slightly rectangular shape from screenshot */
+  background-color: #111;
+  overflow: hidden;
+}
+
+.thumbImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.flavorItem:hover .thumbImage {
+  transform: scale(1.05);
+}
+
+.flavorTitle {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Right Column */
+.imageCol {
+  width: 100%;
+}
+
+.largeImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1; /* Tall square/portrait */
+  background-color: #111;
+  overflow: hidden;
+}
+
+.largeImage {
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .imageCol {
+    order: -1; /* Move image to top on mobile */
+  }
+
+  .largeImageWrapper {
+    aspect-ratio: 1 / 1; /* Square on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .flavorGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    gap: 1.5rem 1rem;
+  }
+}
