@@ -11,6 +11,8 @@ export const homePageType = defineType({
     { name: 'studio', title: 'Studio Section' },
     { name: 'magazine', title: 'Magazine Section' },
     { name: 'spotlight', title: 'Spotlight' },
+    { name: 'story', title: 'Our Story Section' },
+    { name: 'purpose', title: 'Purposeful by Design Section' },
     { name: 'cta', title: 'CTAs & Footer' },
   ],
   fields: [
@@ -111,6 +113,73 @@ export const homePageType = defineType({
       title: 'Magazine Right Image URL (Cloudinary)',
       type: 'url',
       group: 'magazine',
+    }),
+
+    // Story Section Images
+    defineField({
+      name: 'storyImage1',
+      title: 'Our Story - Top Left (Tall)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'story',
+    }),
+    defineField({
+      name: 'storyImage2',
+      title: 'Our Story - Bottom Left (Short)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'story',
+    }),
+    defineField({
+      name: 'storyImage3',
+      title: 'Our Story - Top Right (Short)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'story',
+    }),
+    defineField({
+      name: 'storyImage4',
+      title: 'Our Story - Bottom Right (Tall)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'story',
+    }),
+
+    // Purposeful by Design Images
+    defineField({
+      name: 'purposeImage1',
+      title: 'Feature Thumbnail 1',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'purpose',
+    }),
+    defineField({
+      name: 'purposeImage2',
+      title: 'Feature Thumbnail 2',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'purpose',
+    }),
+    defineField({
+      name: 'purposeImage3',
+      title: 'Feature Thumbnail 3',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'purpose',
+    }),
+    defineField({
+      name: 'purposeImage4',
+      title: 'Feature Thumbnail 4',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'purpose',
+    }),
+    defineField({
+      name: 'purposeLargeImage',
+      title: 'Purposeful Large Featured Image',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'purpose',
     }),
 
     // CTAs

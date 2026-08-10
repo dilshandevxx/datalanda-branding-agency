@@ -31,8 +31,18 @@ export default async function Home() {
     cinematicExecutionVideo, "studioImage1": studioImage1.asset->url,
     "studioImage2": studioImage2.asset->url, "studioImage3": studioImage3.asset->url,
     "studioImage4": studioImage4.asset->url, 
+    "studioImage4": studioImage4.asset->url, 
     magazineImageLeft, 
     magazineImageRight, 
+    "storyImage1": storyImage1.asset->url,
+    "storyImage2": storyImage2.asset->url,
+    "storyImage3": storyImage3.asset->url,
+    "storyImage4": storyImage4.asset->url,
+    "purposeImage1": purposeImage1.asset->url,
+    "purposeImage2": purposeImage2.asset->url,
+    "purposeImage3": purposeImage3.asset->url,
+    "purposeImage4": purposeImage4.asset->url,
+    "purposeLargeImage": purposeLargeImage.asset->url,
     projectInMindCaption, footerCtaCaption
   }`) || {};
 
@@ -48,7 +58,12 @@ export default async function Home() {
       />
       <WhyUsSection />
       <IntroSection />
-      <StorySection />
+      <StorySection 
+        img1={homeData.storyImage1}
+        img2={homeData.storyImage2}
+        img3={homeData.storyImage3}
+        img4={homeData.storyImage4}
+      />
 
       <ServicesSection />
       <WorkSection />
@@ -58,7 +73,13 @@ export default async function Home() {
       />
       <FaqSection />
       <BlogSection />
-      <FeatureShowcaseSection />
+      <FeatureShowcaseSection 
+        thumb1={homeData.purposeImage1}
+        thumb2={homeData.purposeImage2}
+        thumb3={homeData.purposeImage3}
+        thumb4={homeData.purposeImage4}
+        largeImage={homeData.purposeLargeImage}
+      />
       <FooterCTASection caption={homeData.footerCtaCaption} />
       <FooterSection />
     </main>

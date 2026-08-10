@@ -4,12 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './FeatureShowcaseSection.module.css';
 
-export default function FeatureShowcaseSection() {
+export default function FeatureShowcaseSection({
+  thumb1, thumb2, thumb3, thumb4, largeImage
+}: {
+  thumb1?: string; thumb2?: string; thumb3?: string; thumb4?: string; largeImage?: string;
+}) {
   const features = [
-    { title: "Brand Strategy &\nPositioning", image: "/blog/blog-image-1.png" },
-    { title: "Digital Experience\nDesign", image: "/blog/blog-image-2.png" },
-    { title: "Custom Web\nDevelopment", image: "/blog/blog-image-3.png" },
-    { title: "AI-Driven\nSolutions", image: "/blog/blog-image-5.png" }
+    { title: "Brand Strategy &\nPositioning", image: thumb1 || "/blog/blog-image-1.png" },
+    { title: "Digital Experience\nDesign", image: thumb2 || "/blog/blog-image-2.png" },
+    { title: "Custom Web\nDevelopment", image: thumb3 || "/blog/blog-image-3.png" },
+    { title: "AI-Driven\nSolutions", image: thumb4 || "/blog/blog-image-5.png" }
   ];
 
   return (
@@ -55,7 +59,7 @@ export default function FeatureShowcaseSection() {
         <div className={styles.imageCol}>
           <div className={styles.largeImageWrapper}>
             <Image 
-              src="/magazine-right.png" 
+              src={largeImage || "/magazine-right.png"} 
               alt="Purposeful by design featured work"
               fill
               sizes="(max-width: 992px) 100vw, 50vw"
