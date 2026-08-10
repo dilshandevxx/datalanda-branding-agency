@@ -10,10 +10,10 @@ export default function FeatureShowcaseSection({
   thumb1?: string; thumb2?: string; thumb3?: string; thumb4?: string; largeImage?: string;
 }) {
   const features = [
-    { title: "Brand Strategy &\nPositioning", image: thumb1 || "/blog/blog-image-1.png" },
-    { title: "Digital Experience\nDesign", image: thumb2 || "/blog/blog-image-2.png" },
-    { title: "Custom Web\nDevelopment", image: thumb3 || "/blog/blog-image-3.png" },
-    { title: "AI-Driven\nSolutions", image: thumb4 || "/blog/blog-image-5.png" }
+    { title: "Brand Strategy &\nPositioning", image: thumb1 || "/agency/purpose_thumb1.png" },
+    { title: "Digital Experience\nDesign", image: thumb2 || "/agency/purpose_thumb2.png" },
+    { title: "Custom Web\nDevelopment", image: thumb3 || "/agency/purpose_thumb3.png" },
+    { title: "AI-Driven\nSolutions", image: thumb4 || "/agency/purpose_thumb4.png" }
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function FeatureShowcaseSection({
         <div className={styles.imageCol}>
           <div className={styles.largeImageWrapper}>
             <Image 
-              src={largeImage || "/magazine-right.png"} 
+              src={largeImage || "/agency/purpose_large.png"} 
               alt="Purposeful by design featured work"
               fill
               sizes="(max-width: 992px) 100vw, 50vw"

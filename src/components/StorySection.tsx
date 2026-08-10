@@ -17,7 +17,7 @@ export default function StorySection({
           <div className={styles.col}>
             <div className={`${styles.imageWrapper} ${styles.tall}`}>
               <Image 
-                src={img1 || "/blog/blog-image-6.png"} 
+                src={img1 || "/agency/story1.png"} 
                 alt="Brand Identity" 
                 fill 
                 className={styles.image} 
@@ -25,7 +25,7 @@ export default function StorySection({
             </div>
             <div className={`${styles.imageWrapper} ${styles.short}`}>
               <Image 
-                src={img2 || "/blog/blog-image-2.png"} 
+                src={img2 || "/agency/story2.png"} 
                 alt="Creative Process" 
                 fill 
                 className={styles.image} 
@@ -35,7 +35,7 @@ export default function StorySection({
           <div className={`${styles.col} ${styles.shifted}`}>
             <div className={`${styles.imageWrapper} ${styles.short}`}>
               <Image 
-                src={img3 || "/blog/blog-image-3.png"} 
+                src={img3 || "/agency/story3.png"} 
                 alt="Digital Ecosystem" 
                 fill 
                 className={styles.image} 
@@ -43,7 +43,7 @@ export default function StorySection({
             </div>
             <div className={`${styles.imageWrapper} ${styles.tall}`}>
               <Image 
-                src={img4 || "/blog/blog-image-4.png"} 
+                src={img4 || "/agency/story4.png"} 
                 alt="Agency Culture" 
                 fill 
                 className={styles.image} 
