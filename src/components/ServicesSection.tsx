@@ -9,36 +9,36 @@ export default function ServicesSection() {
 
   const services = [
     {
+      title: "Web Development",
+      description: "We build highly scalable, fast, and secure web applications using the latest modern technologies and robust backend frameworks to drive your business forward."
+    },
+    {
+      title: "Mobile App Development",
+      description: "We develop custom native and cross-platform mobile applications that deliver seamless performance and exceptional user experiences on both iOS and Android."
+    },
+    {
+      title: "AI & Machine Learning",
+      description: "Leverage the power of Artificial Intelligence to optimize your operations, automate complex workflows, and unlock new possibilities and data-driven insights for your business."
+    },
+    {
+      title: "Custom Software Development",
+      description: "We engineer bespoke software solutions tailored specifically to your unique business requirements, ensuring high performance, security, and scalability."
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Streamline your deployment pipelines and ensure your applications run reliably with our comprehensive cloud infrastructure, automation, and DevOps services."
+    },
+    {
       title: "UI/UX Design",
       description: "We craft intuitive and visually stunning user interfaces and experiences, ensuring your digital products are not only beautiful but also highly usable and engaging."
     },
     {
-      title: "Web Development",
-      description: "Our team builds fast, scalable, and secure web applications using the latest modern technologies like Next.js, React, and robust backend frameworks."
+      title: "Cybersecurity",
+      description: "We implement robust security measures and protocols to protect your digital assets, ensuring data integrity and safeguarding your systems against modern cyber threats."
     },
     {
-      title: "App Development",
-      description: "We develop cross-platform and native mobile applications that deliver seamless performance and exceptional user experiences on both iOS and Android."
-    },
-    {
-      title: "Digital Marketing",
-      description: "We drive growth through data-driven digital marketing strategies, including SEO, content marketing, and targeted advertising campaigns."
-    },
-    {
-      title: "AI Consulting",
-      description: "Leverage the power of Artificial Intelligence to optimize your operations, automate workflows, and unlock new possibilities for your business."
-    },
-    {
-      title: "Agentic Systems",
-      description: "We design and implement autonomous AI agents that can handle complex tasks, reason through problems, and execute workflows with minimal human oversight."
-    },
-    {
-      title: "Cloud & DevOps",
-      description: "Streamline your deployment pipelines and ensure your applications run reliably with our comprehensive cloud infrastructure and DevOps services."
-    },
-    {
-      title: "Brand Identity",
-      description: "We forge comprehensive brand identities, from logo design to brand guidelines, ensuring a consistent and memorable presence across all touchpoints."
+      title: "IT Consulting & Support",
+      description: "We provide strategic IT guidance and ongoing technical support to help you navigate digital transformation and maintain optimal system performance."
     }
   ];
 
