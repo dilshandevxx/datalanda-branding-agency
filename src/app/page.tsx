@@ -18,7 +18,6 @@ const MagazineSection = dynamic(() => import('@/components/MagazineSection'));
 const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const FeatureShowcaseSection = dynamic(() => import('@/components/FeatureShowcaseSection'));
 const BlogSection = dynamic(() => import('@/components/BlogSection'));
-const FooterCTASection = dynamic(() => import('@/components/FooterCTASection'));
 const FooterSection = dynamic(() => import('@/components/FooterSection'));
 
 import { client } from '@/sanity/lib/client';
@@ -80,7 +79,6 @@ export default async function Home() {
         thumb4={homeData.purposeImage4}
         largeImage={homeData.purposeLargeImage}
       />
-      <FooterCTASection caption={homeData.footerCtaCaption} />
       <FooterSection />
     </main>
   );

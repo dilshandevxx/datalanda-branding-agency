@@ -125,6 +125,13 @@
   padding-left: 0.25rem; /* Slight optical alignment */
 }
 
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
 .cardTitle {
   font-size: 1.5rem;
   font-weight: 600;
@@ -134,17 +141,42 @@
   margin: 0;
 }
 
+.expandIcon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #a3a3a3;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotated {
+  transform: rotate(45deg);
+  color: #ffffff;
+}
+
+.descWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expanded {
+  grid-template-rows: 1fr;
+}
+
 .desc {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #a3a3a3; /* Exact grey from project card */
+  color: #a3a3a3;
   margin: 0;
   font-weight: 400;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
-  max-width: 95%; /* Prevents text from hitting the absolute edge */
+  max-width: 95%;
+  min-height: 0;
+  padding-top: 1rem;
 }
 
 @media (max-width: 992px) {
