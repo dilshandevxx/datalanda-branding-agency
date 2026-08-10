@@ -9,6 +9,7 @@ export const homePageType = defineType({
     { name: 'cinematic', title: 'Cinematic Videos' },
     { name: 'showcase', title: 'App Showcase' },
     { name: 'studio', title: 'Studio Section' },
+    { name: 'magazine', title: 'Magazine Section' },
     { name: 'spotlight', title: 'Spotlight' },
     { name: 'cta', title: 'CTAs & Footer' },
   ],
@@ -96,6 +97,22 @@ export const homePageType = defineType({
       type: 'image',
       options: { hotspot: true },
       group: 'studio',
+    }),
+
+    // Magazine Section Images
+    defineField({
+      name: 'magazineImageLeft',
+      title: 'Magazine Left Image (Portrait)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'magazine',
+    }),
+    defineField({
+      name: 'magazineImageRight',
+      title: 'Magazine Right Image (Landscape/Square)',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'magazine',
     }),
 
     // CTAs

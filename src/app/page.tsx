@@ -30,7 +30,10 @@ export default async function Home() {
     appShowcaseVideo, cinematicStrategyVideo, cinematicDesignVideo, 
     cinematicExecutionVideo, "studioImage1": studioImage1.asset->url,
     "studioImage2": studioImage2.asset->url, "studioImage3": studioImage3.asset->url,
-    "studioImage4": studioImage4.asset->url, projectInMindCaption, footerCtaCaption
+    "studioImage4": studioImage4.asset->url, 
+    "magazineImageLeft": magazineImageLeft.asset->url, 
+    "magazineImageRight": magazineImageRight.asset->url, 
+    projectInMindCaption, footerCtaCaption
   }`) || {};
 
   return (
@@ -49,7 +52,10 @@ export default async function Home() {
       <ServicesSection />
       <AppShowcaseSection video={homeData.appShowcaseVideo} />
       <WorkSection />
-      <MagazineSection />
+      <MagazineSection 
+        imageLeft={homeData.magazineImageLeft}
+        imageRight={homeData.magazineImageRight}
+      />
       <SpotlightSection video={homeData.spotlightVideo} />
       <FaqSection />
       <BlogSection />
