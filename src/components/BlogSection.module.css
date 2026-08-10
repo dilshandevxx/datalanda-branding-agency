@@ -1,6 +1,6 @@
 .section {
   padding: clamp(4rem, 8vw, 8rem) 0;
-  background-color: var(--background);
+  background-color: #111111;
   color: var(--foreground);
 }
 
