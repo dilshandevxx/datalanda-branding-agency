@@ -1,76 +1,83 @@
 "use client";
 
 import Link from 'next/link';
-import { Logo } from './Logo';
+import Image from 'next/image';
 import styles from './FooterSection.module.css';
 
 export default function FooterSection() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        
-        <div className={styles.mainGrid}>
-          {/* Column 1 */}
-          <div className={styles.brandCol}>
-            <h2 className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
-              <Logo />
-              SKYLABS.
-            </h2>
-            <p className={styles.desc}>
-              SKYLABS is a stunning and bold digital agency, perfectly suited for creative brands and enterprise platforms. With modern design and advanced engineering, it takes your website to the next level.
+    <footer className={styles.footerWrapper}>
+      {/* Top White Section */}
+      <div className={styles.ctaSection}>
+        <div className={styles.ctaContainer}>
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaTitle}>Have a project<br/>in mind?</h2>
+            <p className={styles.ctaDesc}>
+              Answers are just an email away. Drop us a line and the right person will get back to you as soon as possible.
             </p>
-            <div className={styles.socials}>
-              <a href="#">in</a>
-              <a href="#">tw</a>
-              <a href="#">fb</a>
-              <a href="#">yt</a>
-              <a href="#">ig</a>
+            <Link href="/contact" className={styles.ctaButton}>
+              WORK WITH US
+            </Link>
+          </div>
+          <div className={styles.illustrationWrapper}>
+            {/* The overlapping illustration */}
+            <div className={styles.illustrationOffset}>
+              <Image 
+                src="/agency/purpose_large.png" 
+                alt="Digital Design Illustration"
+                fill
+                className={styles.illustrationImage}
+              />
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Column 2 */}
-          <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>Pages</h4>
-            <nav className={styles.nav}>
-              <Link href="#">Home</Link>
-              <Link href="#">About</Link>
-              <Link href="#">Contact</Link>
-              <Link href="#">Portfolio</Link>
-              <Link href="#">Pricing</Link>
-              <Link href="#">Blog</Link>
-            </nav>
-          </div>
+      {/* Bottom Black Section */}
+      <div className={styles.footerDark}>
+        <div className={styles.footerContainer}>
+          <div className={styles.footerGrid}>
+            
+            <div className={styles.linksCol}>
+              <h4 className={styles.colTitle}>Sitemap</h4>
+              <nav className={styles.nav}>
+                <Link href="#">Home</Link>
+                <Link href="#">About</Link>
+                <Link href="#">News</Link>
+                <Link href="#">Pricing</Link>
+                <Link href="#">Style Guide</Link>
+                <Link href="#">Image Licensing</Link>
+              </nav>
+            </div>
 
-          {/* Column 3 */}
-          <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>Utility pages</h4>
-            <nav className={styles.nav}>
-              <Link href="#">Instructions</Link>
-              <Link href="#">Style guide</Link>
-              <Link href="#">Licenses</Link>
-              <Link href="#">Changelog</Link>
-              <Link href="#">404 Not found</Link>
-              <Link href="#">Password protected</Link>
-            </nav>
-          </div>
+            <div className={styles.contactCol}>
+              <h4 className={styles.colTitle}>Contact</h4>
+              <address className={styles.address}>
+                741 New South Head Rd, Triple<br/>
+                Bay SWFW 3148, New York
+              </address>
+              <div className={styles.contactInfo}>
+                <p>P: 3740 213 301</p>
+                <p>E: contact@vivid.com</p>
+              </div>
+            </div>
 
-          {/* Column 4 */}
-          <div className={styles.newsletterCol}>
-            <h4 className={styles.colTitle}>Subscribe to our newsletter</h4>
-            <p className={styles.desc}>
-              Lorem ipsum dolor sit am consectetur adipiscing
-            </p>
-            <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Enter your email" className={styles.input} />
-              <button type="submit" className={styles.button}>Subscribe</button>
-            </form>
+            <div className={styles.newsletterCol}>
+              <h4 className={styles.colTitle}>Subscribe to our newsletter</h4>
+              <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+                <div className={styles.inputWrapper}>
+                  <input type="email" placeholder="Enter your email..." className={styles.input} />
+                  <button type="submit" className={styles.submitBtn}>SUBSCRIBE</button>
+                </div>
+                <label className={styles.terms}>
+                  <input type="radio" checked readOnly className={styles.radio} />
+                  <span>By subscribing you agree to our <strong>Terms & Conditions.</strong></span>
+                </label>
+              </form>
+            </div>
+
           </div>
         </div>
-
-        <div className={styles.bottomRow}>
-          <div className={styles.copyright}>© SKYLABS — Powered by Next.js — Created by Agency</div>
-        </div>
-        
       </div>
     </footer>
   );
