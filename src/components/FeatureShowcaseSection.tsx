@@ -28,7 +28,7 @@ export default function FeatureShowcaseSection({
             <p className={styles.desc}>
               Growing your brand should be a collaborative journey, not a struggle. We’ve studied dozens of digital ecosystems and industry landscapes, running countless creative sprints, to craft bespoke digital experiences that feel fresh, bold, and highly impactful.
             </p>
-            <Link href="/work" className={styles.link}>
+            <Link href="/work" className={styles.button}>
               EXPLORE OUR WORK
             </Link>
           </div>
