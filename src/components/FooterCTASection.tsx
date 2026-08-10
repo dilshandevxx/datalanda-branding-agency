@@ -8,16 +8,16 @@ export default function FooterCTASection({ caption }: { caption?: string }) {
       <div className={styles.container}>
         <div className={styles.textCol}>
           <div className={styles.meta}>
-            <span>FEB 10, 2020</span>
-            <span className={styles.category}>INSPIRATION</span>
+            <span>NEW RELEASE</span>
+            <span className={styles.category}>MAGAZINE</span>
           </div>
           
           <h2 className={styles.title}>
-            Emerging trends that will shape the future
+            THE<br/>SECOND<br/>ISSUE
           </h2>
           
           <p className={styles.desc}>
-            {caption || "Fusce nec erat sed nisl lobortis eleifend. In eu fringilla leo. Curabitur dignissim efficitur lorem nec fermentum."}
+            Issue No.02 is now available.
           </p>
         </div>
       </div>
